@@ -2,7 +2,7 @@
 
 A growing collection of annotated discography reports — musicians, instrumentation, producers, labels, and the context behind the records.
 
-**Live site:** `https://<your-username>.github.io/<your-repo>/`
+**Live site:** https://mayankles.github.io/afrenpropo-discography/ 
 
 ## What's inside
 
