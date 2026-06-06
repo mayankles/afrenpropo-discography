@@ -10,13 +10,13 @@ Each report is a self-contained HTML page covering an artist's studio albums, or
 
 ## How it works
 
-- All report pages live in the [`htmls/`](htmls/) folder.
+- All report pages live in the [`html/`](html/) folder.
 - The landing page (`index.html`) queries the GitHub API at load time and **automatically lists every `.html` file** in `htmls/`. No manual link editing needed.
 - Hosted free via GitHub Pages.
 
 ## Adding a new report
 
-1. Drop the new `.html` file into the `htmls/` folder.
+1. Drop the new `.html` file into the `html/` folder.
 2. Commit and push (e.g. via GitHub Desktop).
 3. The new report appears on the landing page automatically within a minute or two.
 
