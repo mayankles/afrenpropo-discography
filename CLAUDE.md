@@ -10,14 +10,14 @@ Written for Claude Code, but usable by any capable LLM.
 A collection of self-contained HTML discography reports. Each report covers one
 artist's catalog, organized by creative era, with personnel, instrumentation,
 producers, labels, and context. The landing page (`index.html`) auto-lists
-everything in `htmls/` via the GitHub API — no manual linking needed.
+everything in `html/` via the GitHub API — no manual linking needed.
 
 ```
 /
-├── index.html          # landing page (auto-lists htmls/ via GitHub API)
+├── index.html          # landing page (auto-lists html/ via GitHub API)
 ├── README.md
 ├── CLAUDE.md           # this file
-└── htmls/
+└── html/
     ├── arcade_fire_discography.html
     ├── james_brown_discography.html
     └── ...
@@ -36,7 +36,7 @@ prettifies these into display titles automatically.
 > Include side projects/other bands: **[yes/no]** (default: no, unless the
 > artist's work is genuinely spread across multiple bands).
 
-Deliverable: one HTML file in `htmls/`. PDF only if asked.
+Deliverable: one HTML file in `html/`. PDF only if asked.
 
 ---
 
@@ -333,7 +333,7 @@ Assign era colors in order; any distinct subset is fine.
 ## Before committing
 
 - [ ] HTML validates — tags balanced, no stray `</div>`
-- [ ] Filename is `<artist>_discography.html`, lowercase, in `htmls/`
+- [ ] Filename is `<artist>_discography.html`, lowercase, in `html/`
 - [ ] Synopsis is 3–4 narrative paragraphs, ending with a scope note
 - [ ] No leftover legend or footer after the final table
 - [ ] Every requested highlight has both `highlight-masterpiece` and `⭐`
