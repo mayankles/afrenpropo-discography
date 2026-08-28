@@ -103,6 +103,14 @@
   }
   .count-bar b { color: var(--ink); font-weight: 500; }
 
+  .statslink {
+    display: inline-block; margin-top: 1.1rem; font-size: 0.74rem;
+    letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+    color: var(--amber); border-bottom: 1px solid var(--amber-deep);
+    padding-bottom: 3px; transition: color 0.2s, border-color 0.2s;
+  }
+  .statslink:hover { color: var(--ink); border-color: var(--ink); }
+
   /* grid */
   .grid {
     display: grid;
@@ -228,6 +236,7 @@
     <h1>Discography <em>Archive</em></h1>
     <p class="tagline">A growing collection of annotated discographies &mdash; musicians, instrumentation, producers, and the stories behind the records. Each entry is built and maintained by hand.</p>
     <div class="count-bar" id="countBar">Indexing the catalog&hellip;</div>
+    <a class="statslink" href="./stats.html">Stats Lab &mdash; ratings, taste &amp; trends &rarr;</a>
   </header>
 
   <main id="content">

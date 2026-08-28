@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-u",
+        "-m",
+        "http.server",
+        "8899",
+        "--bind",
+        "127.0.0.1"
+      ],
+      "port": 8899
+    }
+  ]
+}

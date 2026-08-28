@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFrEnProPo &mdash; Stats Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #17130f;
+    --bg-card: #1f1a15;
+    --ink: #f2e9db;
+    --ink-dim: #a8997f;
+    --amber: #e8b04b;
+    --amber-deep: #c8852b;
+    --line: #3a3128;
+
+    /* Categorical series colours, validated for this dark surface
+       (OKLCH L 0.48-0.67, chroma >= 0.1, worst-pair CVD dE 21.9).
+       Assigned to members in fixed order -- never cycled. A fourth
+       member needs a fourth validated colour, not a repeat. */
+    --s1: #3d9ad1;
+    --s2: #c9762f;
+    --s3: #b56fd0;
+    --s-extra: #8a8172;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(232,176,75,0.07), transparent 40%),
+      radial-gradient(circle at 88% 82%, rgba(200,133,43,0.06), transparent 45%);
+    color: var(--ink);
+    font-family: 'Spline Sans Mono', monospace;
+    min-height: 100vh;
+    padding: clamp(1.5rem, 5vw, 5rem);
+    overflow-x: hidden;
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0; pointer-events: none;
+    opacity: 0.035; z-index: 999;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; }
+
+  header { border-bottom: 1px solid var(--line); padding-bottom: 2rem; margin-bottom: 2.5rem; }
+  .eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.42em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 1.2rem; display: flex;
+    align-items: center; gap: 0.8rem;
+  }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--amber); }
+  h1 {
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(2.4rem, 7vw, 4.6rem); line-height: 0.94;
+    letter-spacing: -0.02em; margin-bottom: 1.2rem;
+  }
+  h1 em { font-style: italic; font-weight: 300; color: var(--amber); }
+  .tagline { max-width: 56ch; font-size: 0.88rem; line-height: 1.7; color: var(--ink-dim); }
+  .backlink {
+    display: inline-block; margin-top: 1.6rem; font-size: 0.74rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+  }
+  .backlink:hover { color: var(--amber); border-color: var(--amber); }
+
+  section { margin-bottom: 3.2rem; }
+  h2 {
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.5rem;
+    margin-bottom: 0.4rem; letter-spacing: -0.01em;
+  }
+  .note { font-size: 0.78rem; color: var(--ink-dim); line-height: 1.6; margin-bottom: 1.4rem; max-width: 68ch; }
+
+  /* stat tiles ---------------------------------------------------------- */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+  .tile { background: var(--bg-card); border: 1px solid var(--line); border-radius: 2px; padding: 1.2rem 1.3rem; }
+  .tile .n {
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 2.5rem;
+    line-height: 1; color: var(--amber); display: block; margin-bottom: 0.5rem;
+  }
+  .tile .k { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-dim); }
+
+  /* now playing --------------------------------------------------------- */
+  .now {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-left: 3px solid var(--amber); border-radius: 2px; padding: 1.4rem 1.6rem;
+  }
+  .now .who { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .now .when { font-size: 0.74rem; color: var(--ink-dim); letter-spacing: 0.1em; text-transform: uppercase; }
+  .now ol { margin: 0.9rem 0 0; padding-left: 1.1rem; font-size: 0.82rem; line-height: 1.9; color: var(--ink-dim); }
+  .now a { color: var(--amber); }
+
+  /* charts -------------------------------------------------------------- */
+  .card {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 2px; padding: 1.4rem 1.5rem;
+  }
+  .chart-scroll { overflow-x: auto; }
+  svg { display: block; width: 100%; height: auto; }
+  .grid-line { stroke: var(--line); stroke-width: 1; }
+  .axis-text { fill: var(--ink-dim); font-family: 'Spline Sans Mono', monospace; font-size: 10px; }
+  .val-text { fill: var(--ink); font-family: 'Spline Sans Mono', monospace; font-size: 11px; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1rem; font-size: 0.72rem; color: var(--ink-dim); }
+  .legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .swatch { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
+  .swatch.hollow { background: transparent; border: 2px solid var(--ink-dim); border-radius: 50%; }
+  .swatch.solid-dot { border-radius: 50%; }
+
+  .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem; }
+
+  /* table --------------------------------------------------------------- */
+  .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 2px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.78rem; background: var(--bg-card); }
+  thead th {
+    text-align: left; padding: 0.75rem 0.7rem; font-weight: 500;
+    font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-dim); border-bottom: 1px solid var(--line); white-space: nowrap;
+  }
+  tbody td { padding: 0.6rem 0.7rem; border-bottom: 1px solid rgba(58,49,40,0.5); vertical-align: middle; }
+  tbody tr:hover { background: rgba(232,176,75,0.05); }
+  tbody tr:last-child td { border-bottom: none; }
+  .rank { color: var(--ink-dim); font-size: 0.7rem; }
+  .artist-cell a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--amber-deep); }
+  .artist-cell a:hover { color: var(--amber); }
+  .no-report { color: var(--ink-dim); }
+  .who-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 0.45rem; vertical-align: 1px; }
+  .avg-cell { display: flex; align-items: center; gap: 0.5rem; min-width: 92px; }
+  .avg-bar { height: 4px; background: var(--amber-deep); border-radius: 2px; flex: 0 0 auto; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .chip {
+    background: var(--bg-card); border: 1px solid var(--line); border-radius: 2px;
+    padding: 0.4rem 0.7rem; font-size: 0.74rem; color: var(--ink-dim);
+  }
+
+  /* tooltip ------------------------------------------------------------- */
+  #tip {
+    position: fixed; pointer-events: none; opacity: 0; transition: opacity 0.1s;
+    background: #0f0c09; border: 1px solid var(--line); border-radius: 3px;
+    padding: 0.5rem 0.7rem; font-size: 0.72rem; line-height: 1.5;
+    color: var(--ink); z-index: 1000; max-width: 240px;
+  }
+  #tip b { color: var(--amber); font-weight: 500; }
+
+  .state { color: var(--ink-dim); font-size: 0.85rem; padding: 2rem 0; }
+  footer { border-top: 1px solid var(--line); padding-top: 1.5rem; font-size: 0.72rem; color: var(--ink-dim); line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Listening Club</div>
+    <h1>Stats <em>Lab</em></h1>
+    <p class="tagline">
+      Five albums, two weeks, three opinions. Every number here is recomputed
+      from the raw ratings each time the sheet changes &mdash; nothing is copied
+      from the spreadsheet&rsquo;s own summary tabs.
+    </p>
+    <a class="backlink" href="./index.html">&larr; Back to the archive</a>
+  </header>
+
+  <div id="content"><p class="state">Loading the numbers&hellip;</p></div>
+
+  <footer id="foot"></footer>
+</div>
+
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+const SERIES = ["var(--s1)", "var(--s2)", "var(--s3)"];
+const EXTRA  = "var(--s-extra)";
+const AMBER  = "#e8b04b";
+const DIM    = "#a8997f";
+const LINE   = "#3a3128";
+
+const svgNS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs = {}, text) => {
+  const n = document.createElementNS(svgNS, tag);
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (text !== undefined) n.textContent = text;
+  return n;
+};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+let colourOf = () => EXTRA;
+
+/* ---- tooltip ---------------------------------------------------------- */
+const tip = document.getElementById("tip");
+function bindTip(node, html) {
+  node.style.cursor = "crosshair";
+  node.addEventListener("pointerenter", () => { tip.innerHTML = html; tip.style.opacity = 1; });
+  node.addEventListener("pointermove", e => {
+    tip.style.left = Math.min(e.clientX + 14, innerWidth - 250) + "px";
+    tip.style.top  = (e.clientY + 18) + "px";
+  });
+  node.addEventListener("pointerleave", () => { tip.style.opacity = 0; });
+}
+
+/* ---- curator dumbbell -------------------------------------------------
+   One row per member. Colour carries member identity; the two ends are
+   distinguished by shape (hollow = how everyone else scored their picks,
+   filled = how they scored their own), so the second dimension never
+   depends on colour alone.                                              */
+function curatorChart(data) {
+  const members = data.members;
+  const rows = members.map(m => ({ m, ...data.curator[m] })).filter(r => r.curator_score != null);
+  const W = 700, rowH = 54, padL = 90, padR = 60, padT = 26;
+  const H = padT + rows.length * rowH + 34;
+  const lo = 5.5, hi = 8.6;
+  const x = v => padL + (v - lo) / (hi - lo) * (W - padL - padR);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img",
+                          "aria-label": "Curator score versus self score, by member" });
+
+  for (let t = 6; t <= 8.5; t += 0.5) {
+    svg.appendChild(el("line", { x1: x(t), y1: padT - 8, x2: x(t), y2: padT + rows.length * rowH - 18, class: "grid-line" }));
+    svg.appendChild(el("text", { x: x(t), y: H - 14, "text-anchor": "middle", class: "axis-text" }, t.toFixed(1)));
+  }
+  rows.forEach((r, i) => {
+    const y = padT + i * rowH + 10, c = colourOf(r.m);
+    svg.appendChild(el("text", { x: padL - 14, y: y + 4, "text-anchor": "end", class: "val-text", fill: c }, r.m));
+    svg.appendChild(el("line", { x1: x(r.curator_score), y1: y, x2: x(r.self_score), y2: y,
+                                 stroke: c, "stroke-width": 2, "stroke-linecap": "round", opacity: 0.55 }));
+    const others = el("circle", { cx: x(r.curator_score), cy: y, r: 6, fill: "none", stroke: c, "stroke-width": 2 });
+    const self   = el("circle", { cx: x(r.self_score), cy: y, r: 6, fill: c, stroke: "#1f1a15", "stroke-width": 2 });
+    bindTip(others, `<b>${esc(r.m)}</b><br>Others rate their ${r.picks} picks<br>${r.curator_score}`);
+    bindTip(self,   `<b>${esc(r.m)}</b><br>Rates their own picks<br>${r.self_score}`);
+    svg.appendChild(others); svg.appendChild(self);
+    svg.appendChild(el("text", { x: x(Math.max(r.curator_score, r.self_score)) + 12, y: y + 4, class: "val-text", fill: DIM },
+                       `+${r.gap.toFixed(2)}`));
+  });
+  return svg;
+}
+
+/* ---- taste matrix (sequential: one hue, dim -> bright) ----------------- */
+function tasteMatrix(data) {
+  const m = data.members, n = m.length;
+  const pair = (a, b) => data.taste[`${a}|${b}`] ?? data.taste[`${b}|${a}`];
+  const vals = Object.values(data.taste).filter(v => v != null);
+  const max = Math.max(...vals, 0.5);
+  const cell = 78, padL = 74, padT = 34;
+  const W = padL + n * cell + 10, H = padT + n * cell + 10;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Rating correlation between members" });
+
+  m.forEach((name, i) => {
+    svg.appendChild(el("text", { x: padL + i * cell + cell / 2, y: padT - 12, "text-anchor": "middle",
+                                 class: "axis-text", fill: colourOf(name) }, name));
+    svg.appendChild(el("text", { x: padL - 10, y: padT + i * cell + cell / 2 + 4, "text-anchor": "end",
+                                 class: "axis-text", fill: colourOf(name) }, name));
+  });
+  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+    const gx = padL + j * cell, gy = padT + i * cell;
+    if (i === j) {
+      svg.appendChild(el("rect", { x: gx + 1, y: gy + 1, width: cell - 4, height: cell - 4,
+                                   fill: "none", stroke: LINE, "stroke-dasharray": "3 3", rx: 2 }));
+      continue;
+    }
+    const v = pair(m[i], m[j]);
+    const t = v == null ? 0 : Math.max(0.06, v / max);
+    const g = el("g");
+    g.appendChild(el("rect", { x: gx + 1, y: gy + 1, width: cell - 4, height: cell - 4,
+                               fill: AMBER, "fill-opacity": t.toFixed(3), rx: 2 }));
+    g.appendChild(el("text", { x: gx + cell / 2 - 1, y: gy + cell / 2 + 5, "text-anchor": "middle",
+                               class: "val-text" }, v == null ? "—" : v.toFixed(2)));
+    bindTip(g, `<b>${esc(m[i])} &amp; ${esc(m[j])}</b><br>correlation ${v == null ? "n/a" : v.toFixed(3)}<br>${
+      v > 0.5 ? "same brain" : v > 0.3 ? "loosely aligned" : "largely independent"}`);
+    svg.appendChild(g);
+  }
+  return svg;
+}
+
+/* ---- timeline --------------------------------------------------------- */
+function timeline(data) {
+  const t = data.timeline;
+  if (t.length < 2) return document.createTextNode("");
+  const W = 940, H = 300, padL = 34, padR = 16, padT = 16, padB = 40;
+  const xs = t.map(d => new Date(d.date).getTime());
+  const [x0, x1] = [Math.min(...xs), Math.max(...xs)];
+  const x = v => padL + (v - x0) / (x1 - x0) * (W - padL - padR);
+  const y = v => padT + (10 - v) / 10 * (H - padT - padB);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img",
+                          "aria-label": "Group average per session over time, with a six-session rolling average" });
+
+  for (let v = 0; v <= 10; v += 2) {
+    svg.appendChild(el("line", { x1: padL, y1: y(v), x2: W - padR, y2: y(v), class: "grid-line" }));
+    svg.appendChild(el("text", { x: padL - 8, y: y(v) + 3, "text-anchor": "end", class: "axis-text" }, v));
+  }
+  const years = {};
+  t.forEach(d => { const yr = d.date.slice(0, 4); if (!(yr in years)) years[yr] = new Date(d.date).getTime(); });
+  Object.entries(years).forEach(([yr, ms]) =>
+    svg.appendChild(el("text", { x: x(ms), y: H - 14, "text-anchor": "middle", class: "axis-text" }, yr)));
+
+  const path = t.map((d, i) => `${i ? "L" : "M"}${x(new Date(d.date).getTime()).toFixed(1)},${y(d.rolling6).toFixed(1)}`).join(" ");
+  svg.appendChild(el("path", { d: path, fill: "none", stroke: AMBER, "stroke-width": 2,
+                               "stroke-linejoin": "round", "stroke-linecap": "round" }));
+  t.forEach(d => {
+    const cx = x(new Date(d.date).getTime()), cy = y(d.average);
+    const dot = el("circle", { cx, cy, r: 4, fill: "#1f1a15", stroke: DIM, "stroke-width": 2 });
+    bindTip(dot, `<b>${esc(d.artist)}</b><br>${d.date}<br>session ${d.average} &middot; trend ${d.rolling6}`);
+    svg.appendChild(dot);
+  });
+  return svg;
+}
+
+/* ---- genre bars ------------------------------------------------------- */
+function genreBars(data) {
+  const g = data.genres;
+  const W = 700, rowH = 30, padL = 118, padR = 54, padT = 8;
+  const H = padT + g.length * rowH + 8;
+  const max = Math.max(...g.map(d => d.average));
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Group average by genre" });
+  g.forEach((d, i) => {
+    const y = padT + i * rowH, w = (d.average / max) * (W - padL - padR);
+    svg.appendChild(el("text", { x: padL - 12, y: y + 17, "text-anchor": "end", class: "axis-text" }, d.genre));
+    const bar = el("rect", { x: padL, y: y + 6, width: Math.max(w, 2), height: 15, rx: 4, ry: 4,
+                             fill: AMBER, "fill-opacity": (0.35 + 0.65 * (d.average / max)).toFixed(3) });
+    bindTip(bar, `<b>${esc(d.genre)}</b><br>${d.sessions} session${d.sessions === 1 ? "" : "s"}<br>average ${d.average}`);
+    svg.appendChild(bar);
+    svg.appendChild(el("text", { x: padL + Math.max(w, 2) + 10, y: y + 18, class: "val-text" }, d.average.toFixed(2)));
+  });
+  return svg;
+}
+
+/* ---- render ----------------------------------------------------------- */
+function render(data) {
+  const idx = Object.fromEntries(data.members.map((m, i) => [m, SERIES[i] ?? EXTRA]));
+  colourOf = m => idx[m] ?? EXTRA;
+  const out = document.getElementById("content");
+  out.innerHTML = "";
+
+  const sec = (title, note) => {
+    const s = document.createElement("section");
+    s.innerHTML = `<h2>${title}</h2>${note ? `<p class="note">${note}</p>` : ""}`;
+    out.appendChild(s); return s;
+  };
+  const card = parent => { const c = document.createElement("div"); c.className = "card"; parent.appendChild(c); return c; };
+  const legend = (parent, items) => {
+    const l = document.createElement("div"); l.className = "legend";
+    l.innerHTML = items.map(([sw, label]) => `<span>${sw}${label}</span>`).join("");
+    parent.appendChild(l);
+  };
+
+  /* tiles */
+  const t = sec("The state of the club");
+  const tiles = document.createElement("div"); tiles.className = "tiles";
+  [[data.sessions_rated, "sessions rated"],
+   [data.overall_average, "group average"],
+   [data.reports, "reports written"],
+   [data.backlog.length, "on the backlog"]].forEach(([n, k]) => {
+    const d = document.createElement("div"); d.className = "tile";
+    d.innerHTML = `<span class="n">${n}</span><span class="k">${k}</span>`;
+    tiles.appendChild(d);
+  });
+  t.appendChild(tiles);
+
+  /* now playing */
+  if (data.current) {
+    const c = data.current, s = sec("On the turntable");
+    const box = document.createElement("div"); box.className = "now";
+    box.innerHTML =
+      `<div class="who">${esc(c.artist)}</div>` +
+      `<div class="when">${c.start} &rarr; ${c.end}</div>` +
+      (c.albums.length ? `<ol>${c.albums.map(a => `<li>${esc(a)}</li>`).join("")}</ol>` : "") +
+      (c.has_report
+        ? `<p style="margin-top:1rem;font-size:0.8rem"><a href="./html/${c.slug}_discography.html">Read the discography report &rarr;</a></p>`
+        : `<p style="margin-top:1rem;font-size:0.8rem;color:var(--ink-dim)">No report yet &mdash; one is queued to be written.</p>`);
+    s.appendChild(box);
+  }
+
+  /* curator */
+  const cs = sec("True curator score",
+    "How the other two rate the albums you brought, against how you rate them yourself. " +
+    "The number on the right is the gap &mdash; how much more you like your own taste than everyone else does.");
+  const cc = card(cs); cc.appendChild(curatorChart(data));
+  legend(cc, [[`<span class="swatch hollow"></span>`, "how the others scored your picks"],
+              [`<span class="swatch solid-dot" style="background:${DIM}"></span>`, "how you scored them"]]);
+
+  /* matrix + genre side by side */
+  const pair = sec("Taste and genre");
+  const cols = document.createElement("div"); cols.className = "two-col"; pair.appendChild(cols);
+
+  const mc = card(cols);
+  mc.insertAdjacentHTML("beforeend", `<h2 style="font-size:1rem;margin-bottom:0.3rem">Taste twin matrix</h2>
+    <p class="note">Correlation between each pair&rsquo;s scores. 1 = same brain, 0 = strangers.</p>`);
+  mc.appendChild(tasteMatrix(data));
+
+  const gc = card(cols);
+  gc.insertAdjacentHTML("beforeend", `<h2 style="font-size:1rem;margin-bottom:0.3rem">Genre autopsy</h2>
+    <p class="note">Group average by genre, best first.</p>`);
+  gc.appendChild(genreBars(data));
+
+  /* timeline */
+  const tl = sec("Are we getting harsher?",
+    "Each dot is one session&rsquo;s group average. The line is a six-session rolling average.");
+  const tc = card(tl);
+  const scroll = document.createElement("div"); scroll.className = "chart-scroll";
+  scroll.appendChild(timeline(data)); tc.appendChild(scroll);
+  legend(tc, [[`<span class="swatch solid-dot" style="background:transparent;border:2px solid ${DIM}"></span>`, "session average"],
+              [`<span class="swatch" style="background:${AMBER}"></span>`, "six-session trend"]]);
+
+  /* contrarian */
+  const con = sec("Contrarian index",
+    "Average distance from the other two&rsquo;s consensus. Higher means you more often disagree with the room.");
+  const ctiles = document.createElement("div"); ctiles.className = "tiles";
+  data.members.forEach(m => {
+    const d = document.createElement("div"); d.className = "tile";
+    d.innerHTML = `<span class="n" style="color:${colourOf(m)}">${data.contrarian[m] ?? "—"}</span><span class="k">${esc(m)}</span>`;
+    ctiles.appendChild(d);
+  });
+  con.appendChild(ctiles);
+
+  /* leaderboard */
+  const lb = sec("Every session, ranked",
+    "Linked artists have a discography report in the archive.");
+  const wrap2 = document.createElement("div"); wrap2.className = "table-scroll";
+  const maxAvg = Math.max(...data.ranked.map(r => r.average));
+  wrap2.innerHTML = `<table>
+    <thead><tr>
+      <th>#</th><th>Artist</th><th>Picked by</th><th>Genre</th><th>Date</th>
+      <th class="num">Average</th>${data.members.map(m => `<th class="num">${esc(m)}</th>`).join("")}
+      <th class="num">Spread</th>
+    </tr></thead>
+    <tbody>${data.ranked.map((r, i) => `<tr>
+      <td class="rank">${String(i + 1).padStart(2, "0")}</td>
+      <td class="artist-cell">${r.has_report
+        ? `<a href="./html/${r.slug}_discography.html">${esc(r.artist)}</a>`
+        : `<span class="no-report">${esc(r.artist)}</span>`}</td>
+      <td><span class="who-dot" style="background:${colourOf(r.submitter)}"></span>${esc(r.submitter ?? "—")}</td>
+      <td style="color:var(--ink-dim)">${esc(r.genre ?? "—")}</td>
+      <td style="color:var(--ink-dim)">${r.start ?? "—"}</td>
+      <td><span class="avg-cell"><span class="avg-bar" style="width:${(r.average / maxAvg * 46).toFixed(1)}px"></span>${r.average.toFixed(2)}</span></td>
+      ${data.members.map(m => `<td class="num">${r.scores[m] != null ? r.scores[m].toFixed(2) : "—"}</td>`).join("")}
+      <td class="num" style="color:var(--ink-dim)">${r.stdev != null ? r.stdev.toFixed(2) : "—"}</td>
+    </tr>`).join("")}</tbody></table>`;
+  lb.appendChild(wrap2);
+
+  /* backlog */
+  if (data.backlog.length) {
+    const bl = sec("Queued up", "Artists proposed but not yet listened to.");
+    const chips = document.createElement("div"); chips.className = "chips";
+    chips.innerHTML = data.backlog.map(b =>
+      `<span class="chip"><span class="who-dot" style="background:${colourOf(b.submitter)}"></span>${esc(b.artist)}</span>`).join("");
+    bl.appendChild(chips);
+  }
+
+  document.getElementById("foot").innerHTML =
+    `${data.sessions_rated} rated sessions &middot; ${data.sessions_listed} artists listed &middot; ` +
+    `${data.reports} discography reports.<br>` +
+    `Recomputed from the raw per-member scores on every sync. Correlations exclude a stray ` +
+    `summary row that the spreadsheet&rsquo;s own formulas count as a session.`;
+}
+
+fetch("./data/ratings.json", { cache: "no-store" })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(render)
+  .catch(err => {
+    // Opened straight off disk, fetch() is blocked by the browser regardless of
+    // whether the data file exists -- say so rather than blaming the data.
+    const offline = location.protocol === "file:";
+    document.getElementById("content").innerHTML = offline
+      ? `<p class="state">This page reads <code>data/ratings.json</code>, and browsers block that
+         when a page is opened directly from disk. Serve the folder instead:<br><br>
+         <code>python3 -m http.server 8899</code><br><br>
+         then open <code>http://localhost:8899/stats.html</code>. On GitHub Pages it just works.</p>`
+      : `<p class="state">Could not load <code>data/ratings.json</code> (${esc(err.message)}).<br>
+         If the file is missing, run <code>python3 scripts/club.py stats</code> to generate it.</p>`;
+  });
+</script>
+</body>
+</html>

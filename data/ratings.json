@@ -1,0 +1,1591 @@
+{
+ "members": [
+  "Nick",
+  "Evan",
+  "Mayank"
+ ],
+ "sessions_rated": 52,
+ "sessions_dated": 51,
+ "sessions_listed": 63,
+ "reports": 11,
+ "overall_average": 7.14,
+ "curator": {
+  "Nick": {
+   "picks": 18,
+   "curator_score": 6.71,
+   "self_score": 8.01,
+   "gap": 1.3
+  },
+  "Evan": {
+   "picks": 17,
+   "curator_score": 6.88,
+   "self_score": 7.69,
+   "gap": 0.81
+  },
+  "Mayank": {
+   "picks": 17,
+   "curator_score": 6.83,
+   "self_score": 7.75,
+   "gap": 0.92
+  }
+ },
+ "taste": {
+  "Evan|Nick": 0.354,
+  "Evan|Mayank": 0.178,
+  "Mayank|Nick": 0.228
+ },
+ "contrarian": {
+  "Nick": 1.18,
+  "Evan": 1.16,
+  "Mayank": 1.06
+ },
+ "genres": [
+  {
+   "genre": "Funk/Soul",
+   "sessions": 3,
+   "average": 7.73
+  },
+  {
+   "genre": "Folk/Country",
+   "sessions": 6,
+   "average": 7.61
+  },
+  {
+   "genre": "Jazz",
+   "sessions": 6,
+   "average": 7.58
+  },
+  {
+   "genre": "Unlisted",
+   "sessions": 1,
+   "average": 7.33
+  },
+  {
+   "genre": "Indie/Alt",
+   "sessions": 11,
+   "average": 7.26
+  },
+  {
+   "genre": "Pop",
+   "sessions": 5,
+   "average": 7.2
+  },
+  {
+   "genre": "Hip-Hop/R&B",
+   "sessions": 3,
+   "average": 7.08
+  },
+  {
+   "genre": "Rock",
+   "sessions": 12,
+   "average": 6.85
+  },
+  {
+   "genre": "Other",
+   "sessions": 1,
+   "average": 6.48
+  },
+  {
+   "genre": "Electronic",
+   "sessions": 4,
+   "average": 6.0
+  }
+ ],
+ "timeline": [
+  {
+   "date": "2024-04-17",
+   "artist": "Osees",
+   "average": 6.33,
+   "rolling6": 6.33
+  },
+  {
+   "date": "2024-05-01",
+   "artist": "Wilco",
+   "average": 8.0,
+   "rolling6": 7.17
+  },
+  {
+   "date": "2024-05-15",
+   "artist": "Béla Fleck",
+   "average": 7.36,
+   "rolling6": 7.23
+  },
+  {
+   "date": "2024-05-30",
+   "artist": "Morphine",
+   "average": 6.02,
+   "rolling6": 6.93
+  },
+  {
+   "date": "2024-06-12",
+   "artist": "Röyksopp",
+   "average": 4.83,
+   "rolling6": 6.51
+  },
+  {
+   "date": "2024-06-26",
+   "artist": "Regina Spektor",
+   "average": 5.05,
+   "rolling6": 6.27
+  },
+  {
+   "date": "2024-07-10",
+   "artist": "Butthole Surfers",
+   "average": 6.07,
+   "rolling6": 6.22
+  },
+  {
+   "date": "2024-07-17",
+   "artist": "Andrew Bird",
+   "average": 8.07,
+   "rolling6": 6.23
+  },
+  {
+   "date": "2024-09-12",
+   "artist": "Mark Lanegan",
+   "average": 8.13,
+   "rolling6": 6.36
+  },
+  {
+   "date": "2024-09-25",
+   "artist": "Kendrick Lamar",
+   "average": 7.48,
+   "rolling6": 6.61
+  },
+  {
+   "date": "2024-10-09",
+   "artist": "Cake",
+   "average": 6.0,
+   "rolling6": 6.8
+  },
+  {
+   "date": "2024-10-23",
+   "artist": "Aphex Twin",
+   "average": 6.02,
+   "rolling6": 6.96
+  },
+  {
+   "date": "2024-11-20",
+   "artist": "Easy Star All-Stars",
+   "average": 6.48,
+   "rolling6": 7.03
+  },
+  {
+   "date": "2024-12-05",
+   "artist": "Can",
+   "average": 4.75,
+   "rolling6": 6.48
+  },
+  {
+   "date": "2025-01-09",
+   "artist": "My Morning Jacket",
+   "average": 7.38,
+   "rolling6": 6.35
+  },
+  {
+   "date": "2025-02-06",
+   "artist": "Beyoncé",
+   "average": 6.9,
+   "rolling6": 6.25
+  },
+  {
+   "date": "2025-02-20",
+   "artist": "Thelonious Monk",
+   "average": 8.45,
+   "rolling6": 6.66
+  },
+  {
+   "date": "2025-03-06",
+   "artist": "Kanye West",
+   "average": 6.87,
+   "rolling6": 6.8
+  },
+  {
+   "date": "2025-03-20",
+   "artist": "Girl Talk",
+   "average": 5.0,
+   "rolling6": 6.56
+  },
+  {
+   "date": "2025-04-03",
+   "artist": "Frank Zappa",
+   "average": 8.07,
+   "rolling6": 7.11
+  },
+  {
+   "date": "2025-04-24",
+   "artist": "Yellow Magic Orchestra / Ryuichi Sakamoto",
+   "average": 8.17,
+   "rolling6": 7.24
+  },
+  {
+   "date": "2025-05-09",
+   "artist": "Jack White",
+   "average": 7.72,
+   "rolling6": 7.38
+  },
+  {
+   "date": "2025-05-23",
+   "artist": "Parliament-Funkadelic",
+   "average": 7.8,
+   "rolling6": 7.27
+  },
+  {
+   "date": "2025-06-06",
+   "artist": "Sufjan Stevens",
+   "average": 6.91,
+   "rolling6": 7.28
+  },
+  {
+   "date": "2025-06-13",
+   "artist": "Phil Collins / Genesis",
+   "average": 7.35,
+   "rolling6": 7.67
+  },
+  {
+   "date": "2025-06-27",
+   "artist": "Jerry Garcia",
+   "average": 7.77,
+   "rolling6": 7.62
+  },
+  {
+   "date": "2025-07-11",
+   "artist": "Randy Newman",
+   "average": 7.93,
+   "rolling6": 7.58
+  },
+  {
+   "date": "2025-07-24",
+   "artist": "Harry Nilsson",
+   "average": 8.1,
+   "rolling6": 7.64
+  },
+  {
+   "date": "2025-08-21",
+   "artist": "Billy Joel",
+   "average": 7.73,
+   "rolling6": 7.63
+  },
+  {
+   "date": "2025-09-05",
+   "artist": "Björk",
+   "average": 6.55,
+   "rolling6": 7.57
+  },
+  {
+   "date": "2025-09-18",
+   "artist": "Pink Floyd",
+   "average": 8.14,
+   "rolling6": 7.7
+  },
+  {
+   "date": "2025-10-03",
+   "artist": "The Brian Jonestown Massacre",
+   "average": 7.12,
+   "rolling6": 7.59
+  },
+  {
+   "date": "2025-10-17",
+   "artist": "Tame Impala",
+   "average": 7.3,
+   "rolling6": 7.49
+  },
+  {
+   "date": "2025-10-31",
+   "artist": "Dave Matthews Band",
+   "average": 5.85,
+   "rolling6": 7.11
+  },
+  {
+   "date": "2025-11-06",
+   "artist": "Lana Del Rey",
+   "average": 5.3,
+   "rolling6": 6.71
+  },
+  {
+   "date": "2025-11-14",
+   "artist": "Julian Lage",
+   "average": 7.63,
+   "rolling6": 6.89
+  },
+  {
+   "date": "2025-12-12",
+   "artist": "Ryan Adams",
+   "average": 7.37,
+   "rolling6": 6.76
+  },
+  {
+   "date": "2026-01-16",
+   "artist": "Talking Heads",
+   "average": 8.87,
+   "rolling6": 7.05
+  },
+  {
+   "date": "2026-01-30",
+   "artist": "Weather Report",
+   "average": 7.48,
+   "rolling6": 7.08
+  },
+  {
+   "date": "2026-02-20",
+   "artist": "Stevie Wonder",
+   "average": 7.45,
+   "rolling6": 7.35
+  },
+  {
+   "date": "2026-03-05",
+   "artist": "Ween",
+   "average": 7.47,
+   "rolling6": 7.71
+  },
+  {
+   "date": "2026-03-21",
+   "artist": "Pat Metheny",
+   "average": 6.8,
+   "rolling6": 7.57
+  },
+  {
+   "date": "2026-04-03",
+   "artist": "Dirty Projectors",
+   "average": 7.27,
+   "rolling6": 7.56
+  },
+  {
+   "date": "2026-04-16",
+   "artist": "Of Montreal",
+   "average": 7.35,
+   "rolling6": 7.3
+  },
+  {
+   "date": "2026-04-30",
+   "artist": "Michael Brecker",
+   "average": 6.8,
+   "rolling6": 7.19
+  },
+  {
+   "date": "2026-05-22",
+   "artist": "Arcade Fire",
+   "average": 8.02,
+   "rolling6": 7.29
+  },
+  {
+   "date": "2026-06-05",
+   "artist": "Michael Jackson",
+   "average": 7.5,
+   "rolling6": 7.29
+  },
+  {
+   "date": "2026-06-19",
+   "artist": "Nick Cave",
+   "average": 8.23,
+   "rolling6": 7.53
+  },
+  {
+   "date": "2026-07-03",
+   "artist": "Cocteau Twins",
+   "average": 6.67,
+   "rolling6": 7.43
+  },
+  {
+   "date": "2026-07-24",
+   "artist": "Miles Davis",
+   "average": 8.32,
+   "rolling6": 7.59
+  },
+  {
+   "date": "2026-08-07",
+   "artist": "The Mars Volta",
+   "average": 7.33,
+   "rolling6": 7.68
+  }
+ ],
+ "ranked": [
+  {
+   "artist": "Talking Heads",
+   "slug": "talking_heads",
+   "submitter": "Mayank",
+   "genre": "Indie/Alt",
+   "start": "2026-01-16",
+   "average": 8.87,
+   "stdev": 0.777,
+   "scores": {
+    "Nick": 9.1,
+    "Evan": 9.5,
+    "Mayank": 8.0
+   },
+   "has_report": false,
+   "albums": [
+    "Talking Heads '77",
+    "More Songs About Buildings and Food",
+    "Fear of Music",
+    "Remain in Light",
+    "Speaking in Tongues"
+   ]
+  },
+  {
+   "artist": "Thelonious Monk",
+   "slug": "thelonious_monk",
+   "submitter": "Nick",
+   "genre": "Jazz",
+   "start": "2025-02-20",
+   "average": 8.45,
+   "stdev": 0.871,
+   "scores": {
+    "Nick": 9.01,
+    "Evan": 7.45,
+    "Mayank": 8.9
+   },
+   "has_report": false,
+   "albums": [
+    "Solo Monk",
+    "Monks dream",
+    "Brilliant corners"
+   ]
+  },
+  {
+   "artist": "Miles Davis",
+   "slug": "miles_davis",
+   "submitter": "Mayank",
+   "genre": "Jazz",
+   "start": "2026-07-24",
+   "average": 8.32,
+   "stdev": 0.778,
+   "scores": {
+    "Nick": 9.05,
+    "Evan": 7.5,
+    "Mayank": 8.4
+   },
+   "has_report": true,
+   "albums": [
+    "Kind of Blue",
+    "Bitches Brew",
+    "Miles Smiles",
+    "Porgy and Bess",
+    "Tutu"
+   ]
+  },
+  {
+   "artist": "Nick Cave",
+   "slug": "nick_cave",
+   "submitter": "Nick",
+   "genre": "Indie/Alt",
+   "start": "2026-06-19",
+   "average": 8.23,
+   "stdev": 0.994,
+   "scores": {
+    "Nick": 8.98,
+    "Evan": 8.6,
+    "Mayank": 7.1
+   },
+   "has_report": true,
+   "albums": [
+    "Dig Lazarus Dig",
+    "The Boatman's Call",
+    "Push the sky away"
+   ]
+  },
+  {
+   "artist": "Yellow Magic Orchestra / Ryuichi Sakamoto",
+   "slug": "yellow_magic_orchestra",
+   "submitter": "Evan",
+   "genre": "Electronic",
+   "start": "2025-04-24",
+   "average": 8.17,
+   "stdev": 0.764,
+   "scores": {
+    "Nick": 8.0,
+    "Evan": 9.0,
+    "Mayank": 7.5
+   },
+   "has_report": false,
+   "albums": [
+    "1996 .",
+    "Solid State Survivor",
+    "Naughty Boys",
+    "BTTB"
+   ]
+  },
+  {
+   "artist": "Pink Floyd",
+   "slug": "pink_floyd",
+   "submitter": "Mayank",
+   "genre": "Rock",
+   "start": "2025-09-18",
+   "average": 8.14,
+   "stdev": 1.096,
+   "scores": {
+    "Nick": 9.2,
+    "Evan": 7.01,
+    "Mayank": 8.2
+   },
+   "has_report": false,
+   "albums": [
+    "Relics",
+    "The Piper at the Gates of Dawn",
+    "A Saucerful of Secrets",
+    "Obscured by Clouds",
+    "Atom Heart Mother"
+   ]
+  },
+  {
+   "artist": "Mark Lanegan",
+   "slug": "mark_lanegan",
+   "submitter": "Nick",
+   "genre": "Rock",
+   "start": "2024-09-12",
+   "average": 8.13,
+   "stdev": 1.093,
+   "scores": {
+    "Nick": 8.99,
+    "Evan": 8.5,
+    "Mayank": 6.9
+   },
+   "has_report": false,
+   "albums": [
+    "Blues Funeral",
+    "Bubblegum",
+    "Hawk",
+    "TBD",
+    "TBD"
+   ]
+  },
+  {
+   "artist": "Harry Nilsson",
+   "slug": "harry_nilsson",
+   "submitter": "Mayank",
+   "genre": "Pop",
+   "start": "2025-07-24",
+   "average": 8.1,
+   "stdev": 0.656,
+   "scores": {
+    "Nick": 7.5,
+    "Evan": 8.8,
+    "Mayank": 8.0
+   },
+   "has_report": false,
+   "albums": [
+    "Nilsson Schmilsson",
+    "Aerial Ballet",
+    "Knnillssonn",
+    "Aerial Pandemonium Ballet",
+    "The Point!"
+   ]
+  },
+  {
+   "artist": "Frank Zappa",
+   "slug": "frank_zappa",
+   "submitter": "Nick",
+   "genre": "Rock",
+   "start": "2025-04-03",
+   "average": 8.07,
+   "stdev": 0.902,
+   "scores": {
+    "Nick": 9.0,
+    "Evan": 7.2,
+    "Mayank": 8.0
+   },
+   "has_report": false,
+   "albums": [
+    "Apostrophe",
+    "Hot rats",
+    "Sheik Yerbouti"
+   ]
+  },
+  {
+   "artist": "Andrew Bird",
+   "slug": "andrew_bird",
+   "submitter": "Evan",
+   "genre": "Folk/Country",
+   "start": "2024-07-17",
+   "average": 8.07,
+   "stdev": 0.208,
+   "scores": {
+    "Nick": 8.0,
+    "Evan": 7.9,
+    "Mayank": 8.3
+   },
+   "has_report": false,
+   "albums": [
+    "Thrills",
+    "The Mysterious Production of Eggs",
+    "I Want to See Pulaski at Night",
+    "TBD",
+    "TBD"
+   ]
+  },
+  {
+   "artist": "Arcade Fire",
+   "slug": "arcade_fire",
+   "submitter": "Evan",
+   "genre": "Indie/Alt",
+   "start": "2026-05-22",
+   "average": 8.02,
+   "stdev": 0.076,
+   "scores": {
+    "Nick": 8.0,
+    "Evan": 7.95,
+    "Mayank": 8.1
+   },
+   "has_report": true,
+   "albums": [
+    "Funeral",
+    "The Suburbs",
+    "Reflector",
+    "Pink Elephant",
+    "Neon Bible"
+   ]
+  },
+  {
+   "artist": "Wilco",
+   "slug": "wilco",
+   "submitter": "Evan",
+   "genre": "Folk/Country",
+   "start": "2024-05-01",
+   "average": 8.0,
+   "stdev": 0.0,
+   "scores": {
+    "Nick": 8.0,
+    "Evan": 8.0,
+    "Mayank": 8.0
+   },
+   "has_report": false,
+   "albums": [
+    "Sky Blue Sky",
+    "Yankee Hotel Foxtrot",
+    "Summerteeth",
+    "TBD",
+    "TBD"
+   ]
+  },
+  {
+   "artist": "Ray Charles",
+   "slug": "ray_charles",
+   "submitter": "Mayank",
+   "genre": "Funk/Soul",
+   "start": null,
+   "average": 7.93,
+   "stdev": 0.603,
+   "scores": {
+    "Nick": 8.0,
+    "Evan": 7.3,
+    "Mayank": 8.5
+   },
+   "has_report": false,
+   "albums": [
+    "Ray Charles",
+    "What I'd Say",
+    "Modern Sounds in Country and Western Music Vol 1 & 2",
+    "The Genius of Ray Charles",
+    "The Sensational Ray Charles"
+   ]
+  },
+  {
+   "artist": "Randy Newman",
+   "slug": "randy_newman",
+   "submitter": "Evan",
+   "genre": "Folk/Country",
+   "start": "2025-07-11",
+   "average": 7.93,
+   "stdev": 0.404,
+   "scores": {
+    "Nick": 8.0,
+    "Evan": 7.5,
+    "Mayank": 8.3
+   },
+   "has_report": false,
+   "albums": [
+    "Trouble in Paradise",
+    "Sail Away",
+    "Little Criminals",
+    "Born Again",
+    "Randy Newman / Live"
+   ]
+  },
+  {
+   "artist": "Parliament-Funkadelic",
+   "slug": "parliament_funkadelic",
+   "submitter": "Nick",
+   "genre": "Funk/Soul",
+   "start": "2025-05-23",
+   "average": 7.8,
+   "stdev": 1.038,
+   "scores": {
+    "Nick": 8.99,
+    "Evan": 7.3,
+    "Mayank": 7.1
+   },
+   "has_report": false,
+   "albums": [
+    "America Eats its Young",
+    "Cosmic slop",
+    "Mothership Connection"
+   ]
+  },
+  {
+   "artist": "Jerry Garcia",
+   "slug": "jerry_garcia",
+   "submitter": "Nick",
+   "genre": "Rock",
+   "start": "2025-06-27",
+   "average": 7.77,
+   "stdev": 1.434,
+   "scores": {
+    "Nick": 9.01,
+    "Evan": 6.2,
+    "Mayank": 8.1
+   },
+   "has_report": false,
+   "albums": [
+    "jerry garcia & david grisman",
+    "Workingman's Dead",
+    "Reckoning",
+    "eruope '72 / cornell 77",
+    "blues for allah"
+   ]
+  },
+  {
+   "artist": "Billy Joel",
+   "slug": "billy_joel",
+   "submitter": "Nick",
+   "genre": "Pop",
+   "start": "2025-08-21",
+   "average": 7.73,
+   "stdev": 0.384,
+   "scores": {
+    "Nick": 8.0,
+    "Evan": 7.29,
+    "Mayank": 7.9
+   },
+   "has_report": false,
+   "albums": [
+    "The stranger",
+    "52nd street",
+    "Glass houses"
+   ]
+  },
+  {
+   "artist": "Jack White",
+   "slug": "jack_white",
+   "submitter": "Mayank",
+   "genre": "Rock",
+   "start": "2025-05-09",
+   "average": 7.72,
+   "stdev": 1.285,
+   "scores": {
+    "Nick": 6.35,
+    "Evan": 7.9,
+    "Mayank": 8.9
+   },
+   "has_report": false,
+   "albums": [
+    "Consolers of the Lonely (Raconteurs)",
+    "Dodge and Burn (Dead Weather)",
+    "De Stijl (White Stripes)"
+   ]
+  },
+  {
+   "artist": "Julian Lage",
+   "slug": "julian_lage",
+   "submitter": "Nick",
+   "genre": "Jazz",
+   "start": "2025-11-14",
+   "average": 7.63,
+   "stdev": 1.557,
+   "scores": {
+    "Nick": 9.1,
+    "Evan": 7.8,
+    "Mayank": 6.0
+   },
+   "has_report": false,
+   "albums": [
+    "Speak To Me",
+    "Arclight",
+    "Squint"
+   ]
+  },
+  {
+   "artist": "Michael Jackson",
+   "slug": "michael_jackson",
+   "submitter": "Mayank",
+   "genre": "Pop",
+   "start": "2026-06-05",
+   "average": 7.5,
+   "stdev": 1.229,
+   "scores": {
+    "Nick": 7.0,
+    "Evan": 8.9,
+    "Mayank": 6.6
+   },
+   "has_report": true,
+   "albums": [
+    "Off the Wall",
+    "Thriller",
+    "Bad",
+    "Dangerous",
+    "Invincible"
+   ]
+  },
+  {
+   "artist": "Weather Report",
+   "slug": "weather_report",
+   "submitter": "Nick",
+   "genre": "Jazz",
+   "start": "2026-01-30",
+   "average": 7.48,
+   "stdev": 0.225,
+   "scores": {
+    "Nick": 7.5,
+    "Evan": 7.25,
+    "Mayank": 7.7
+   },
+   "has_report": true,
+   "albums": [
+    "Heavy Weather",
+    "Black Market",
+    "Tale Spinnin'"
+   ]
+  },
+  {
+   "artist": "Kendrick Lamar",
+   "slug": "kendrick_lamar",
+   "submitter": "Evan",
+   "genre": "Hip-Hop/R&B",
+   "start": "2024-09-25",
+   "average": 7.48,
+   "stdev": 0.633,
+   "scores": {
+    "Nick": 7.25,
+    "Evan": 8.2,
+    "Mayank": 7.0
+   },
+   "has_report": false,
+   "albums": [
+    "DAMN",
+    "Mr. Morale and the Big Steppers",
+    "To Pimp a Butterfly",
+    "TBD",
+    "TBD"
+   ]
+  },
+  {
+   "artist": "Ween",
+   "slug": "ween",
+   "submitter": "Mayank",
+   "genre": "Indie/Alt",
+   "start": "2026-03-05",
+   "average": 7.47,
+   "stdev": 0.896,
+   "scores": {
+    "Nick": 8.5,
+    "Evan": 7.0,
+    "Mayank": 6.9
+   },
+   "has_report": true,
+   "albums": [
+    "God Ween Satan: The Oneness",
+    "The Pod",
+    "Pure Guava",
+    "Chocolate and Cheese",
+    "12 Golden Country Greats"
+   ]
+  },
+  {
+   "artist": "Stevie Wonder",
+   "slug": "stevie_wonder",
+   "submitter": "Evan",
+   "genre": "Funk/Soul",
+   "start": "2026-02-20",
+   "average": 7.45,
+   "stdev": 0.926,
+   "scores": {
+    "Nick": 6.75,
+    "Evan": 8.5,
+    "Mayank": 7.1
+   },
+   "has_report": true,
+   "albums": [
+    "Songs in the Key of Life",
+    "Music of My Mind",
+    "Talking Book",
+    "Innervisions",
+    "Fulfillingness’ First Finale"
+   ]
+  },
+  {
+   "artist": "My Morning Jacket",
+   "slug": "my_morning_jacket",
+   "submitter": "Evan",
+   "genre": "Rock",
+   "start": "2025-01-09",
+   "average": 7.38,
+   "stdev": 0.465,
+   "scores": {
+    "Nick": 7.25,
+    "Evan": 7.9,
+    "Mayank": 7.0
+   },
+   "has_report": false,
+   "albums": [
+    "At Dawn",
+    "It still moves",
+    "Circuital"
+   ]
+  },
+  {
+   "artist": "Ryan Adams",
+   "slug": "ryan_adams",
+   "submitter": "Evan",
+   "genre": "Folk/Country",
+   "start": "2025-12-12",
+   "average": 7.37,
+   "stdev": 0.764,
+   "scores": {
+    "Nick": 7.2,
+    "Evan": 8.2,
+    "Mayank": 6.7
+   },
+   "has_report": false,
+   "albums": [
+    "Jacksonville City Nights",
+    "Cold Roses",
+    "Heartbreaker (*2000 album - No anniversary garbage)",
+    "29.0",
+    "Easy Tiger"
+   ]
+  },
+  {
+   "artist": "Béla Fleck",
+   "slug": "bela_fleck",
+   "submitter": "Mayank",
+   "genre": "Folk/Country",
+   "start": "2024-05-15",
+   "average": 7.36,
+   "stdev": 1.125,
+   "scores": {
+    "Nick": 7.3333333333,
+    "Evan": 6.25,
+    "Mayank": 8.5
+   },
+   "has_report": false,
+   "albums": [
+    "Perpetual Motion",
+    "Music for Two",
+    "Rhapsody in Blue",
+    "Bela Fleck and Abigail Washburn",
+    "As We Speak"
+   ]
+  },
+  {
+   "artist": "Phil Collins / Genesis",
+   "slug": "phil_collins_genesis",
+   "submitter": "Mayank",
+   "genre": "Pop",
+   "start": "2025-06-13",
+   "average": 7.35,
+   "stdev": 0.409,
+   "scores": {
+    "Nick": 7.25,
+    "Evan": 7.0,
+    "Mayank": 7.8
+   },
+   "has_report": false,
+   "albums": [
+    "Genesis",
+    "Invisible Touch",
+    "...But Seriously",
+    "No Jacket Required"
+   ]
+  },
+  {
+   "artist": "Of Montreal",
+   "slug": "of_montreal",
+   "submitter": "Mayank",
+   "genre": "Indie/Alt",
+   "start": "2026-04-16",
+   "average": 7.35,
+   "stdev": 0.409,
+   "scores": {
+    "Nick": 7.25,
+    "Evan": 7.8,
+    "Mayank": 7.0
+   },
+   "has_report": true,
+   "albums": [
+    "Hissing Fauna, Are You the Destroyer",
+    "Cherry Peel",
+    "Satanic Panic in the Attic",
+    "Sunlandic Twins",
+    "I Feel Safe with You, Trash"
+   ]
+  },
+  {
+   "artist": "The Mars Volta",
+   "slug": "mars_volta",
+   "submitter": "Nick",
+   "genre": null,
+   "start": "2026-08-07",
+   "average": 7.33,
+   "stdev": 1.258,
+   "scores": {
+    "Nick": 8.5,
+    "Evan": 7.5,
+    "Mayank": 6.0
+   },
+   "has_report": true,
+   "albums": [
+    "Deloused in the comatorium",
+    "Octahedron",
+    "Frances the Mute",
+    "The Bedlam in Goliath",
+    "Noctourniquet"
+   ]
+  },
+  {
+   "artist": "Tame Impala",
+   "slug": "tame_impala",
+   "submitter": "Evan",
+   "genre": "Indie/Alt",
+   "start": "2025-10-17",
+   "average": 7.3,
+   "stdev": 0.52,
+   "scores": {
+    "Nick": 7.0,
+    "Evan": 7.9,
+    "Mayank": 7.0
+   },
+   "has_report": false,
+   "albums": [
+    "Dead Beat",
+    "The Slow Rush",
+    "Lonerism",
+    "InnerSpeaker",
+    "Currents"
+   ]
+  },
+  {
+   "artist": "Dirty Projectors",
+   "slug": "dirty_projectors",
+   "submitter": "Evan",
+   "genre": "Indie/Alt",
+   "start": "2026-04-03",
+   "average": 7.27,
+   "stdev": 1.115,
+   "scores": {
+    "Nick": 6.0,
+    "Evan": 7.7,
+    "Mayank": 8.1
+   },
+   "has_report": false,
+   "albums": [
+    "Lamp Lit Prose",
+    "Bitte Orca",
+    "Song of the Earth",
+    "Swing Lo Megellan",
+    "Dirty Projectors (Self Titled)"
+   ]
+  },
+  {
+   "artist": "The Brian Jonestown Massacre",
+   "slug": "brian_jonestown_massacre",
+   "submitter": "Nick",
+   "genre": "Indie/Alt",
+   "start": "2025-10-03",
+   "average": 7.12,
+   "stdev": 0.679,
+   "scores": {
+    "Nick": 7.75,
+    "Evan": 6.4,
+    "Mayank": 7.2
+   },
+   "has_report": false,
+   "albums": [
+    "Take it from the man",
+    "thank god for mental illness",
+    "the future is your past",
+    "aufhobben",
+    "Revelation"
+   ]
+  },
+  {
+   "artist": "Sufjan Stevens",
+   "slug": "sufjan_stevens",
+   "submitter": "Evan",
+   "genre": "Folk/Country",
+   "start": "2025-06-06",
+   "average": 6.91,
+   "stdev": 0.93,
+   "scores": {
+    "Nick": 5.99,
+    "Evan": 7.85,
+    "Mayank": 6.9
+   },
+   "has_report": false,
+   "albums": [
+    "Carrie & Lowell",
+    "Seven Swans",
+    "The Age of Adz"
+   ]
+  },
+  {
+   "artist": "Beyoncé",
+   "slug": "beyonce",
+   "submitter": "Mayank",
+   "genre": "Hip-Hop/R&B",
+   "start": "2025-02-06",
+   "average": 6.9,
+   "stdev": 1.643,
+   "scores": {
+    "Nick": 5.0,
+    "Evan": 7.79,
+    "Mayank": 7.9
+   },
+   "has_report": false,
+   "albums": [
+    "Lemonade",
+    "Cowboy Carter",
+    "Beyoncé",
+    "TBD",
+    "TBD"
+   ]
+  },
+  {
+   "artist": "Kanye West",
+   "slug": "kanye_west",
+   "submitter": "Evan",
+   "genre": "Hip-Hop/R&B",
+   "start": "2025-03-06",
+   "average": 6.87,
+   "stdev": 2.044,
+   "scores": {
+    "Nick": 4.51,
+    "Evan": 8.1,
+    "Mayank": 8.0
+   },
+   "has_report": false,
+   "albums": [
+    "The College Dropout",
+    "Yeezus",
+    "The Life of Pablo",
+    "User's Choice",
+    "User's Choice"
+   ]
+  },
+  {
+   "artist": "Pat Metheny",
+   "slug": "pat_metheny",
+   "submitter": "Nick",
+   "genre": "Jazz",
+   "start": "2026-03-21",
+   "average": 6.8,
+   "stdev": 1.808,
+   "scores": {
+    "Nick": 8.5,
+    "Evan": 4.9,
+    "Mayank": 7.0
+   },
+   "has_report": false,
+   "albums": [
+    "The Way Up",
+    "Offramp",
+    "Side-Eye III+"
+   ]
+  },
+  {
+   "artist": "Michael Brecker",
+   "slug": "michael_brecker",
+   "submitter": "Nick",
+   "genre": "Jazz",
+   "start": "2026-04-30",
+   "average": 6.8,
+   "stdev": 1.473,
+   "scores": {
+    "Nick": 8.5,
+    "Evan": 6.0,
+    "Mayank": 5.9
+   },
+   "has_report": false,
+   "albums": [
+    "cityscape",
+    "the nearness of you - the ballad book",
+    "tales of the hudson",
+    "wide angles"
+   ]
+  },
+  {
+   "artist": "Cocteau Twins",
+   "slug": "cocteau_twins",
+   "submitter": "Evan",
+   "genre": "Indie/Alt",
+   "start": "2026-07-03",
+   "average": 6.67,
+   "stdev": 0.952,
+   "scores": {
+    "Nick": 5.75,
+    "Evan": 7.65,
+    "Mayank": 6.6
+   },
+   "has_report": true,
+   "albums": [
+    "Heaven or Las Vegas",
+    "Treasure",
+    "Blue Bell Knoll",
+    "Victorialand",
+    "Head Over Heels"
+   ]
+  },
+  {
+   "artist": "Björk",
+   "slug": "bjork",
+   "submitter": "Evan",
+   "genre": "Indie/Alt",
+   "start": "2025-09-05",
+   "average": 6.55,
+   "stdev": 1.426,
+   "scores": {
+    "Nick": 5.1,
+    "Evan": 7.95,
+    "Mayank": 6.6
+   },
+   "has_report": false,
+   "albums": [
+    "Debut",
+    "Homogenic",
+    "Utopia",
+    "Post",
+    "Vespertine"
+   ]
+  },
+  {
+   "artist": "Easy Star All-Stars",
+   "slug": "easy_star_all_stars",
+   "submitter": "Mayank",
+   "genre": "Other",
+   "start": "2024-11-20",
+   "average": 6.48,
+   "stdev": 2.11,
+   "scores": {
+    "Nick": 6.25,
+    "Evan": 4.5,
+    "Mayank": 8.7
+   },
+   "has_report": false,
+   "albums": [
+    "Dub Side of the Moon",
+    "Radiodread",
+    "Ziggy Stardub",
+    "Easy Star's Thrilla",
+    "First Light"
+   ]
+  },
+  {
+   "artist": "Osees",
+   "slug": "osees",
+   "submitter": "Nick",
+   "genre": "Rock",
+   "start": "2024-04-17",
+   "average": 6.33,
+   "stdev": 0.289,
+   "scores": {
+    "Nick": 6.5,
+    "Evan": 6.5,
+    "Mayank": 6.0
+   },
+   "has_report": false,
+   "albums": [
+    "Floating coffin",
+    "Orc",
+    "Carrion crawler/the dream",
+    "Face stabber",
+    "Mutilator defeated at last"
+   ]
+  },
+  {
+   "artist": "Butthole Surfers",
+   "slug": "butthole_surfers",
+   "submitter": "Nick",
+   "genre": "Rock",
+   "start": "2024-07-10",
+   "average": 6.07,
+   "stdev": 1.601,
+   "scores": {
+    "Nick": 6.0,
+    "Evan": 4.5,
+    "Mayank": 7.7
+   },
+   "has_report": false,
+   "albums": [
+    "Independent worm saloon",
+    "Locust abortion technician",
+    "Fairway to Steven",
+    "Rembrandt pussyhorse",
+    "Psychic…powerless…another man's sac"
+   ]
+  },
+  {
+   "artist": "Morphine",
+   "slug": "morphine",
+   "submitter": "Nick",
+   "genre": "Rock",
+   "start": "2024-05-30",
+   "average": 6.02,
+   "stdev": 0.225,
+   "scores": {
+    "Nick": 6.25,
+    "Evan": 6.0,
+    "Mayank": 5.8
+   },
+   "has_report": false,
+   "albums": [
+    "Good",
+    "Cure for pain",
+    "Yes",
+    "Bootleg detroit",
+    "Like swimming"
+   ]
+  },
+  {
+   "artist": "Aphex Twin",
+   "slug": "aphex_twin",
+   "submitter": "Nick",
+   "genre": "Electronic",
+   "start": "2024-10-23",
+   "average": 6.02,
+   "stdev": 1.401,
+   "scores": {
+    "Nick": 7.26,
+    "Evan": 6.3,
+    "Mayank": 4.5
+   },
+   "has_report": false,
+   "albums": [
+    "Selected Ambient Works",
+    "Drukqs",
+    "Syro"
+   ]
+  },
+  {
+   "artist": "Cake",
+   "slug": "cake",
+   "submitter": "Mayank",
+   "genre": "Rock",
+   "start": "2024-10-09",
+   "average": 6.0,
+   "stdev": 1.0,
+   "scores": {
+    "Nick": 5.0,
+    "Evan": 6.0,
+    "Mayank": 7.0
+   },
+   "has_report": false,
+   "albums": [
+    "Fashion Nugget",
+    "Comfort Eagle",
+    "Prolonging the Magic",
+    "B-Sides and Rarities",
+    "Showroom of Compassion"
+   ]
+  },
+  {
+   "artist": "Dave Matthews Band",
+   "slug": "dave_matthews_band",
+   "submitter": "Mayank",
+   "genre": "Rock",
+   "start": "2025-10-31",
+   "average": 5.85,
+   "stdev": 1.602,
+   "scores": {
+    "Nick": 4.0,
+    "Evan": 6.75,
+    "Mayank": 6.8
+   },
+   "has_report": false,
+   "albums": [
+    "Crash",
+    "Some Devil",
+    "Walk around the moon",
+    "Away from the world",
+    "Stand Up"
+   ]
+  },
+  {
+   "artist": "Lana Del Rey",
+   "slug": "lana_del_rey",
+   "submitter": "Evan",
+   "genre": "Pop",
+   "start": "2025-11-06",
+   "average": 5.3,
+   "stdev": 1.058,
+   "scores": {
+    "Nick": 4.5,
+    "Evan": 4.9,
+    "Mayank": 6.5
+   },
+   "has_report": false,
+   "albums": [
+    "Ultraviolence",
+    "Norman Fucking Rockwell",
+    "Did you know there's a tunnel under ocean blvd",
+    "Honeymoon",
+    "Born to die"
+   ]
+  },
+  {
+   "artist": "Regina Spektor",
+   "slug": "regina_spektor",
+   "submitter": "Mayank",
+   "genre": "Indie/Alt",
+   "start": "2024-06-26",
+   "average": 5.05,
+   "stdev": 2.661,
+   "scores": {
+    "Nick": 2.0,
+    "Evan": 6.25,
+    "Mayank": 6.9
+   },
+   "has_report": false,
+   "albums": [
+    "Begin to Hope",
+    "Soviet Kitsch",
+    "11:11:00",
+    "TBD",
+    "TBD"
+   ]
+  },
+  {
+   "artist": "Girl Talk",
+   "slug": "girl_talk",
+   "submitter": "Mayank",
+   "genre": "Electronic",
+   "start": "2025-03-20",
+   "average": 5.0,
+   "stdev": 2.366,
+   "scores": {
+    "Nick": 3.99,
+    "Evan": 3.3,
+    "Mayank": 7.7
+   },
+   "has_report": false,
+   "albums": [
+    "Unstoppable",
+    "Secret Diary",
+    "Night Ripper",
+    "Feed the Animals",
+    "Full Court Press"
+   ]
+  },
+  {
+   "artist": "Röyksopp",
+   "slug": "royksopp",
+   "submitter": "Evan",
+   "genre": "Electronic",
+   "start": "2024-06-12",
+   "average": 4.83,
+   "stdev": 0.764,
+   "scores": {
+    "Nick": 4.0,
+    "Evan": 5.5,
+    "Mayank": 5.0
+   },
+   "has_report": false,
+   "albums": [
+    "Senior",
+    "Melody A.M.",
+    "Junior",
+    "TBD",
+    "TBD"
+   ]
+  },
+  {
+   "artist": "Can",
+   "slug": "can",
+   "submitter": "Nick",
+   "genre": "Rock",
+   "start": "2024-12-05",
+   "average": 4.75,
+   "stdev": 2.817,
+   "scores": {
+    "Nick": 6.25,
+    "Evan": 1.5,
+    "Mayank": 6.5
+   },
+   "has_report": false,
+   "albums": [
+    "Ege Bamyasi",
+    "live album",
+    "live album"
+   ]
+  }
+ ],
+ "backlog": [
+  {
+   "artist": "Cat Stevens",
+   "slug": "cat_stevens",
+   "submitter": "Mayank"
+  },
+  {
+   "artist": "Wolfmother",
+   "slug": "wolfmother",
+   "submitter": "Mayank"
+  },
+  {
+   "artist": "Daft Punk",
+   "slug": "daft_punk",
+   "submitter": "Mayank"
+  },
+  {
+   "artist": "Neil Diamond",
+   "slug": "neil_diamond",
+   "submitter": "Mayank"
+  },
+  {
+   "artist": "Dolly Parton",
+   "slug": "dolly_parton",
+   "submitter": null
+  },
+  {
+   "artist": "Keith Jarrett",
+   "slug": "keith_jarrett",
+   "submitter": "Nick"
+  },
+  {
+   "artist": "Leonard Cohen",
+   "slug": "leonard_cohen",
+   "submitter": "Nick"
+  },
+  {
+   "artist": "Spoon",
+   "slug": "spoon",
+   "submitter": "Nick"
+  },
+  {
+   "artist": "Kamasi Washington",
+   "slug": "kamasi_washington",
+   "submitter": "Nick"
+  },
+  {
+   "artist": "Jeff Lynne & ELO",
+   "slug": "jeff_lynne_elo",
+   "submitter": "Evan"
+  },
+  {
+   "artist": "James Brown",
+   "slug": "james_brown",
+   "submitter": null
+  }
+ ],
+ "current": {
+  "artist": "James Brown",
+  "slug": "james_brown",
+  "submitter": null,
+  "start": "2026-08-22",
+  "end": "2026-09-04",
+  "albums": [
+   "Live at the Apollo",
+   "The Payback",
+   "Sex Machine",
+   "Hell",
+   "Doing It to Death (J.B.’s)"
+  ],
+  "has_report": true
+ }
+}

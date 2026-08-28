@@ -15,13 +15,24 @@ everything in `html/` via the GitHub API — no manual linking needed.
 ```
 /
 ├── index.html          # landing page (auto-lists html/ via GitHub API)
+├── stats.html          # ratings dashboard, renders data/ratings.json
 ├── README.md
 ├── CLAUDE.md           # this file
+├── data/
+│   └── ratings.json    # generated -- do not hand-edit
+├── scripts/
+│   ├── club.py         # reads the club spreadsheet
+│   └── artists.json    # artist name -> report slug
 └── html/
     ├── arcade_fire_discography.html
     ├── james_brown_discography.html
     └── ...
 ```
+
+Reports are sometimes written by a scheduled GitHub Action (see the README)
+rather than by hand. Either way the spec below is the whole contract: filename,
+structure, and the pre-commit checklist apply identically. An automated report
+arrives as a pull request and is never merged unreviewed.
 
 **Naming:** `<artist_name_snake_case>_discography.html`, all lowercase.
 `of_montreal_discography.html`, `mars_volta_discography.html`. The landing page

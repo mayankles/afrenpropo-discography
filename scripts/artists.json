@@ -1,0 +1,21 @@
+{
+  "_comment": "Maps artist names as typed in the club spreadsheet to report slugs. Only messy names need an entry -- clean names are slugified automatically by scripts/club.py (accents stripped, parentheticals dropped, leading 'The' removed). 'display' overrides the name shown on the stats page; omit it to use the sheet's spelling.",
+  "aliases": {
+    "Béla Fleck (non-Flecktones)": { "slug": "bela_fleck", "display": "Béla Fleck" },
+    "Béyonce":                     { "slug": "beyonce", "display": "Beyoncé" },
+    "Lana Del Ray (CHICK)":        { "slug": "lana_del_rey", "display": "Lana Del Rey" },
+    "Jack White Projects":         { "slug": "jack_white", "display": "Jack White" },
+    "Phil Collins/Genesis":        { "slug": "phil_collins_genesis", "display": "Phil Collins / Genesis" },
+    "Funkadelic / Parliament / George Clinton": { "slug": "parliament_funkadelic", "display": "Parliament-Funkadelic" },
+    "Yellow Magic Orchestra/ Ryuichi Sakamoto": { "slug": "yellow_magic_orchestra", "display": "Yellow Magic Orchestra / Ryuichi Sakamoto" },
+    "Jeff Lynne + ELO":            { "slug": "jeff_lynne_elo", "display": "Jeff Lynne & ELO" },
+    "The oh sees":                 { "slug": "osees", "display": "Osees" },
+    "Butthole surfers":            { "slug": "butthole_surfers", "display": "Butthole Surfers" },
+    "Brian Jonestown massacre":    { "slug": "brian_jonestown_massacre", "display": "The Brian Jonestown Massacre" },
+    "Leonard cohen":               { "slug": "leonard_cohen", "display": "Leonard Cohen" },
+    "Easy Star All Stars":         { "slug": "easy_star_all_stars", "display": "Easy Star All-Stars" },
+    "Kanye  West":                 { "slug": "kanye_west", "display": "Kanye West" },
+    "Röyksopp":                    { "slug": "royksopp", "display": "Röyksopp" },
+    "Björk":                       { "slug": "bjork", "display": "Björk" }
+  }
+}

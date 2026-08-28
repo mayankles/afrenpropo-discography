@@ -1,0 +1,147 @@
+name: Club sync
+
+# The club listens to one artist per fortnight, so a daily check is plenty.
+# workflow_dispatch is deliberate: GitHub disables cron on public repos after
+# 60 days of inactivity, and a manual button is the way back in.
+on:
+  # Uncomment once CLUB_SHEET_ID and CLAUDE_CODE_OAUTH_TOKEN exist as repository
+  # secrets. Until then the daily run would fail every morning and email you
+  # about it. The manual "Run workflow" button below works either way.
+  # schedule:
+  #   - cron: "0 8 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: club-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      # Derived data, no prose -- safe to land on main directly.
+      - name: Refresh the stats data
+        env:
+          CLUB_SHEET_ID: ${{ secrets.CLUB_SHEET_ID }}
+        run: python3 scripts/club.py stats
+
+      - name: Commit refreshed stats
+        run: |
+          if git diff --quiet -- data/ratings.json; then
+            echo "Ratings unchanged."
+          else
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/ratings.json
+            git commit -m "Refresh club stats from the spreadsheet"
+            git push
+          fi
+
+      # Runs after the stats refresh on purpose: if the green row is missing or
+      # ambiguous this step fails the build, and the ratings should update anyway.
+      - name: Read the spreadsheet
+        id: club
+        env:
+          CLUB_SHEET_ID: ${{ secrets.CLUB_SHEET_ID }}
+        run: python3 scripts/club.py check
+
+      # The green row stays green for a fortnight. Without this guard the
+      # daily schedule would open the same pull request fourteen times.
+      - name: Is a report already in flight?
+        id: branch
+        if: steps.club.outputs.needed == 'true'
+        env:
+          SLUG: ${{ steps.club.outputs.slug }}
+        run: |
+          BRANCH="report/${SLUG}"
+          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Branch $BRANCH already exists -- nothing to do."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Claude only writes the file. Committing and opening the PR is done by
+      # the workflow below, so the run needs no shell or git access at all.
+      - name: Write the discography report
+        if: steps.club.outputs.needed == 'true' && steps.branch.outputs.exists == 'false'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+          prompt: |
+            Write a discography report for ${{ steps.club.outputs.artist }}.
+
+            CLAUDE.md in the repository root is the complete specification for
+            these reports. Read it first and follow it exactly: the synopsis
+            structure, the era sections, the scope note, the HTML template, and
+            the pre-commit checklist at the end.
+
+            Highlight these albums, which are the five the club is listening to
+            this fortnight: ${{ steps.club.outputs.albums }}
+
+            Every highlighted album needs both the highlight-masterpiece class
+            and a leading star, per CLAUDE.md. If any of them is a live album,
+            compilation or side-project release, include it anyway and add the
+            .fmt format tag so the classification stays honest.
+
+            Save the finished page to html/${{ steps.club.outputs.slug }}_discography.html
+            and change nothing else in the repository.
+
+            Research before you write. Verify album years, labels, personnel and
+            producers against sources rather than writing from memory, and search
+            for releases newer than your training data. Where you cannot confirm
+            a detail, write "details limited" rather than plausible filler --
+            a gap is fine, an invention is not.
+
+      - name: Open a pull request
+        if: steps.club.outputs.needed == 'true' && steps.branch.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ steps.branch.outputs.branch }}
+          ARTIST: ${{ steps.club.outputs.artist }}
+          SLUG: ${{ steps.club.outputs.slug }}
+          ALBUMS: ${{ steps.club.outputs.albums }}
+        run: |
+          FILE="html/${SLUG}_discography.html"
+          if [ ! -f "$FILE" ]; then
+            echo "::error::Claude did not produce $FILE"
+            exit 1
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add "$FILE"
+          git commit -m "Add ${ARTIST} discography report"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --title "Add ${ARTIST} discography report" \
+            --body "$(cat <<EOF
+          Generated automatically because **${ARTIST}** is the green-highlighted
+          artist in the club spreadsheet and \`${FILE}\` did not exist yet.
+
+          Albums highlighted: ${ALBUMS}
+
+          **Please read it before merging.** Check the years, labels, personnel
+          and producers, and anything the report says about living people. The
+          landing page picks the file up automatically once this is on \`main\`.
+          EOF
+          )"
