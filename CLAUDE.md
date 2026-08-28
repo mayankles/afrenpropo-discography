@@ -9,12 +9,14 @@ Written for Claude Code, but usable by any capable LLM.
 
 A collection of self-contained HTML discography reports. Each report covers one
 artist's catalog, organized by creative era, with personnel, instrumentation,
-producers, labels, and context. The landing page (`index.html`) auto-lists
-everything in `html/` via the GitHub API — no manual linking needed.
+producers, labels, and context. `archive.html` auto-lists everything in `html/`
+via the GitHub API — no manual linking needed.
 
 ```
 /
-├── index.html          # landing page (auto-lists html/ via GitHub API)
+├── index.html          # Hit List: stats, current artist, sortable session table
+├── archive.html        # auto-lists html/ via the GitHub API
+├── assets/             # shared table styles + sort behaviour
 ├── stats.html          # ratings dashboard, renders data/ratings.json
 ├── README.md
 ├── CLAUDE.md           # this file
@@ -430,4 +432,4 @@ order is what keeps consecutive eras distinguishable.
 - [ ] Special characters HTML-escaped (`&amp;`, `&mdash;`, `&ndash;`, accents)
 - [ ] Renders correctly when opened in a browser
 
-Commit, push, and the landing page picks it up automatically.
+Commit, push, and the archive picks it up automatically.

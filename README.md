@@ -13,7 +13,9 @@ There's also a [Stats Lab](stats.html) page: ratings, taste correlations, genre 
 ## How it works
 
 - All report pages live in the [`html/`](html/) folder.
-- The landing page (`index.html`) queries the GitHub API at load time and **automatically lists every `.html` file** in `html/`. No manual link editing needed.
+- The landing page (`index.html`) is the **Hit List**: club stats, what's currently on the turntable, and every rated session in a sortable table, all read from `data/ratings.json`.
+- `archive.html` queries the GitHub API at load time and **automatically lists every `.html` file** in `html/`. No manual link editing needed.
+- `stats.html` renders the charts — curator scores, taste correlation, the rating trend over time.
 - The [Stats Lab](stats.html) renders `data/ratings.json`, which is regenerated from the spreadsheet.
 - Hosted free via GitHub Pages.
 
@@ -21,9 +23,9 @@ There's also a [Stats Lab](stats.html) page: ratings, taste correlations, genre 
 
 1. Drop the new `.html` file into the `html/` folder.
 2. Commit and push (e.g. via GitHub Desktop).
-3. The new report appears on the landing page automatically within a minute or two.
+3. The new report appears on `archive.html` automatically within a minute or two, and links light up in the Hit List table.
 
-That's it — the landing page rebuilds its catalog every time someone visits.
+That's it — the archive rebuilds its catalog every time someone visits.
 
 ## Enabling GitHub Pages (one-time setup)
 
@@ -35,7 +37,7 @@ That's it — the landing page rebuilds its catalog every time someone visits.
 
 - The repo must be **public** for the GitHub API listing and Pages to work on a free account.
 - Anonymous GitHub API calls are limited to 60/hour per visitor; for a personal archive this is plenty.
-- Using a custom domain? Open `index.html` and set `MANUAL.owner` / `MANUAL.repo` near the top of the script.
+- Using a custom domain? Open `archive.html` and set `MANUAL.owner` / `MANUAL.repo` near the top of the script.
 
 ## Automation
 

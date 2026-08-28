@@ -1,0 +1,79 @@
+/* Styles for the shared session table (see club-table.js).
+   Relies on the page defining --bg-card, --ink, --ink-dim, --line, --amber. */
+
+.table-scroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.table-scroll::-webkit-scrollbar { height: 6px; }
+.table-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+.session-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  background: var(--bg-card);
+}
+
+.session-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #241e18;
+  text-align: left;
+  padding: 0.7rem;
+  font-weight: 500;
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+.session-table thead th:hover { color: var(--ink); }
+.session-table thead th:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; }
+.session-table thead th.sorted { color: var(--amber); }
+
+/* Reserve the arrow's width so switching columns doesn't shift the header. */
+.session-table .arrow {
+  display: inline-block;
+  width: 1em;
+  margin-left: 0.35em;
+  opacity: 0.35;
+  font-size: 0.9em;
+}
+.session-table th.sorted .arrow { opacity: 1; }
+
+.session-table tbody td {
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid rgba(58, 49, 40, 0.5);
+  vertical-align: middle;
+}
+.session-table tbody tr:hover { background: rgba(232, 176, 75, 0.05); }
+.session-table tbody tr:last-child td { border-bottom: none; }
+
+.session-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.session-table .dim { color: var(--ink-dim); }
+.session-table .nowrap { white-space: nowrap; }
+
+.session-table .artist-cell a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--amber-deep, #c8852b);
+}
+.session-table .artist-cell a:hover { color: var(--amber); }
+.session-table .no-report { color: var(--ink-dim); }
+
+.session-table .who-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  display: inline-block; margin-right: 0.45rem; vertical-align: 1px;
+}
+
+@media (max-width: 640px) {
+  .session-table { font-size: 0.72rem; }
+  .session-table tbody td { padding: 0.5rem 0.55rem; }
+}

@@ -6,6 +6,7 @@
 <title>AFrEnProPo &mdash; Stats Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./assets/club-table.css">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -63,8 +64,9 @@
   }
   h1 em { font-style: italic; font-weight: 300; color: var(--amber); }
   .tagline { max-width: 56ch; font-size: 0.88rem; line-height: 1.7; color: var(--ink-dim); }
+  .navlinks { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-top: 1.6rem; }
   .backlink {
-    display: inline-block; margin-top: 1.6rem; font-size: 0.74rem;
+    display: inline-block; font-size: 0.74rem;
     letter-spacing: 0.15em; text-transform: uppercase;
     color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid var(--line);
     padding-bottom: 2px;
@@ -122,25 +124,7 @@
 
   .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem; }
 
-  /* table --------------------------------------------------------------- */
-  .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 2px; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.78rem; background: var(--bg-card); }
-  thead th {
-    text-align: left; padding: 0.75rem 0.7rem; font-weight: 500;
-    font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--ink-dim); border-bottom: 1px solid var(--line); white-space: nowrap;
-  }
-  tbody td { padding: 0.6rem 0.7rem; border-bottom: 1px solid rgba(58,49,40,0.5); vertical-align: middle; }
-  tbody tr:hover { background: rgba(232,176,75,0.05); }
-  tbody tr:last-child td { border-bottom: none; }
-  .rank { color: var(--ink-dim); font-size: 0.7rem; }
-  .artist-cell a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--amber-deep); }
-  .artist-cell a:hover { color: var(--amber); }
-  .no-report { color: var(--ink-dim); }
   .who-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 0.45rem; vertical-align: 1px; }
-  .avg-cell { display: flex; align-items: center; gap: 0.5rem; min-width: 92px; }
-  .avg-bar { height: 4px; background: var(--amber-deep); border-radius: 2px; flex: 0 0 auto; }
-  .num { text-align: right; font-variant-numeric: tabular-nums; }
 
   .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .chip {
@@ -168,11 +152,14 @@
     <div class="eyebrow">Listening Club</div>
     <h1>Stats <em>Lab</em></h1>
     <p class="tagline">
-      Five albums, two weeks, three opinions. Every number here is recomputed
-      from the raw ratings each time the sheet changes &mdash; nothing is copied
-      from the spreadsheet&rsquo;s own summary tabs.
+      Who brings the good records, whose taste tracks whose, and whether we&rsquo;re
+      getting harsher. Every number is recomputed from the raw ratings &mdash; nothing
+      is copied from the spreadsheet&rsquo;s own summary tabs.
     </p>
-    <a class="backlink" href="./index.html">&larr; Back to the archive</a>
+    <nav class="navlinks">
+      <a class="backlink" href="./index.html">&larr; Hit List</a>
+      <a class="backlink" href="./archive.html">Discography Archive &rarr;</a>
+    </nav>
   </header>
 
   <div id="content"><p class="state">Loading the numbers&hellip;</p></div>
@@ -182,6 +169,7 @@
 
 <div id="tip" role="status" aria-live="polite"></div>
 
+<script src="./assets/club-table.js"></script>
 <script>
 const SERIES = ["var(--s1)", "var(--s2)", "var(--s3)"];
 const EXTRA  = "var(--s-extra)";
@@ -364,33 +352,6 @@ function render(data) {
     parent.appendChild(l);
   };
 
-  /* tiles */
-  const t = sec("The state of the club");
-  const tiles = document.createElement("div"); tiles.className = "tiles";
-  [[data.sessions_rated, "sessions rated"],
-   [data.overall_average, "group average"],
-   [data.reports, "reports written"],
-   [data.backlog.length, "on the backlog"]].forEach(([n, k]) => {
-    const d = document.createElement("div"); d.className = "tile";
-    d.innerHTML = `<span class="n">${n}</span><span class="k">${k}</span>`;
-    tiles.appendChild(d);
-  });
-  t.appendChild(tiles);
-
-  /* now playing */
-  if (data.current) {
-    const c = data.current, s = sec("On the turntable");
-    const box = document.createElement("div"); box.className = "now";
-    box.innerHTML =
-      `<div class="who">${esc(c.artist)}</div>` +
-      `<div class="when">${c.start} &rarr; ${c.end}</div>` +
-      (c.albums.length ? `<ol>${c.albums.map(a => `<li>${esc(a)}</li>`).join("")}</ol>` : "") +
-      (c.has_report
-        ? `<p style="margin-top:1rem;font-size:0.8rem"><a href="./html/${c.slug}_discography.html">Read the discography report &rarr;</a></p>`
-        : `<p style="margin-top:1rem;font-size:0.8rem;color:var(--ink-dim)">No report yet &mdash; one is queued to be written.</p>`);
-    s.appendChild(box);
-  }
-
   /* curator */
   const cs = sec("True curator score",
     "How the other two rate the albums you brought, against how you rate them yourself. " +
@@ -434,28 +395,8 @@ function render(data) {
 
   /* leaderboard */
   const lb = sec("Every session, ranked",
-    "Linked artists have a discography report in the archive.");
-  const wrap2 = document.createElement("div"); wrap2.className = "table-scroll";
-  const maxAvg = Math.max(...data.ranked.map(r => r.average));
-  wrap2.innerHTML = `<table>
-    <thead><tr>
-      <th>#</th><th>Artist</th><th>Picked by</th><th>Genre</th><th>Date</th>
-      <th class="num">Average</th>${data.members.map(m => `<th class="num">${esc(m)}</th>`).join("")}
-      <th class="num">Spread</th>
-    </tr></thead>
-    <tbody>${data.ranked.map((r, i) => `<tr>
-      <td class="rank">${String(i + 1).padStart(2, "0")}</td>
-      <td class="artist-cell">${r.has_report
-        ? `<a href="./html/${r.slug}_discography.html">${esc(r.artist)}</a>`
-        : `<span class="no-report">${esc(r.artist)}</span>`}</td>
-      <td><span class="who-dot" style="background:${colourOf(r.submitter)}"></span>${esc(r.submitter ?? "—")}</td>
-      <td style="color:var(--ink-dim)">${esc(r.genre ?? "—")}</td>
-      <td style="color:var(--ink-dim)">${r.start ?? "—"}</td>
-      <td><span class="avg-cell"><span class="avg-bar" style="width:${(r.average / maxAvg * 46).toFixed(1)}px"></span>${r.average.toFixed(2)}</span></td>
-      ${data.members.map(m => `<td class="num">${r.scores[m] != null ? r.scores[m].toFixed(2) : "—"}</td>`).join("")}
-      <td class="num" style="color:var(--ink-dim)">${r.stdev != null ? r.stdev.toFixed(2) : "—"}</td>
-    </tr>`).join("")}</tbody></table>`;
-  lb.appendChild(wrap2);
+    "Click any column heading to sort. Linked artists have a discography report in the archive.");
+  ClubTable.render(lb, data, { colourOf, reportBase: "./html/" });
 
   /* backlog */
   if (data.backlog.length) {
