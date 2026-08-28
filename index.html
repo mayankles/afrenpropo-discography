@@ -45,7 +45,22 @@
 
   .wrap { max-width: 1100px; margin: 0 auto; }
 
-  header { border-bottom: 1px solid var(--line); padding-bottom: 2rem; margin-bottom: 2.5rem; }
+  header {
+    border-bottom: 1px solid var(--line); padding-bottom: 2rem; margin-bottom: 2.5rem;
+    display: flex; align-items: center; gap: clamp(1.5rem, 4vw, 3rem);
+  }
+  .header-text { flex: 1 1 auto; min-width: 0; }
+  /* The crest carries the club's full name around its ring, so it is sized to
+     be read rather than tucked away as decoration. */
+  .crest { flex: 0 0 auto; width: clamp(104px, 13vw, 156px); }
+  .crest img {
+    width: 100%; height: auto; display: block;
+    filter: drop-shadow(0 4px 18px rgba(0,0,0,0.55));
+  }
+  @media (max-width: 640px) {
+    header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .crest { width: 96px; }
+  }
   .eyebrow {
     font-size: 0.72rem; letter-spacing: 0.42em; text-transform: uppercase;
     color: var(--amber); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem;
@@ -58,6 +73,7 @@
   }
   h1 em { font-style: italic; font-weight: 300; color: var(--amber); }
   .tagline { max-width: 56ch; font-size: 0.88rem; line-height: 1.7; color: var(--ink-dim); }
+  .tagline strong { color: var(--amber); font-weight: 500; }
 
   .navlinks { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-top: 1.8rem; }
   .navlink {
@@ -110,16 +126,25 @@
 <div class="wrap">
 
   <header>
-    <div class="eyebrow">Listening Club</div>
-    <h1>AFrEnProPo <em>Hit List</em></h1>
-    <p class="tagline">
-      Five albums, two weeks, three opinions. Everything we&rsquo;ve listened to,
-      what we made of it, and what&rsquo;s spinning right now.
-    </p>
-    <nav class="navlinks">
-      <a class="navlink" href="./stats.html">Stats Lab &rarr;</a>
-      <a class="navlink" href="./archive.html">Discography Archive &rarr;</a>
-    </nav>
+    <div class="header-text">
+      <div class="eyebrow">Listening Club</div>
+      <h1>AFrEnProPo <em>Hit List</em></h1>
+      <p class="tagline">
+        The <strong>A</strong>scendant <strong>Fr</strong>aternity for the
+        <strong>En</strong>joyment of <strong>Pro</strong>found
+        <strong>Po</strong>lyphony. Five albums, two weeks, three opinions &mdash;
+        everything we&rsquo;ve listened to and what we made of it.
+      </p>
+      <nav class="navlinks">
+        <a class="navlink" href="./stats.html">Stats Lab &rarr;</a>
+        <a class="navlink" href="./archive.html">Discography Archive &rarr;</a>
+      </nav>
+    </div>
+    <div class="crest">
+      <img src="./assets/logo.png" width="360" height="360"
+           alt="Club crest: a shark in shirt and tie holding a vinyl record, ringed by the words
+                'The Ascendant Fraternity for the Enjoyment of Profound Polyphony'.">
+    </div>
   </header>
 
   <div id="content"><p class="state">Loading the numbers&hellip;</p></div>
