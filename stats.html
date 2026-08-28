@@ -102,7 +102,13 @@
     background: var(--bg-card); border: 1px solid var(--line);
     border-radius: 2px; padding: 1.4rem 1.5rem;
   }
-  .chart-scroll { overflow-x: auto; }
+  /* Charts scroll inside their own card on narrow screens instead of scaling
+     down -- an SVG shrinks its text along with everything else, and below
+     roughly 600px the axis labels stop being readable. Same treatment the
+     leaderboard table gets. */
+  .chart-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
+  .chart-scroll::-webkit-scrollbar { height: 6px; }
+  .chart-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
   svg { display: block; width: 100%; height: auto; }
   .grid-line { stroke: var(--line); stroke-width: 1; }
   .axis-text { fill: var(--ink-dim); font-family: 'Spline Sans Mono', monospace; font-size: 10px; }
@@ -342,6 +348,13 @@ function render(data) {
     s.innerHTML = `<h2>${title}</h2>${note ? `<p class="note">${note}</p>` : ""}`;
     out.appendChild(s); return s;
   };
+  const scrollWrap = (svg, minW) => {
+    const d = document.createElement("div");
+    d.className = "chart-scroll";
+    svg.style.minWidth = minW + "px";
+    d.appendChild(svg);
+    return d;
+  };
   const card = parent => { const c = document.createElement("div"); c.className = "card"; parent.appendChild(c); return c; };
   const legend = (parent, items) => {
     const l = document.createElement("div"); l.className = "legend";
@@ -380,7 +393,7 @@ function render(data) {
   const cs = sec("True curator score",
     "How the other two rate the albums you brought, against how you rate them yourself. " +
     "The number on the right is the gap &mdash; how much more you like your own taste than everyone else does.");
-  const cc = card(cs); cc.appendChild(curatorChart(data));
+  const cc = card(cs); cc.appendChild(scrollWrap(curatorChart(data), 620));
   legend(cc, [[`<span class="swatch hollow"></span>`, "how the others scored your picks"],
               [`<span class="swatch solid-dot" style="background:${DIM}"></span>`, "how you scored them"]]);
 
@@ -391,19 +404,18 @@ function render(data) {
   const mc = card(cols);
   mc.insertAdjacentHTML("beforeend", `<h2 style="font-size:1rem;margin-bottom:0.3rem">Taste twin matrix</h2>
     <p class="note">Correlation between each pair&rsquo;s scores. 1 = same brain, 0 = strangers.</p>`);
-  mc.appendChild(tasteMatrix(data));
+  mc.appendChild(scrollWrap(tasteMatrix(data), 300));
 
   const gc = card(cols);
   gc.insertAdjacentHTML("beforeend", `<h2 style="font-size:1rem;margin-bottom:0.3rem">Genre autopsy</h2>
     <p class="note">Group average by genre, best first.</p>`);
-  gc.appendChild(genreBars(data));
+  gc.appendChild(scrollWrap(genreBars(data), 560));
 
   /* timeline */
   const tl = sec("Are we getting harsher?",
     "Each dot is one session&rsquo;s group average. The line is a six-session rolling average.");
   const tc = card(tl);
-  const scroll = document.createElement("div"); scroll.className = "chart-scroll";
-  scroll.appendChild(timeline(data)); tc.appendChild(scroll);
+  tc.appendChild(scrollWrap(timeline(data), 760));
   legend(tc, [[`<span class="swatch solid-dot" style="background:transparent;border:2px solid ${DIM}"></span>`, "session average"],
               [`<span class="swatch" style="background:${AMBER}"></span>`, "six-session trend"]]);
 
