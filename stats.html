@@ -320,7 +320,9 @@ function timeline(data) {
 /* ---- genre bars ------------------------------------------------------- */
 function genreBars(data) {
   const g = data.genres;
-  const W = 700, rowH = 30, padL = 118, padR = 54, padT = 8;
+  // Drawn at the width of the half-column it sits in, so the labels render
+  // about 1:1 there instead of being scaled down.
+  const W = 470, rowH = 30, padL = 104, padR = 46, padT = 8;
   const H = padT + g.length * rowH + 8;
   const max = Math.max(...g.map(d => d.average));
   const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Group average by genre" });
@@ -409,7 +411,7 @@ function render(data) {
   const gc = card(cols);
   gc.insertAdjacentHTML("beforeend", `<h2 style="font-size:1rem;margin-bottom:0.3rem">Genre autopsy</h2>
     <p class="note">Group average by genre, best first.</p>`);
-  gc.appendChild(scrollWrap(genreBars(data), 560));
+  gc.appendChild(scrollWrap(genreBars(data), 400));
 
   /* timeline */
   const tl = sec("Are we getting harsher?",
