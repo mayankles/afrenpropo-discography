@@ -4,115 +4,146 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>James Brown - Landmark Albums, Musicians & Instrumentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+    :root {
+        --bg: #17130f; --bg-card: #1f1a15; --bg-soft: #251f19;
+        --ink: #f2e9db; --ink-dim: #a8997f; --amber: #e8b04b; --line: #3a3128;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 20px;
-        background-color: #f5f5f5;
-        color: #333;
-    }
-    .container {
-        max-width: 1500px;
-        margin: 0 auto;
-        background-color: white;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h1 {
-        text-align: center;
-        color: #1a1a1a;
-        margin-bottom: 10px;
-        font-size: 28px;
-    }
-    .subtitle {
-        text-align: center;
-        color: #666;
-        margin-bottom: 30px;
-        font-size: 14px;
-    }
-    .synopsis {
-        margin-bottom: 35px;
-        padding: 20px 25px;
-        background-color: #f9f9f9;
-        border-left: 4px solid #2c3e50;
-        border-radius: 4px;
-        font-size: 13px;
-        line-height: 1.75;
-    }
-    .synopsis p { margin-bottom: 12px; }
-    .synopsis p:last-child { margin-bottom: 0; }
-    .scope-note {
-        font-size: 11px;
-        color: #95a5a6;
-        font-style: italic;
-        margin-top: 20px;
+        font-family: 'Fraunces', Georgia, serif;
+        background-color: var(--bg);
+        background-image:
+            radial-gradient(circle at 12% 18%, rgba(232,176,75,0.06), transparent 40%),
+            radial-gradient(circle at 88% 82%, rgba(200,133,43,0.05), transparent 45%);
+        background-attachment: fixed;
+        color: var(--ink);
+        padding: clamp(1rem, 3vw, 2.5rem);
         line-height: 1.6;
     }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 12px;
-        margin-bottom: 30px;
+    .container {
+        max-width: 1500px; margin: 0 auto; background-color: var(--bg-card);
+        padding: clamp(1.4rem, 3vw, 2.4rem); border: 1px solid var(--line);
+        border-radius: 4px; box-shadow: 0 2px 28px rgba(0,0,0,0.45);
     }
-    thead {
-        background-color: #2c3e50;
-        color: white;
-        position: sticky;
-        top: 0;
+    h1 {
+        font-family: 'Fraunces', Georgia, serif; font-weight: 900; text-align: center;
+        color: var(--ink); font-size: clamp(1.7rem, 4vw, 2.1rem);
+        letter-spacing: -0.015em; margin-bottom: 10px; line-height: 1.1;
     }
+    .subtitle {
+        font-family: 'Spline Sans Mono', monospace; text-align: center;
+        color: var(--ink-dim); margin-bottom: 32px; font-size: 11px;
+        letter-spacing: 0.16em; text-transform: uppercase;
+    }
+
+    .synopsis {
+        margin-bottom: 36px; padding: 22px 26px; background-color: var(--bg-soft);
+        border-left: 4px solid var(--amber); border-radius: 4px;
+        font-size: 14px; line-height: 1.85;
+    }
+    .synopsis p { margin-bottom: 14px; }
+    .synopsis p:last-child { margin-bottom: 0; }
+    .synopsis strong { color: var(--amber); font-weight: 600; }
+    .synopsis em { color: var(--ink); font-style: italic; }
+    .scope-note {
+        font-family: 'Spline Sans Mono', monospace; font-size: 11px;
+        color: var(--ink-dim); font-style: normal; margin-top: 22px; line-height: 1.7;
+    }
+
+    h3 {
+        margin: 34px 0 10px; font-family: 'Fraunces', Georgia, serif;
+        font-weight: 600; font-size: 17px; color: var(--ink);
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 30px; }
+    thead { background-color: #2a231c; position: sticky; top: 0; }
     th {
-        padding: 12px 8px;
-        text-align: left;
-        font-weight: 600;
-        border-bottom: 2px solid #34495e;
+        font-family: 'Spline Sans Mono', monospace; padding: 11px 9px; text-align: left;
+        font-weight: 500; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+        color: var(--ink-dim); border-bottom: 1px solid var(--line);
     }
     td {
-        padding: 10px 8px;
-        border-bottom: 1px solid #ecf0f1;
-        vertical-align: top;
+        padding: 11px 9px; border-bottom: 1px solid rgba(58,49,40,0.6);
+        vertical-align: top; line-height: 1.7;
     }
-    tbody tr:hover { background-color: #f9f9f9; }
+    tbody tr:hover { background-color: rgba(232,176,75,0.05); }
     .year-album {
-        font-weight: 600;
-        color: #2c3e50;
-        width: 175px;
+        font-family: 'Spline Sans Mono', monospace; font-weight: 500;
+        color: var(--ink); width: 180px; font-size: 12px; line-height: 1.5;
     }
-    .era-flames { border-left: 4px solid #8e44ad; }
-    .era-funk { border-left: 4px solid #c0392b; }
-    .era-jbs { border-left: 4px solid #e67e22; }
-    .era-late { border-left: 4px solid #27ae60; }
-    .era-band { border-left: 4px solid #16a085; }
-    .era-label {
-        display: inline-block;
-        padding: 2px 8px;
-        border-radius: 3px;
-        font-size: 11px;
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-    .era-label.flames { background-color: #f4ecf7; color: #6c3483; }
-    .era-label.funk { background-color: #fadbd8; color: #922b21; }
-    .era-label.jbs { background-color: #fef5e7; color: #b8680b; }
-    .era-label.late { background-color: #d5f4e6; color: #186a3b; }
-    .era-label.band { background-color: #d1f2eb; color: #0b5345; }
     .musician-role { display: block; margin-bottom: 2px; font-weight: 500; }
-    .instrument { color: #7f8c8d; font-size: 11px; font-style: italic; }
-    .highlight-masterpiece {
-        background-color: #fff9e6;
-        box-shadow: inset 0 0 8px rgba(230,200,50,0.3);
-        border-left: 6px solid #f39c12 !important;
+    .instrument {
+        font-family: 'Spline Sans Mono', monospace; color: var(--ink-dim);
+        font-size: 11px; font-style: normal;
     }
+
+    .era-label {
+        font-family: 'Spline Sans Mono', monospace; display: inline-block;
+        padding: 3px 9px; border-radius: 3px; font-size: 10px; font-weight: 500;
+        letter-spacing: 0.1em; margin-bottom: 8px; margin-right: 6px;
+    }
+
+    .era-flames { border-left: 4px solid #4a93d8; }
+    .era-funk { border-left: 4px solid #c9762f; }
+    .era-jbs { border-left: 4px solid #b56fd0; }
+    .era-band { border-left: 4px solid #5aa832; }
+    .era-late { border-left: 4px solid #cf5566; }
+
+    .era-label.flames { background-color: #273038; color: #96bad9; }
+    .era-label.funk { background-color: #3e2b1a; color: #dbaa7c; }
+    .era-label.jbs { background-color: #3a2937; color: #d0a6d5; }
+    .era-label.band { background-color: #2a341a; color: #9ec57e; }
+    .era-label.late { background-color: #3f2524; color: #df989b; }
+
+    .highlight-masterpiece {
+        background-color: #392e1c;
+        box-shadow: inset 0 0 10px rgba(232,176,75,0.12);
+        border-left: 6px solid var(--amber) !important;
+    }
+
     .fmt {
-        display: inline-block;
-        font-size: 10px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: #7f8c8d;
-        border: 1px solid #d5dbdb;
-        border-radius: 3px;
-        padding: 1px 5px;
-        margin-top: 4px;
+        font-family: 'Spline Sans Mono', monospace; display: inline-block;
+        font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+        color: var(--ink-dim); border: 1px solid var(--line); border-radius: 3px;
+        padding: 1px 5px; margin-top: 5px;
+    }
+
+    .project-header {
+        font-family: 'Fraunces', Georgia, serif; background-color: #2a231c;
+        color: var(--ink); padding: 14px 18px; border-radius: 4px 4px 0 0;
+        margin: 10px 0 0; font-size: 18px; font-weight: 600;
+    }
+    .project-desc {
+        background-color: var(--bg-soft); padding: 12px 18px; font-size: 13px;
+        color: var(--ink-dim); margin-bottom: 15px;
+        border-left: 4px solid var(--line); line-height: 1.7;
+    }
+
+    /* Most reports still carry a legend after the final table rather than a
+       synopsis at the top. Styled to match the synopsis so they read as
+       deliberate; the left border is neutral rather than amber to rank it
+       below a real synopsis. */
+    .legend {
+        margin-top: 30px; padding: 20px 24px; background-color: var(--bg-soft);
+        border-left: 4px solid var(--line); border-radius: 4px;
+        font-size: 13px; line-height: 1.8;
+    }
+    .legend > strong { color: var(--amber); font-weight: 600; }
+    .legend-item { margin-bottom: 14px; }
+    .legend-item:last-child { margin-bottom: 0; }
+    .legend-item strong { color: var(--amber); font-weight: 600; }
+
+    a { color: var(--amber); }
+
+    @media (max-width: 700px) {
+        body { padding: 0.6rem; }
+        .container { padding: 1.1rem; }
+        table { font-size: 12px; }
+        .year-album { width: auto; min-width: 120px; }
     }
 </style>
 </head>
