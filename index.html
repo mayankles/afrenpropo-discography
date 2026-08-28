@@ -58,8 +58,10 @@
     filter: drop-shadow(0 4px 18px rgba(0,0,0,0.55));
   }
   @media (max-width: 640px) {
-    header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-    .crest { width: 96px; }
+    /* column-reverse so the crest leads the header like a letterhead rather
+       than trailing below the nav links. */
+    header { flex-direction: column-reverse; align-items: flex-start; gap: 1.5rem; }
+    .crest { width: 92px; }
   }
   .eyebrow {
     font-size: 0.72rem; letter-spacing: 0.42em; text-transform: uppercase;
