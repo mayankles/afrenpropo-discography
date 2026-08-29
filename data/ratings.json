@@ -7,7 +7,7 @@
  "sessions_rated": 52,
  "sessions_dated": 52,
  "sessions_listed": 63,
- "reports": 10,
+ "reports": 12,
  "overall_average": 7.14,
  "curator": {
   "Nick": {
@@ -414,7 +414,7 @@
     "Evan": 9.5,
     "Mayank": 8.0
    },
-   "has_report": false,
+   "has_report": true,
    "albums": [
     "Talking Heads '77",
     "More Songs About Buildings and Food",
@@ -1569,25 +1569,25 @@
    "submitter": "Evan"
   },
   {
-   "artist": "2026-08-22 00:00:00",
-   "slug": "2026_08_22_00_00_00",
-   "submitter": "2026-08-22 00:00:00"
+   "artist": "James Brown",
+   "slug": "james_brown",
+   "submitter": null
   }
  ],
  "current": {
-  "artist": "2026-08-22 00:00:00",
-  "slug": "2026_08_22_00_00_00",
-  "submitter": "2026-08-22 00:00:00",
+  "artist": "James Brown",
+  "slug": "james_brown",
+  "submitter": null,
   "start": "2026-08-22",
-  "end": "2026-08-22",
+  "end": "2026-09-04",
   "albums": [
-   "2026-08-22 00:00:00",
-   "2026-08-22 00:00:00",
-   "2026-08-22 00:00:00",
-   "2026-08-22 00:00:00",
-   "2026-08-22 00:00:00"
+   "Live at the Apollo",
+   "The Payback",
+   "Sex Machine",
+   "Hell",
+   "Doing It to Death (J.B.’s)"
   ],
-  "has_report": false
+  "has_report": true
  },
  "current_issue": null
 }
