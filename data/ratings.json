@@ -7,7 +7,7 @@
  "sessions_rated": 52,
  "sessions_dated": 52,
  "sessions_listed": 63,
- "reports": 11,
+ "reports": 10,
  "overall_average": 7.14,
  "curator": {
   "Nick": {
@@ -1569,23 +1569,23 @@
    "submitter": "Evan"
   },
   {
-   "artist": "James Brown",
-   "slug": "james_brown",
-   "submitter": null
+   "artist": "2026-08-22 00:00:00",
+   "slug": "2026_08_22_00_00_00",
+   "submitter": "2026-08-22 00:00:00"
   }
  ],
  "current": {
-  "artist": "Talking Heads",
-  "slug": "talking_heads",
-  "submitter": "Mayank",
-  "start": "2026-01-16",
-  "end": "2026-01-30",
+  "artist": "2026-08-22 00:00:00",
+  "slug": "2026_08_22_00_00_00",
+  "submitter": "2026-08-22 00:00:00",
+  "start": "2026-08-22",
+  "end": "2026-08-22",
   "albums": [
-   "Talking Heads '77",
-   "More Songs About Buildings and Food",
-   "Fear of Music",
-   "Remain in Light",
-   "Speaking in Tongues"
+   "2026-08-22 00:00:00",
+   "2026-08-22 00:00:00",
+   "2026-08-22 00:00:00",
+   "2026-08-22 00:00:00",
+   "2026-08-22 00:00:00"
   ],
   "has_report": false
  },
