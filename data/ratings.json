@@ -56,11 +56,6 @@
    "average": 7.58
   },
   {
-   "genre": "Unlisted",
-   "sessions": 1,
-   "average": 7.33
-  },
-  {
    "genre": "Indie/Alt",
    "sessions": 11,
    "average": 7.26
@@ -77,8 +72,8 @@
   },
   {
    "genre": "Rock",
-   "sessions": 12,
-   "average": 6.85
+   "sessions": 13,
+   "average": 6.89
   },
   {
    "genre": "Other",
@@ -1028,7 +1023,7 @@
    "artist": "The Mars Volta",
    "slug": "mars_volta",
    "submitter": "Nick",
-   "genre": null,
+   "genre": "Rock",
    "start": "2026-08-07",
    "average": 7.33,
    "stdev": 1.258,
