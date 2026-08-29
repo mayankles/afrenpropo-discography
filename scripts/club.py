@@ -188,6 +188,20 @@ def report_path(slug: str) -> Path:
 # Reading sessions
 # --------------------------------------------------------------------------
 
+def looks_like_artist(value) -> bool:
+    """Is this cell plausibly an artist name?
+
+    A fill-drag in the spreadsheet can smear a date or a number across a whole
+    row. Without this, such a row reads as an artist called "2026-08-22
+    00:00:00" and a report gets commissioned for it.
+    """
+    if value is None or isinstance(value, (int, float, bool)):
+        return False
+    if hasattr(value, "strftime"):            # date / datetime
+        return False
+    return any(ch.isalpha() for ch in str(value))
+
+
 def _num(value):
     return float(value) if isinstance(value, (int, float)) else None
 
@@ -203,7 +217,7 @@ def read_sessions(ws, header, header_row, members, aliases) -> list[dict]:
     out = []
     for row in range(header_row + 1, ws.max_row + 1):
         artist = ws.cell(row, col("artist")).value
-        if artist is None or not str(artist).strip():
+        if not looks_like_artist(artist):
             continue
         slug, display = resolve(artist, aliases)
         scores = {m: _num(ws.cell(row, header[m.lower()]).value) for m in members}
@@ -254,8 +268,17 @@ def find_current(ws, header, header_row, members, aliases) -> dict:
     for session in read_sessions(ws, header, header_row, members, aliases):
         if session["row"] == row:
             return session
-    raise SheetError(f"Green row {row} has no artist in the Artist column.",
-                     kind="unnamed", rows=[row])
+
+    # The row is green but read_sessions rejected it, so the Artist cell holds
+    # something that is not a name. Say what is actually in it -- a smeared
+    # date or number means the row was damaged by a fill-drag.
+    cell = ws.cell(row, header["artist"]).value
+    what = "is empty" if cell is None else f"contains {str(cell)[:40]!r}, which is not a name"
+    raise SheetError(
+        f"The green row ({row}) {what}. The row was probably overwritten by a "
+        f"fill-drag in the spreadsheet -- check that row {row} still holds its "
+        f"artist, albums and ratings.",
+        kind="unnamed", rows=[row])
 
 
 # --------------------------------------------------------------------------

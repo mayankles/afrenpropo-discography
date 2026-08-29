@@ -212,6 +212,11 @@ function render(data) {
         (c.has_report
           ? `<p class="read"><a href="./html/${c.slug}_discography.html">Read the discography report &rarr;</a></p>`
           : `<p class="read" style="color:var(--ink-dim)">No report yet &mdash; one is queued to be written.</p>`);
+    } else if (["unnamed", "error"].includes((data.current_issue || {}).kind)) {
+      box.className = "now warn";
+      box.innerHTML =
+        `<div class="who">The marked row doesn&rsquo;t name an artist</div>` +
+        `<p class="msg">${esc(data.current_issue.message)}</p>`;
     } else if ((data.current_issue || {}).kind === "multiple") {
       const rows = (data.current_issue.rows || []).map(Number);
       const where = rows.length
