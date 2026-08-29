@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talking Heads - Studio Albums, Musicians &amp; Instrumentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg: #17130f; --bg-card: #1f1a15; --bg-soft: #251f19;
+        --ink: #f2e9db; --ink-dim: #a8997f; --amber: #e8b04b; --line: #3a3128;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Fraunces', Georgia, serif;
+        background-color: var(--bg);
+        background-image:
+            radial-gradient(circle at 12% 18%, rgba(232,176,75,0.06), transparent 40%),
+            radial-gradient(circle at 88% 82%, rgba(200,133,43,0.05), transparent 45%);
+        background-attachment: fixed;
+        color: var(--ink);
+        padding: clamp(1rem, 3vw, 2.5rem);
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 1500px; margin: 0 auto; background-color: var(--bg-card);
+        padding: clamp(1.4rem, 3vw, 2.4rem); border: 1px solid var(--line);
+        border-radius: 4px; box-shadow: 0 2px 28px rgba(0,0,0,0.45);
+    }
+    h1 {
+        font-family: 'Fraunces', Georgia, serif; font-weight: 900; text-align: center;
+        color: var(--ink); font-size: clamp(1.7rem, 4vw, 2.1rem);
+        letter-spacing: -0.015em; margin-bottom: 10px; line-height: 1.1;
+    }
+    .subtitle {
+        font-family: 'Spline Sans Mono', monospace; text-align: center;
+        color: var(--ink-dim); margin-bottom: 32px; font-size: 11px;
+        letter-spacing: 0.16em; text-transform: uppercase;
+    }
+
+    .synopsis {
+        margin-bottom: 36px; padding: 22px 26px; background-color: var(--bg-soft);
+        border-left: 4px solid var(--amber); border-radius: 4px;
+        font-size: 14px; line-height: 1.85;
+    }
+    .synopsis p { margin-bottom: 14px; }
+    .synopsis p:last-child { margin-bottom: 0; }
+    .synopsis strong { color: var(--amber); font-weight: 600; }
+    .synopsis em { color: var(--ink); font-style: italic; }
+    .scope-note {
+        font-family: 'Spline Sans Mono', monospace; font-size: 11px;
+        color: var(--ink-dim); font-style: normal; margin-top: 22px; line-height: 1.7;
+    }
+
+    h3 {
+        margin: 34px 0 10px; font-family: 'Fraunces', Georgia, serif;
+        font-weight: 600; font-size: 17px; color: var(--ink);
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 30px; }
+    thead { background-color: #2a231c; position: sticky; top: 0; }
+    th {
+        font-family: 'Spline Sans Mono', monospace; padding: 11px 9px; text-align: left;
+        font-weight: 500; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+        color: var(--ink-dim); border-bottom: 1px solid var(--line);
+    }
+    td {
+        padding: 11px 9px; border-bottom: 1px solid rgba(58,49,40,0.6);
+        vertical-align: top; line-height: 1.7;
+    }
+    tbody tr:hover { background-color: rgba(232,176,75,0.05); }
+    .year-album {
+        font-family: 'Spline Sans Mono', monospace; font-weight: 500;
+        color: var(--ink); width: 180px; font-size: 12px; line-height: 1.5;
+    }
+    .musician-role { display: block; margin-bottom: 2px; font-weight: 500; }
+    .instrument {
+        font-family: 'Spline Sans Mono', monospace; color: var(--ink-dim);
+        font-size: 11px; font-style: normal;
+    }
+
+    .era-label {
+        font-family: 'Spline Sans Mono', monospace; display: inline-block;
+        padding: 3px 9px; border-radius: 3px; font-size: 10px; font-weight: 500;
+        letter-spacing: 0.1em; margin-bottom: 8px; margin-right: 6px;
+    }
+
+    /* One era-* class per era, assigned in the order the eras appear.
+       These seven are validated for this dark surface -- don't invent more. */
+    .era-one   { border-left: 4px solid #4a93d8; }
+    .era-two   { border-left: 4px solid #c9762f; }
+    .era-three { border-left: 4px solid #b56fd0; }
+    .era-four  { border-left: 4px solid #5aa832; }
+    .era-five  { border-left: 4px solid #cf5566; }
+    .era-six   { border-left: 4px solid #2aa294; }
+    .era-seven { border-left: 4px solid #8f8ad4; }
+
+    .era-label.one   { background-color: #273038; color: #96bad9; }
+    .era-label.two   { background-color: #3e2b1a; color: #dbaa7c; }
+    .era-label.three { background-color: #3a2937; color: #d0a6d5; }
+    .era-label.four  { background-color: #2a341a; color: #9ec57e; }
+    .era-label.five  { background-color: #3f2524; color: #df989b; }
+    .era-label.six   { background-color: #21322c; color: #84c2b4; }
+    .era-label.seven { background-color: #332e37; color: #bcb5d7; }
+
+    .highlight-masterpiece {
+        background-color: #392e1c;
+        box-shadow: inset 0 0 10px rgba(232,176,75,0.12);
+        border-left: 6px solid var(--amber) !important;
+    }
+
+    .fmt {
+        font-family: 'Spline Sans Mono', monospace; display: inline-block;
+        font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+        color: var(--ink-dim); border: 1px solid var(--line); border-radius: 3px;
+        padding: 1px 5px; margin-top: 5px;
+    }
+
+    .project-header {
+        font-family: 'Fraunces', Georgia, serif; background-color: #2a231c;
+        color: var(--ink); padding: 14px 18px; border-radius: 4px 4px 0 0;
+        margin: 10px 0 0; font-size: 18px; font-weight: 600;
+    }
+    .project-desc {
+        background-color: var(--bg-soft); padding: 12px 18px; font-size: 13px;
+        color: var(--ink-dim); margin-bottom: 15px;
+        border-left: 4px solid var(--line); line-height: 1.7;
+    }
+
+    /* Most reports still carry a legend after the final table rather than a
+       synopsis at the top. Styled to match the synopsis so they read as
+       deliberate; the left border is neutral rather than amber to rank it
+       below a real synopsis. */
+    .legend {
+        margin-top: 30px; padding: 20px 24px; background-color: var(--bg-soft);
+        border-left: 4px solid var(--line); border-radius: 4px;
+        font-size: 13px; line-height: 1.8;
+    }
+    .legend > strong { color: var(--amber); font-weight: 600; }
+    .legend-item { margin-bottom: 14px; }
+    .legend-item:last-child { margin-bottom: 0; }
+    .legend-item strong { color: var(--amber); font-weight: 600; }
+
+    a { color: var(--amber); }
+
+    @media (max-width: 700px) {
+        body { padding: 0.6rem; }
+        .container { padding: 1.1rem; }
+        table { font-size: 12px; }
+        .year-album { width: auto; min-width: 120px; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Talking Heads: Studio Albums Discography</h1>
+    <p class="subtitle">Musicians &amp; Instrumentation (1977&ndash;1988)</p>
+
+    <div class="synopsis">
+        <p><strong>David Byrne</strong> and <strong>Chris Frantz</strong> started playing together as the Artistics at the Rhode Island School of Design in 1973, then moved to New York and recruited Frantz's girlfriend <strong>Tina Weymouth</strong> on bass &mdash; she learned the instrument specifically for the job, auditioning three times before Byrne would take her. As Talking Heads, the trio played their first show on June 5, 1975, opening for the Ramones at CBGB, and signed to Sire Records in November 1976. <strong>Jerry Harrison</strong>, formerly of the Modern Lovers, joined on keyboards and guitar in January 1977, completing the lineup that would stay fixed for the rest of the band's existence. Their debut, <em>Talking Heads: 77</em>, produced by Tony Bongiovi and Lance Quinn, translated the nervous, cerebral energy of the Bowery scene into something tighter and stranger than punk &mdash; clipped guitar figures, deadpan vocals, and "Psycho Killer" as its calling card.</p>
+        <p>The band's defining transformation came from three consecutive albums produced by <strong>Brian Eno</strong>. <em>More Songs About Buildings and Food</em> (1978), cut at Compass Point in Nassau, loosened the debut's tension into funkier, more textured arrangements and gave the band a hit with its cover of Al Green's "Take Me to the River." <em>Fear of Music</em> (1979) pushed further into paranoid, polyrhythmic territory, with King Crimson's Robert Fripp guesting on guitar. <em>Remain in Light</em> (1980) went further still, building layered, single-chord grooves modeled on Fela Kuti and King Sunny Adé with an expanded cast including Adrian Belew, Jon Hassell, and Nona Hendryx. It's now regarded as the band's masterpiece, but making it fractured the group: advance pressings credited the songwriting to "Byrne, Eno, Talking Heads" rather than all four members by name, Frantz and Weymouth felt sidelined during the New York sessions, and the ensuing dispute ended the band's working relationship with Eno.</p>
+        <p>A three-year hiatus followed, during which Weymouth and Frantz launched the hit side project Tom Tom Club and Byrne and Eno released <em>My Life in the Bush of Ghosts</em>. Talking Heads regrouped to self-produce (with Alex Sadkin) 1983's <em>Speaking in Tongues</em>, whose "Burning Down the House" became their only U.S. top-ten single and whose limited Robert Rauschenberg-designed sleeve won a Grammy. Jonathan Demme's concert film <em>Stop Making Sense</em> (1984) captured the band at its live peak with an expanded touring ensemble, though it isn't a studio release. <em>Little Creatures</em> (1985) and <em>True Stories</em> (1986, tied to Byrne's own film of the same name) pivoted toward American roots and pop songcraft and became the band's commercial high-water mark, before <em>Naked</em> (1988), cut in Paris with Steve Lillywhite and guests including Johnny Marr, returned to the worldbeat sound of <em>Remain in Light</em>.</p>
+        <p>Talking Heads dissolved in December 1991; Frantz has said he learned of Byrne's departure from a Los Angeles Times article rather than from Byrne directly. The remaining three toured and recorded as The Heads in the mid-1990s, a name Byrne opposed as trading on the band's legacy, and the personal rift has lingered in public since &mdash; Weymouth has called Byrne "incapable of returning friendship." A brief reunion took place at their 2002 Rock and Roll Hall of Fame induction, and the four appeared together again in 2023 around the IMAX reissue of <em>Stop Making Sense</em>, though Byrne has repeatedly ruled out a reunion tour or new music; the band reportedly turned down an $80 million tour offer in early 2024. In June 2025, marking the band's 50th anniversary, they released a new "Psycho Killer" music video directed by Mike Mills and starring Saoirse Ronan.</p>
+        <p class="scope-note">Scope: covers all eight Talking Heads studio albums, 1977&ndash;1988. Excluded: live albums (<em>The Name of This Band Is Talking Heads</em>, <em>Stop Making Sense</em>), compilations and remix releases, the 2018 expanded <em>True Stories</em> soundtrack combining the film cast's versions (distinct from the band's own <em>True Stories</em> album, which is included), and post-breakup work released under the name The Heads (1996), which Byrne never took part in. Also out of scope, per the default for a single-band catalog: members' side and solo projects (Tom Tom Club, Jerry Harrison's and David Byrne's solo work, <em>My Life in the Bush of Ghosts</em>), since Talking Heads itself was the constant rather than a rotating cast of side bands.</p>
+    </div>
+
+    <h3><span class="era-label one">CBGB ORIGINS (1977)</span> Art-School Nerves at the Bowery</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-one highlight-masterpiece">
+                <td class="year-album">⭐ Talking Heads: 77<br/>1977</td>
+                <td>
+                    <span class="musician-role">David Byrne</span><span class="instrument">vocals, guitar</span>
+                    <span class="musician-role">Chris Frantz</span><span class="instrument">drums, steel pan</span>
+                    <span class="musician-role">Tina Weymouth</span><span class="instrument">bass</span>
+                    <span class="musician-role">Jerry Harrison</span><span class="instrument">keyboards, guitar</span>
+                </td>
+                <td>Tony Bongiovi &amp; Lance Quinn, producers; Ed Stasium, engineer</td>
+                <td>Sire (Philips in continental Europe). Recorded at Sundragon and ODO Studios in New York, April&ndash;July 1977 &mdash; Harrison's first sessions with the band after joining that January. Clipped, wiry art-punk; "Psycho Killer" only reached #92 on the Hot 100 but became the band's signature. A 2024 deluxe reissue added outtakes and a live CBGB recording from October 1977.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label two">THE ENO TRILOGY (1978&ndash;1980)</span> Funk, Paranoia &amp; Polyrhythm</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-two highlight-masterpiece">
+                <td class="year-album">⭐ More Songs About Buildings and Food<br/>1978</td>
+                <td>
+                    <span class="musician-role">David Byrne</span><span class="instrument">vocals, guitar, synth percussion</span>
+                    <span class="musician-role">Chris Frantz</span><span class="instrument">drums, percussion</span>
+                    <span class="musician-role">Tina Weymouth</span><span class="instrument">bass</span>
+                    <span class="musician-role">Jerry Harrison</span><span class="instrument">piano, organ, synth, guitar</span>
+                </td>
+                <td>Brian Eno, producer &mdash; first of three consecutive collaborations</td>
+                <td>Sire. Recorded at Compass Point Studios, Nassau. Eno's layered synths and treatments loosened the debut's tension into something funkier and warmer. The cover of Al Green's "Take Me to the River" became the band's first Top 30 hit and earned the album a gold certification.</td>
+            </tr>
+            <tr class="era-two highlight-masterpiece">
+                <td class="year-album">⭐ Fear of Music<br/>1979</td>
+                <td>
+                    <span class="musician-role">David Byrne</span><span class="instrument">vocals, guitar</span>
+                    <span class="musician-role">Chris Frantz</span><span class="instrument">drums, percussion</span>
+                    <span class="musician-role">Tina Weymouth</span><span class="instrument">bass, vocals</span>
+                    <span class="musician-role">Jerry Harrison</span><span class="instrument">guitar, keyboards, vocals</span>
+                </td>
+                <td>Brian Eno, co-producer; guest guitar from King Crimson's Robert Fripp</td>
+                <td>Sire. Sessions began in Frantz and Weymouth's Long Island City loft before moving to several New York studios (the Hit Factory, Atlantic, R.P.M., Record Plant). Paranoid, geopolitically charged lyrics over increasingly unconventional rhythms; the embossed, tread-plate cover was Grammy-nominated for Best Recording Package. Gold-certified in 1985.</td>
+            </tr>
+            <tr class="era-two highlight-masterpiece">
+                <td class="year-album">⭐ Remain in Light<br/>1980</td>
+                <td>
+                    <span class="musician-role">David Byrne</span><span class="instrument">vocals, guitar, keyboards</span>
+                    <span class="musician-role">Chris Frantz</span><span class="instrument">drums, percussion</span>
+                    <span class="musician-role">Tina Weymouth</span><span class="instrument">bass, keyboards</span>
+                    <span class="musician-role">Jerry Harrison</span><span class="instrument">keyboards, guitar</span>
+                </td>
+                <td>Brian Eno, producer; Adrian Belew (guitar), Jon Hassell (trumpet), Nona Hendryx (vocals), Robert Palmer (percussion)</td>
+                <td>Sire. Built at Compass Point and Sigma Sound from studio jams layering interlocking, single-chord grooves inspired by Fela Kuti and King Sunny Adé. A dispute over songwriting credits &mdash; advance pressings read "Byrne, Eno, Talking Heads" rather than naming all four members &mdash; left Frantz and Weymouth feeling sidelined and ended the band's collaboration with Eno. Selected for the National Recording Registry in 2017; gold in the U.S. and Canada.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label three">THE COMMERCIAL BREAKTHROUGH (1983)</span> Burning Down the House</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-three highlight-masterpiece">
+                <td class="year-album">⭐ Speaking in Tongues<br/>1983</td>
+                <td>
+                    <span class="musician-role">David Byrne</span><span class="instrument">vocals, guitar, keyboards</span>
+                    <span class="musician-role">Chris Frantz</span><span class="instrument">drums, synthesizer</span>
+                    <span class="musician-role">Tina Weymouth</span><span class="instrument">synth bass, double bass</span>
+                    <span class="musician-role">Jerry Harrison</span><span class="instrument">keyboards, guitar</span>
+                </td>
+                <td>Alex Sadkin, co-producer, with the band; Wally Badarou &amp; Bernie Worrell (synths), Alex Weir (guitar), Steve Scales &amp; David Van Tieghem (percussion), Nona Hendryx &amp; Dolette McDonald (vocals)</td>
+                <td>Sire. Self-produced comeback after a three-year hiatus spent on Tom Tom Club and Byrne/Eno's <em>My Life in the Bush of Ghosts</em>. "Burning Down the House" became the band's only U.S. top-ten single, and their highest-charting studio album (#15). The limited-edition Robert Rauschenberg sleeve &mdash; clear vinyl with rotating color discs &mdash; won a Grammy for Best Recording Package. Jonathan Demme's concert film <em>Stop Making Sense</em> (1984) toured this material with an expanded band, but is a live release and outside this report's scope.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label four">AMERICANA PIVOT (1985&ndash;1986)</span> Big Suits &amp; Small Towns</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-four">
+                <td class="year-album">Little Creatures<br/>1985</td>
+                <td>
+                    <span class="musician-role">David Byrne</span><span class="instrument">vocals, guitar</span>
+                    <span class="musician-role">Chris Frantz</span><span class="instrument">drums</span>
+                    <span class="musician-role">Tina Weymouth</span><span class="instrument">bass, vocals</span>
+                    <span class="musician-role">Jerry Harrison</span><span class="instrument">keyboards, guitar, vocals</span>
+                </td>
+                <td>Self-produced; Lenny Pickett (sax), Eric Weissberg (pedal steel), backing vocalists Erin Dickens &amp; Diva Gray</td>
+                <td>Sire/EMI. A country- and roots-flavored turn away from <em>Remain in Light</em>'s polyrhythms. Howard Finster's cover art won Rolling Stone's album cover of the year; the album itself topped the Village Voice Pazz &amp; Jop critics' poll and became the band's best-selling studio record, with "And She Was" and "Road to Nowhere" as its singles.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">True Stories<br/>1986</td>
+                <td>
+                    <span class="musician-role">David Byrne</span><span class="instrument">vocals, guitar</span>
+                    <span class="musician-role">Chris Frantz</span><span class="instrument">drums</span>
+                    <span class="musician-role">Tina Weymouth</span><span class="instrument">bass</span>
+                    <span class="musician-role">Jerry Harrison</span><span class="instrument">keyboards, guitar</span>
+                </td>
+                <td>Self-produced; Paulinho da Costa (percussion), Pops Staples (vocal on "Papa Legba")</td>
+                <td>Sire. The band's own studio versions of songs from Byrne's satirical film <em>True Stories</em>, set in a fictional Texas town &mdash; the film itself used different cast performances, later compiled separately in 2018. "Wild Wild Life" won two 1987 MTV Video Music Awards; the album's sixth track, "Radio Head," later gave a British band its name.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label five">THE FINAL ALBUM (1988)</span> Paris, Worldbeat &amp; the End</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-five">
+                <td class="year-album">Naked<br/>1988</td>
+                <td>
+                    <span class="musician-role">David Byrne</span><span class="instrument">vocals, guitar</span>
+                    <span class="musician-role">Chris Frantz</span><span class="instrument">drums</span>
+                    <span class="musician-role">Tina Weymouth</span><span class="instrument">bass</span>
+                    <span class="musician-role">Jerry Harrison</span><span class="instrument">guitar, keyboards</span>
+                </td>
+                <td>Steve Lillywhite, co-producer, with the band; Johnny Marr (guitar), Kirsty MacColl (vocals), Mory Kant&eacute; (kora), horn and percussion sections</td>
+                <td>Sire/Fly. Instrumental tracks cut at Studio Davout in Paris, vocals and overdubs finished at Sigma Sound in New York, August&ndash;December 1987. A return to the Afrobeat-inflected worldbeat of <em>Remain in Light</em> after two pop-leaning records. The band's eighth and final studio album; they entered hiatus after its release and formally disbanded in December 1991.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
