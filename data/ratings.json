@@ -1575,19 +1575,19 @@
   }
  ],
  "current": {
-  "artist": "James Brown",
-  "slug": "james_brown",
-  "submitter": null,
-  "start": "2026-08-22",
-  "end": "2026-09-04",
+  "artist": "Talking Heads",
+  "slug": "talking_heads",
+  "submitter": "Mayank",
+  "start": "2026-01-16",
+  "end": "2026-01-30",
   "albums": [
-   "Live at the Apollo",
-   "The Payback",
-   "Sex Machine",
-   "Hell",
-   "Doing It to Death (J.B.’s)"
+   "Talking Heads '77",
+   "More Songs About Buildings and Food",
+   "Fear of Music",
+   "Remain in Light",
+   "Speaking in Tongues"
   ],
-  "has_report": true
+  "has_report": false
  },
  "current_issue": null
 }
