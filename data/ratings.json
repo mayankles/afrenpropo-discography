@@ -5,7 +5,7 @@
   "Mayank"
  ],
  "sessions_rated": 52,
- "sessions_dated": 51,
+ "sessions_dated": 52,
  "sessions_listed": 63,
  "reports": 11,
  "overall_average": 7.14,
@@ -141,34 +141,40 @@
    "rolling6": 6.23
   },
   {
+   "date": "2024-08-01",
+   "artist": "Ray Charles",
+   "average": 7.93,
+   "rolling6": 6.33
+  },
+  {
    "date": "2024-09-12",
    "artist": "Mark Lanegan",
    "average": 8.13,
-   "rolling6": 6.36
+   "rolling6": 6.68
   },
   {
    "date": "2024-09-25",
    "artist": "Kendrick Lamar",
    "average": 7.48,
-   "rolling6": 6.61
+   "rolling6": 7.12
   },
   {
    "date": "2024-10-09",
    "artist": "Cake",
    "average": 6.0,
-   "rolling6": 6.8
+   "rolling6": 7.28
   },
   {
    "date": "2024-10-23",
    "artist": "Aphex Twin",
    "average": 6.02,
-   "rolling6": 6.96
+   "rolling6": 7.27
   },
   {
    "date": "2024-11-20",
    "artist": "Easy Star All-Stars",
    "average": 6.48,
-   "rolling6": 7.03
+   "rolling6": 7.01
   },
   {
    "date": "2024-12-05",
@@ -662,7 +668,7 @@
    "slug": "ray_charles",
    "submitter": "Mayank",
    "genre": "Funk/Soul",
-   "start": null,
+   "start": "2024-08-01",
    "average": 7.93,
    "stdev": 0.603,
    "scores": {
