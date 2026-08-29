@@ -106,6 +106,13 @@
   .now ol { margin: 1rem 0 0; padding-left: 1.1rem; font-size: 0.82rem; line-height: 1.95; color: var(--ink-dim); }
   .now ol li::marker { color: var(--amber-deep); }
   .now .read { margin-top: 1.1rem; font-size: 0.8rem; }
+  /* Nothing marked yet is routine; two things marked is a mistake worth
+     flagging, so they get different weights rather than one generic empty state. */
+  .now.idle { border-left-color: var(--line); }
+  .now.warn { border-left-color: #cf5566; }
+  .now.idle .who, .now.warn .who { font-size: 1.35rem; }
+  .now.warn .who { color: #df989b; }
+  .now .msg { margin-top: 0.55rem; font-size: 0.84rem; line-height: 1.75; color: var(--ink-dim); max-width: 64ch; }
   .now a { color: var(--amber); }
 
   footer {
@@ -193,16 +200,37 @@ function render(data) {
   t.appendChild(tiles);
 
   /* on the turntable */
-  if (data.current) {
+  {
     const c = data.current, s = sec("On the turntable");
-    const box = document.createElement("div"); box.className = "now";
-    box.innerHTML =
-      `<div class="who">${esc(c.artist)}</div>` +
-      `<div class="when">${c.start} &rarr; ${c.end}</div>` +
-      (c.albums.length ? `<ol>${c.albums.map(a => `<li>${esc(a)}</li>`).join("")}</ol>` : "") +
-      (c.has_report
-        ? `<p class="read"><a href="./html/${c.slug}_discography.html">Read the discography report &rarr;</a></p>`
-        : `<p class="read" style="color:var(--ink-dim)">No report yet &mdash; one is queued to be written.</p>`);
+    const box = document.createElement("div");
+    if (c) {
+      box.className = "now";
+      box.innerHTML =
+        `<div class="who">${esc(c.artist)}</div>` +
+        `<div class="when">${c.start} &rarr; ${c.end}</div>` +
+        (c.albums.length ? `<ol>${c.albums.map(a => `<li>${esc(a)}</li>`).join("")}</ol>` : "") +
+        (c.has_report
+          ? `<p class="read"><a href="./html/${c.slug}_discography.html">Read the discography report &rarr;</a></p>`
+          : `<p class="read" style="color:var(--ink-dim)">No report yet &mdash; one is queued to be written.</p>`);
+    } else if ((data.current_issue || {}).kind === "multiple") {
+      const rows = (data.current_issue.rows || []).map(Number);
+      const where = rows.length
+        ? ` (spreadsheet row${rows.length > 1 ? "s" : ""} ${
+            rows.length > 1 ? rows.slice(0, -1).join(", ") + " and " + rows[rows.length - 1] : rows[0]})`
+        : "";
+      box.className = "now warn";
+      box.innerHTML =
+        `<div class="who">More than one artist is marked</div>` +
+        `<p class="msg">Two or more rows are highlighted green${where}, so there's no way to tell
+         which session is current. Nothing is broken and no report will be written until it's
+         resolved &mdash; clear the extra highlights and the next sync will pick it up.</p>`;
+    } else {
+      box.className = "now idle";
+      box.innerHTML =
+        `<div class="who">Nothing on the turntable</div>` +
+        `<p class="msg">No artist is marked green in the spreadsheet yet. Highlight a row to
+         start the next session.</p>`;
+    }
     s.appendChild(box);
   }
 

@@ -48,7 +48,16 @@ EXPORT_URL = "https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xl
 
 
 class SheetError(RuntimeError):
-    """The spreadsheet is not shaped the way we expect."""
+    """The spreadsheet is not shaped the way we expect.
+
+    `kind` lets callers tell a routine situation (no artist marked yet) from a
+    genuine mistake (two artists marked at once) without matching on prose.
+    """
+
+    def __init__(self, message, kind=None, rows=None):
+        super().__init__(message)
+        self.kind = kind
+        self.rows = rows or []
 
 
 # --------------------------------------------------------------------------
@@ -234,18 +243,19 @@ def find_current(ws, header, header_row, members, aliases) -> dict:
     if not rows:
         raise SheetError(
             "No green-highlighted row found. The current artist is marked by "
-            f"filling a row with {GREEN[2:]} (bright green)."
-        )
+            f"filling a row with {GREEN[2:]} (bright green).",
+            kind="none")
     if len(rows) > 1:
         raise SheetError(
             f"Expected one green row, found {len(rows)} (rows {rows}). "
-            "Clear the extras so the current artist is unambiguous."
-        )
+            "Clear the extras so the current artist is unambiguous.",
+            kind="multiple", rows=rows)
     row = rows[0]
     for session in read_sessions(ws, header, header_row, members, aliases):
         if session["row"] == row:
             return session
-    raise SheetError(f"Green row {row} has no artist in the Artist column.")
+    raise SheetError(f"Green row {row} has no artist in the Artist column.",
+                     kind="unnamed", rows=[row])
 
 
 # --------------------------------------------------------------------------
@@ -386,9 +396,24 @@ def cmd_current(args):
 
 
 def cmd_check(args):
-    """Decide whether a report needs generating, and say so on stdout."""
+    """Decide whether a report needs generating, and say so on stdout.
+
+    No green row is a routine between-sessions state, so it reports "nothing to
+    do" and exits cleanly -- a nightly schedule shouldn't email anyone about it.
+    Two green rows is a real mistake and still fails loudly, because guessing
+    could write a report for the wrong artist.
+    """
     ws, header, header_row, members, aliases = open_sheet(args)
-    current = find_current(ws, header, header_row, members, aliases)
+    try:
+        current = find_current(ws, header, header_row, members, aliases)
+    except SheetError as exc:
+        if exc.kind == "none":
+            print("No artist is marked green in the spreadsheet yet -- "
+                  "nothing to write. Highlight a row to set the next session.")
+            emit_github_output({"needed": "false", "artist": "", "slug": "", "albums": ""})
+            return 0
+        raise
+
     needed = not current["has_report"]
     print(f"Current artist : {current['artist']}  (sheet row {current['row']})")
     print(f"Session        : {current['start']} -> {current['end']}")
@@ -417,7 +442,12 @@ def cmd_stats(args):
                              "albums", "has_report")}
     except SheetError as exc:
         stats["current"] = None
+        stats["current_issue"] = {"kind": exc.kind or "error",
+                                  "rows": exc.rows,
+                                  "message": str(exc)}
         print(f"note: no current session ({exc})", file=sys.stderr)
+    else:
+        stats["current_issue"] = None
     out = Path(args.out) if args.out else DATA_FILE
     out.parent.mkdir(parents=True, exist_ok=True)
     with open(out, "w", encoding="utf-8") as fh:

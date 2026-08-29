@@ -4,11 +4,8 @@ name: Club sync
 # workflow_dispatch is deliberate: GitHub disables cron on public repos after
 # 60 days of inactivity, and a manual button is the way back in.
 on:
-  # Uncomment once CLUB_SHEET_ID and CLAUDE_CODE_OAUTH_TOKEN exist as repository
-  # secrets. Until then the daily run would fail every morning and email you
-  # about it. The manual "Run workflow" button below works either way.
-  # schedule:
-  #   - cron: "0 8 * * *"
+  schedule:
+    - cron: "0 8 * * *"
   workflow_dispatch:
 
 concurrency:
