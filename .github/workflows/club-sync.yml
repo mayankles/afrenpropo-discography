@@ -74,6 +74,36 @@ jobs:
             echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
           fi
 
+      # The club often picks an artist before choosing the albums. Interpolating
+      # an empty list into "highlight these five albums:" produced a prompt that
+      # contradicted itself, and the run came back in seconds having written
+      # nothing. Build the paragraph to match reality instead.
+      - name: Build the highlight instruction
+        id: highlight
+        if: steps.club.outputs.needed == 'true' && steps.branch.outputs.exists == 'false'
+        env:
+          ALBUMS: ${{ steps.club.outputs.albums }}
+        run: |
+          {
+            echo "text<<PROMPT_EOF"
+            if [ -z "${ALBUMS// /}" ]; then
+              echo "The club has not chosen the albums for this session yet, so"
+              echo "highlight nothing. Omit the highlight-masterpiece class and the"
+              echo "leading star entirely -- CLAUDE.md treats highlights as optional."
+              echo "Cover the catalogue as the spec describes and leave the"
+              echo "highlighting to a later pass."
+            else
+              echo "Highlight these albums, which are what the club is listening to"
+              echo "this fortnight: ${ALBUMS}"
+              echo ""
+              echo "Every highlighted album needs both the highlight-masterpiece class"
+              echo "and a leading star, per CLAUDE.md. If any of them is a live album,"
+              echo "compilation or side-project release, include it anyway and add the"
+              echo ".fmt format tag so the classification stays honest."
+            fi
+            echo "PROMPT_EOF"
+          } >> "$GITHUB_OUTPUT"
+
       # Claude only writes the file. Committing and opening the PR is done by
       # the workflow below, so the run needs no shell or git access at all.
       - name: Write the discography report
@@ -81,6 +111,9 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Without this the run log records only turn counts, so a run that
+          # writes nothing gives no hint as to why.
+          show_full_output: "true"
           claude_args: |
             --max-turns 60
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
@@ -92,13 +125,7 @@ jobs:
             structure, the era sections, the scope note, the HTML template, and
             the pre-commit checklist at the end.
 
-            Highlight these albums, which are the five the club is listening to
-            this fortnight: ${{ steps.club.outputs.albums }}
-
-            Every highlighted album needs both the highlight-masterpiece class
-            and a leading star, per CLAUDE.md. If any of them is a live album,
-            compilation or side-project release, include it anyway and add the
-            .fmt format tag so the classification stays honest.
+            ${{ steps.highlight.outputs.text }}
 
             Save the finished page to html/${{ steps.club.outputs.slug }}_discography.html
             and change nothing else in the repository.
