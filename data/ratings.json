@@ -4,11 +4,11 @@
   "Evan",
   "Mayank"
  ],
- "sessions_rated": 52,
- "sessions_dated": 52,
+ "sessions_rated": 53,
+ "sessions_dated": 53,
  "sessions_listed": 63,
  "reports": 12,
- "overall_average": 7.14,
+ "overall_average": 7.16,
  "curator": {
   "Nick": {
    "picks": 18,
@@ -30,20 +30,20 @@
   }
  },
  "taste": {
-  "Evan|Nick": 0.354,
-  "Evan|Mayank": 0.178,
-  "Mayank|Nick": 0.228
+  "Evan|Nick": 0.36,
+  "Evan|Mayank": 0.187,
+  "Mayank|Nick": 0.233
  },
  "contrarian": {
-  "Nick": 1.18,
-  "Evan": 1.16,
-  "Mayank": 1.06
+  "Nick": 1.16,
+  "Evan": 1.15,
+  "Mayank": 1.05
  },
  "genres": [
   {
    "genre": "Funk/Soul",
-   "sessions": 3,
-   "average": 7.73
+   "sessions": 4,
+   "average": 7.81
   },
   {
    "genre": "Folk/Country",
@@ -398,6 +398,12 @@
    "artist": "The Mars Volta",
    "average": 7.33,
    "rolling6": 7.68
+  },
+  {
+   "date": "2026-08-22",
+   "artist": "James Brown",
+   "average": 8.08,
+   "rolling6": 7.69
   }
  ],
  "ranked": [
@@ -570,6 +576,28 @@
     "Knnillssonn",
     "Aerial Pandemonium Ballet",
     "The Point!"
+   ]
+  },
+  {
+   "artist": "James Brown",
+   "slug": "james_brown",
+   "submitter": null,
+   "genre": "Funk/Soul",
+   "start": "2026-08-22",
+   "average": 8.08,
+   "stdev": 0.236,
+   "scores": {
+    "Nick": 8.0,
+    "Evan": 8.35,
+    "Mayank": 7.9
+   },
+   "has_report": true,
+   "albums": [
+    "Live at the Apollo",
+    "The Payback",
+    "Sex Machine",
+    "Hell",
+    "Doing It to Death (J.B.’s)"
    ]
   },
   {
@@ -1541,7 +1569,7 @@
   {
    "artist": "Dolly Parton",
    "slug": "dolly_parton",
-   "submitter": null
+   "submitter": "Mayank"
   },
   {
    "artist": "Keith Jarrett",
@@ -1567,27 +1595,16 @@
    "artist": "Jeff Lynne & ELO",
    "slug": "jeff_lynne_elo",
    "submitter": "Evan"
-  },
-  {
-   "artist": "James Brown",
-   "slug": "james_brown",
-   "submitter": null
   }
  ],
  "current": {
-  "artist": "James Brown",
-  "slug": "james_brown",
-  "submitter": null,
-  "start": "2026-08-22",
-  "end": "2026-09-04",
-  "albums": [
-   "Live at the Apollo",
-   "The Payback",
-   "Sex Machine",
-   "Hell",
-   "Doing It to Death (J.B.’s)"
-  ],
-  "has_report": true
+  "artist": "Dolly Parton",
+  "slug": "dolly_parton",
+  "submitter": "Mayank",
+  "start": "2026-09-03",
+  "end": "2026-09-17",
+  "albums": [],
+  "has_report": false
  },
  "current_issue": null
 }
