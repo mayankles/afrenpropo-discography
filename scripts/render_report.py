@@ -80,6 +80,10 @@ def normalize_title(s) -> str:
 # --------------------------------------------------------------------------
 
 def load(path: Path) -> dict:
+    if not path.exists():
+        raise ReportError(
+            f"{path} does not exist. The report is written as YAML to "
+            f"data/reports/<slug>.yaml, not as HTML.")
     try:
         with open(path, encoding="utf-8") as fh:
             data = yaml.safe_load(fh)
