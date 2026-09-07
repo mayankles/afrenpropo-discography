@@ -1588,7 +1588,13 @@
   "submitter": "Mayank",
   "start": "2026-09-03",
   "end": "2026-09-17",
-  "albums": [],
+  "albums": [
+   "Coat of Many Colors",
+   "Jolene",
+   "Trio",
+   "Little Sparrow",
+   "Pure & Simple"
+  ],
   "has_report": true
  },
  "current_issue": null
