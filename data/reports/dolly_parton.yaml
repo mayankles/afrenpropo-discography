@@ -1,0 +1,577 @@
+# Migrated from the generated HTML report. Re-rendering this file
+# reproduces that page, except that six inline .fmt badges the model had
+# invented mid-prose are now bold lead-ins -- the schema has no field for
+# a badge inside a sentence, and the spec never sanctioned one.
+
+artist: Dolly Parton
+title: 'Dolly Parton: Studio Albums Discography'
+subtitle: Musicians & Instrumentation (1967–2024)
+synopsis:
+- >-
+  **Dolly Parton** was born January 19, 1946, the fourth of twelve children raised in a one-room
+  cabin in Sevier County, Tennessee, without electricity or running water. Her father, Robert
+  Lee Parton, couldn't read or write; her mother's family, the Owenses, carried the musical tradition
+  — hymns, ballads, mountain harmony — that shaped her ear before she ever picked up a guitar.
+  She was singing on local radio and television as a child and signed to Monument Records in 1965,
+  scoring her first chart single with "Dumb Blonde" in 1966. Her debut LP, *Hello, I'm Dolly*
+  (1967), caught the attention of **Porter Wagoner**, who hired her to replace Norma Jean on his
+  syndicated television show. What followed was a seven-year professional partnership — his folksy
+  showmanship set against her voice and songwriting — that made her a national name, alongside
+  a prolific run of RCA duet albums recorded in parallel with her solo catalog under staff producer
+  **Bob Ferguson**.
+- >-
+  The Wagoner years produced some of her most enduring writing: *Coat of Many Colors* (1971) turned
+  childhood poverty into one of country music's most beloved narrative songs, and *My Tennessee
+  Mountain Home* (1973) mined the same material. But the partnership had grown constricting, and
+  in 1974 she left the show. She said goodbye to Wagoner the only way she knew how — by writing
+  him a song. "I Will Always Love You," cut for the album *Jolene* (1974), was delivered to him
+  in his office as notice she was leaving; the split still curdled into a 1979 lawsuit over royalties
+  and business dealings, settled out of court. Freed from the arrangement, she produced *New Harvest…First
+  Gathering* (1977) herself, then handed the reins to pop producer **Gary Klein** for *Here You
+  Come Again* (1977), engineered with new manager **Sandy Gallin** to cross her into the pop charts
+  without losing the steel guitar underneath. It worked: the album went to number one on the country
+  chart and top five on the Hot 100, and the crossover held through *Heartbreaker* (1978) and
+  into the 1980s, where "9 to 5," her Oscar-nominated theme from her film debut alongside Jane
+  Fonda and Lily Tomlin, made her a movie star as well as a singer. "Islands in the Stream," her
+  signature duet with Kenny Rogers, was written and produced by the Bee Gees but released on Rogers's
+  own album rather than hers — a fact worth knowing even though it sits outside this list.
+- >-
+  She left RCA for Columbia in 1987, the same year she joined **Emmylou Harris** and **Linda Ronstadt**
+  for *Trio*, a harmony-singing landmark produced by George Massenburg that won a Grammy and remains
+  one of the most beloved records any of the three ever made; a shelved sequel, *Trio II*, finally
+  surfaced in 1999. Her solo Columbia run was uneven — *Rainbow* (1987) flopped, but *White Limozeen*
+  (1989), produced by bluegrass veteran Ricky Skaggs, restored her to the top of the country charts.
+  The defining artistic turn of her later career came at the end of the 1990s, when she began
+  working with producer **Steve Buckingham**, first heard on *Eagle When She Flies* (1991) and
+  deepened through the 1990s, and used it to make a deliberate return to the string-band sound
+  of her childhood: *The Grass Is Blue* (1999), *Little Sparrow* (2001), and the self-produced
+  *Halos & Horns* (2002) form a bluegrass trilogy that critics still consider her most purely
+  satisfying stretch of recording, anchored by a Grammy win for *The Grass Is Blue*.
+- >-
+  From 2008 on she released music through her own label, Dolly Records, in a long-running partnership
+  with producer **Kent Wells** that carried her through *Backwoods Barbie*, *Better Day*, *Blue
+  Smoke*, and beyond. Her 2022 induction into the Rock & Roll Hall of Fame — which she initially
+  tried to decline, saying she hadn't earned it, before accepting and declaring "I'm a rock star
+  now" — inspired *Rockstar* (2023), a covers-and-collaborations record that became the biggest
+  chart debut of her career. Her husband of nearly sixty years, **Carl Dean**, whom she married
+  in secret in 1966 after meeting him outside a Nashville laundromat, died in March 2025 following
+  a long illness. Her final studio release, *Smoky Mountain DNA: Family, Faith and Fables* (2024),
+  gathered five generations of the Parton and Owens families in a project tracing her music back
+  to its Appalachian roots. Dolly Parton died on August 25, 2026, in Nashville, at 80, after a
+  brief battle with cancer — closing a six-decade catalog that moved from a mountain cabin to
+  Hollywood and back again without ever losing the thread.
+scope_note: >-
+  Scope: this report covers Parton's solo studio catalog, roughly 40 albums spanning 1967–2024.
+  Excluded: her live albums, compilations, and soundtrack albums; her thirteen duet LPs with Porter
+  Wagoner (1968–1980), a separate discography built around a distinct professional partnership;
+  and songs like "Islands in the Stream," which appear on other artists' records rather than her
+  own. Collaborative studio albums credited to Parton alongside named co-artists — *Trio*, *Trio
+  II*, *Honky Tonk Angels*, and the multi-generational family project *Smoky Mountain DNA* — are
+  included, since they were released as Dolly Parton albums proper, though *Smoky Mountain DNA*
+  is a genuine edge case: it is credited to "Dolly Parton & Family" and functions more as a group
+  heritage project than a conventional solo record. A handful of mid-1970s and early-1980s RCA
+  albums carry thin production/personnel documentation in surviving sources; where a detail could
+  not be confirmed, it is marked "details limited" rather than guessed. No posthumous or archival
+  release had been announced as of this writing.
+eras:
+- name: THE MONUMENT & PORTER WAGONER YEARS
+  years: 1967–1974
+  descriptor: Mountain Roots to Nashville Fame
+  columns:
+  - Album / Year
+  - Artist's Role
+  - Producers & Key Musicians
+  - Label / Notes
+  albums:
+  - title: Hello, I'm Dolly
+    year: 1967
+    cells:
+    - Singer, co-writer (10 of 12 tracks, with uncle Bill Owens)
+    - Fred Foster
+    - >-
+      Monument. Her debut LP, built around the modest hit "Dumb Blonde" (1966); its reception
+      brought her to Porter Wagoner's attention and led directly to her joining his TV show later
+      in 1967.
+  - title: Just Because I'm a Woman
+    year: 1968
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - >-
+      RCA Victor. Her first RCA solo album after signing that year; the title track pushed back
+      at a double standard toward women's sexual pasts in plain, unapologetic terms.
+  - title: In the Good Old Days (When Times Were Bad)
+    year: 1969
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - >-
+      RCA Victor. Early set of hardscrabble mountain narratives; establishes the autobiographical
+      vein she'd return to throughout the era.
+  - title: My Blue Ridge Mountain Boy
+    year: 1969
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - RCA Victor. Details limited beyond the Ferguson-produced, mountain-themed content typical
+      of the run.
+  - title: The Fairest of Them All
+    year: 1970
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - RCA Victor. Details limited; personnel not well documented in surviving sources.
+  - title: The Golden Streets of Glory
+    year: 1971
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - RCA Victor. A gospel-leaning record reflecting the church-and-hymn side of her upbringing.
+  - title: Joshua
+    year: 1971
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - >-
+      RCA Victor. Title song gave her a solo number-one country single, a turning point that made
+      clear she could top the charts without Wagoner.
+  - title: Coat of Many Colors
+    year: 1971
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - >-
+      RCA Victor. The title track, about a coat her mother sewed from rags and the cruelty of
+      classmates who mocked it, is among the most-loved songs in country music and her own frequent
+      pick as her best work.
+  - title: Touch Your Woman
+    year: 1972
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - RCA Victor. Title track was a top-ten country single; continues the Ferguson-era house sound.
+  - title: My Favorite Songwriter, Porter Wagoner
+    year: 1972
+    cells:
+    - Singer
+    - Bob Ferguson
+    - >-
+      RCA Victor. A tribute album of songs written (not sung) by Wagoner — a solo Parton release,
+      not one of the duet LPs, though the title invites confusion.
+  - title: My Tennessee Mountain Home
+    year: 1973
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - >-
+      RCA Victor. A concept album built entirely around her Sevierville childhood, a companion
+      piece to "Coat of Many Colors."
+  - title: Bubbling Over
+    year: 1973
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - RCA Victor. Details limited; a transitional record as the Wagoner partnership neared its
+      end.
+  - title: Jolene
+    year: 1974
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - >-
+      RCA Victor. The title song and "I Will Always Love You" (cut June 12, 1973, at RCA Studio
+      B) both appear here; the latter was written as a direct farewell to Wagoner and marks her
+      exit from his show. One of the era's defining albums.
+  - title: Love Is Like a Butterfly
+    year: 1974
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - >-
+      RCA Victor. The title single was a number-one country hit and closed out the Ferguson/Wagoner-associated
+      run as she stepped fully into a solo career.
+- name: 'SOLO INDEPENDENCE: THE BARGAIN STORE YEARS'
+  years: 1975–1976
+  descriptor: Asserting Creative Control
+  columns:
+  - Album / Year
+  - Artist's Role
+  - Producers & Key Musicians
+  - Label / Notes
+  albums:
+  - title: The Bargain Store
+    year: 1975
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - >-
+      RCA Victor. Title track's romantic metaphor was blunt enough that some radio stations banned
+      it as suggestive — an early sign of Parton pushing her own material past the label's comfort
+      zone.
+  - title: Dolly
+    year: 1975
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - RCA Victor. Details limited; a late Ferguson-era release as she began angling toward broader
+      pop ambitions.
+  - title: All I Can Do
+    year: 1976
+    cells:
+    - Singer, writer
+    - Bob Ferguson
+    - >-
+      RCA Victor. Her last album with Ferguson before taking the production reins herself; manager
+      Sandy Gallin signed her this year and began steering her toward a pop crossover.
+- name: 'THE POP CROSSOVER: GARY KLEIN YEARS'
+  years: 1977–1980
+  descriptor: Here You Come Again to Hollywood
+  columns:
+  - Album / Year
+  - Artist's Role
+  - Producers & Key Musicians
+  - Label / Notes
+  albums:
+  - title: New Harvest…First Gathering
+    year: 1977
+    cells:
+    - Singer, writer, producer
+    - Dolly Parton (Gregg Perry, 2 tracks)
+    - >-
+      RCA Victor. Her first self-produced album and first aimed squarely at the pop market, cut
+      in both Nashville and Los Angeles. Hit number one on the country albums chart and earned
+      a Grammy nomination for "(Your Love Keeps Lifting Me) Higher and Higher."
+  - title: Here You Come Again
+    year: 1977
+    cells:
+    - Singer
+    - Gary Klein
+    - >-
+      RCA Victor. The crossover breakthrough: the Barry Mann/Cynthia Weil title track (written
+      for Brenda Lee, redirected to Parton) went to number one country and number three pop. Klein
+      kept a steel guitar audible in the mix at her insistence. Won the Grammy for Best Female
+      Country Vocal Performance.
+  - title: Heartbreaker
+    year: 1978
+    cells:
+    - Singer
+    - Gary Klein
+    - >-
+      RCA Victor. Continued the polished pop-country sound of its predecessor, with the title
+      track another crossover hit.
+  - title: Great Balls of Fire
+    year: 1979
+    cells:
+    - Singer
+    - Gary Klein
+    - RCA Victor. Closed out the run of Klein-produced pop-leaning albums heading into the new
+      decade.
+  - title: Dolly, Dolly, Dolly
+    year: 1980
+    cells:
+    - Singer
+    - Details limited
+    - >-
+      RCA Victor. A commercially softer, transitional record between the Klein pop run and her
+      film-driven work later in the year.
+  - title: 9 to 5 and Odd Jobs
+    year: 1980
+    cells:
+    - Singer, writer
+    - Mike Post ("9 to 5" produced by Gregg Perry)
+    - >-
+      RCA Victor. Tied to her film debut in *9 to 5* alongside Jane Fonda and Lily Tomlin. The
+      Oscar-nominated title song hit number one country and pop; the rest of the album mixed originals
+      with folk and country standards by Woody Guthrie, Mel Tillis, and Merle Travis.
+- name: THE HOLLYWOOD & LATE RCA YEARS
+  years: 1982–1986
+  descriptor: Movie Star, Radio Star
+  columns:
+  - Album / Year
+  - Artist's Role
+  - Producers & Key Musicians
+  - Label / Notes
+  albums:
+  - title: Heartbreak Express
+    year: 1982
+    cells:
+    - Singer, writer
+    - Details limited
+    - >-
+      RCA Victor. Released the same year as her film *The Best Little Whorehouse in Texas*; her
+      Hollywood career was now running parallel to her recording career.
+  - title: Burlap & Satin
+    year: 1983
+    cells:
+    - Singer, writer, co-producer
+    - Dolly Parton & Gregg Perry
+    - >-
+      RCA Victor. Released the same year as "Islands in the Stream," her signature duet with Kenny
+      Rogers — written and produced by the Bee Gees but issued on Rogers's own album, *Eyes That
+      See in the Dark*, not this one.
+  - title: The Great Pretender
+    year: 1984
+    cells:
+    - Singer
+    - Val Garay
+    - >-
+      RCA Victor. A pop-oriented covers-and-originals set from the same year as her Christmas
+      collaboration with Rogers.
+  - title: Once Upon a Christmas
+    year: 1984
+    cells:
+    - Singer
+    - Details limited
+    - RCA. Her first Christmas album, a full collaborative record with Kenny Rogers.
+  - title: Real Love
+    year: 1985
+    cells:
+    - Singer, writer
+    - David Malloy
+    - >-
+      RCA Victor. Her last studio album for RCA after nearly twenty years with the label. Title
+      track, a duet with Kenny Rogers, and "Think About Love" both hit number one country.
+- name: 'COLUMBIA YEARS: TRIO & ROOTS REVIVAL'
+  years: 1987–1993
+  descriptor: Harmony Singing, Comeback, Duets
+  columns:
+  - Album / Year
+  - Artist's Role
+  - Producers & Key Musicians
+  - Label / Notes
+  albums:
+  - title: Trio
+    year: 1987
+    format: Dolly Parton, Emmylou Harris & Linda Ronstadt
+    cells:
+    - Singer, co-writer
+    - George Massenburg; David Lindley, Mark O'Connor
+    - >-
+      Warner Bros. A harmony-singing landmark; went platinum and roughly four million worldwide,
+      won the Grammy for Best Country Performance by a Duo or Group, and was nominated for Album
+      of the Year.
+  - title: Rainbow
+    year: 1987
+    cells:
+    - Singer, executive producer
+    - Steve "Gold-E" Goldstein
+    - >-
+      Columbia. Her first solo album after leaving RCA for Columbia; a pop-leaning record, including
+      a duet with Smokey Robinson, that sold poorly (peaking at #153) and scuttled Columbia's
+      original plan to alternate pop and country releases.
+  - title: White Limozeen
+    year: 1989
+    cells:
+    - Singer, writer
+    - Ricky Skaggs
+    - >-
+      Columbia. A commercial comeback after *Rainbow*: RIAA Gold, two number-one country singles
+      ("Why'd You Come in Here Lookin' Like That," "Yellow Roses"), plus a bluegrass-flavored
+      cover of REO Speedwagon's "Time for Me to Fly."
+  - title: Home for Christmas
+    year: 1990
+    cells:
+    - Singer
+    - Details limited
+    - Columbia. Her second Christmas album.
+  - title: Eagle When She Flies
+    year: 1991
+    cells:
+    - Singer, writer, executive producer
+    - Steve Buckingham & Gary Smith
+    - >-
+      Columbia. RIAA Platinum with a strong opening week; the first collaboration with Steve Buckingham,
+      whose partnership with Parton would deepen through the decade and shape her later bluegrass
+      turn.
+  - title: Slow Dancing with the Moon
+    year: 1993
+    cells:
+    - Singer, writer
+    - Steve Buckingham
+    - >-
+      Columbia. Continued the Buckingham-produced Columbia sound heading into her all-star duets
+      record the same year.
+  - title: Honky Tonk Angels
+    year: 1993
+    format: Dolly Parton, Loretta Lynn & Tammy Wynette
+    cells:
+    - Singer, co-producer
+    - Steve Buckingham (co-produced with Parton)
+    - >-
+      Columbia. Billboard called the trio "three country cornerstones" on release; mostly standards,
+      plus originals from all three singers. Certified Gold.
+- name: BLUE EYE, BUCKINGHAM & THE BLUEGRASS TRILOGY
+  years: 1995–2005
+  descriptor: Return to the Mountain Sound
+  columns:
+  - Album / Year
+  - Artist's Role
+  - Producers & Key Musicians
+  - Label / Notes
+  albums:
+  - title: Something Special
+    year: 1995
+    cells:
+    - Singer, writer
+    - Steve Buckingham
+    - >-
+      Columbia/Blue Eye. Mixed seven new songs with re-recorded classics, including "I Will Always
+      Love You" as a duet with Vince Gill.
+  - title: Treasures
+    year: 1996
+    cells:
+    - Singer
+    - Steve Buckingham
+    - Rising Tide/Blue Eye. **Covers.** A full album of rock and country covers spanning the 1960s–80s.
+  - title: Hungry Again
+    year: 1998
+    cells:
+    - Singer, writer
+    - Dolly Parton & Richie Owens
+    - >-
+      Decca/Blue Eye. An all-original, stripped-down roots record widely read as a deliberate
+      return to songwriting; her cousin Richie Owens, who would become a long-term collaborator,
+      produces here for the first time.
+  - title: Precious Memories
+    year: 1999
+    cells:
+    - Singer
+    - Richie Owens
+    - Blue Eye. **Gospel.** Sold exclusively at Dollywood, with proceeds going to the Dollywood
+      Foundation.
+  - title: Trio II
+    year: 1999
+    format: Dolly Parton, Emmylou Harris & Linda Ronstadt
+    cells:
+    - Singer, co-writer
+    - George Massenburg
+    - Asylum. Recorded in 1994 but shelved for years by label disputes and scheduling before its
+      eventual release.
+  - title: The Grass Is Blue
+    year: 1999
+    cells:
+    - Singer, writer
+    - Steve Buckingham
+    - >-
+      Sugar Hill/Blue Eye. First of a self-described bluegrass trilogy and a career-defining artistic
+      reset. Won the Grammy for Best Bluegrass Album; "Travelin' Prayer" was nominated for Best
+      Female Country Vocal Performance.
+  - title: Little Sparrow
+    year: 2001
+    cells:
+    - Singer, writer
+    - Steve Buckingham
+    - >-
+      Sugar Hill/Blue Eye. Second of the bluegrass trilogy; Grammy-nominated for Best Bluegrass
+      Album, and her cover of Collective Soul's "Shine" won Best Female Country Vocal Performance.
+  - title: Halos & Horns
+    year: 2002
+    cells:
+    - Singer, writer, producer
+    - Dolly Parton
+    - >-
+      Sugar Hill/Blue Eye. Third of the bluegrass trilogy, self-produced after sessions that began
+      as informal demos. Includes a bluegrass arrangement of Led Zeppelin's "Stairway to Heaven";
+      Grammy-nominated for Best Country Album.
+  - title: For God and Country
+    year: 2003
+    cells:
+    - Singer
+    - Details limited
+    - >-
+      Welk Music Group/Blue Eye. **Patriotic covers & originals.** A mixed set of covers and new
+      material released amid post-9/11 patriotic sentiment; a contested classification, sitting
+      between a covers record and an originals album.
+  - title: Those Were the Days
+    year: 2005
+    cells:
+    - Singer
+    - Details limited
+    - >-
+      Sugar Hill/Blue Eye. **Covers.** Bluegrass-style reworkings of 1960s–70s folk and pop songs,
+      several featuring the original artists as guests.
+- name: DOLLY RECORDS & THE LATE CATALOG
+  years: 2008–2024
+  descriptor: Independence, Legacy, and a Rock Star at Last
+  columns:
+  - Album / Year
+  - Artist's Role
+  - Producers & Key Musicians
+  - Label / Notes
+  albums:
+  - title: Backwoods Barbie
+    year: 2008
+    cells:
+    - Singer, writer, co-producer
+    - Dolly Parton & Kent Wells
+    - >-
+      Dolly Records. First release on her own label and her first mainstream country album in
+      close to a decade; opens a long-running partnership with producer Kent Wells that would
+      carry most of her subsequent catalog.
+  - title: Better Day
+    year: 2011
+    cells:
+    - Singer, writer, co-producer
+    - Dolly Parton & Kent Wells
+    - Dolly Records/Warner Music Nashville. Upbeat, largely self-written set continuing the Wells
+      partnership.
+  - title: Blue Smoke
+    year: 2014
+    cells:
+    - Singer, writer, executive producer
+    - Kent Wells
+    - >-
+      Dolly Records/Sony Masterworks. Recorded largely at Kent Wells Productions in Franklin,
+      Tennessee; blends country, bluegrass, and gospel material.
+  - title: Pure & Simple
+    year: 2016
+    cells:
+    - Singer, writer, producer
+    - Dolly Parton
+    - Dolly Records/RCA. Her seventh number-one country album and first chart-topper in 25 years.
+  - title: I Believe in You
+    year: 2017
+    cells:
+    - Singer, writer, producer
+    - Dolly Parton
+    - >-
+      Dolly Records/Sony. **Children's album.** Her first children's record, 14 self-written and
+      performed tracks, with proceeds supporting her Imagination Library literacy program.
+  - title: A Holly Dolly Christmas
+    year: 2020
+    cells:
+    - Singer, writer
+    - Kent Wells
+    - >-
+      Butterfly Records/12Tone Music Group. Her third Christmas album, with guests including Michael
+      Bublé, Willie Nelson, Miley Cyrus, Billy Ray Cyrus, and Jimmy Fallon. Reached number one
+      on Top Country Albums.
+  - title: Run, Rose, Run
+    year: 2022
+    cells:
+    - Singer, writer, co-producer
+    - Dolly Parton, Richard Dennison & Tom Rutledge
+    - >-
+      Butterfly Records. A companion album to the novel she co-wrote with James Patterson, released
+      the same week; twelve originals inspired by the book's plot.
+  - title: Rockstar
+    year: 2023
+    cells:
+    - Singer, writer
+    - Various producers
+    - >-
+      Butterfly Records/Big Machine. **Rock covers & collaborations.** Her only rock album, inspired
+      by her 2022 Rock & Roll Hall of Fame induction; 30 tracks with an enormous guest list including
+      Paul McCartney, Ringo Starr, Sting, Elton John, Chris Stapleton, Joan Jett, and Steven Tyler.
+      Debuted at number one simultaneously on Billboard's Top Album Sales, Top Country, Rock,
+      and Alternative Albums charts — the biggest chart arrival of her career.
+  - title: 'Smoky Mountain DNA: Family, Faith and Fables'
+    year: 2024
+    format: Dolly Parton & Family
+    cells:
+    - Singer, writer, executive producer
+    - Richie Owens
+    - >-
+      Owepar Entertainment. A multi-generational family project spanning five generations of the
+      Parton and Owens lines, paired with a four-part docuseries tracing the family's musical
+      roots to the United Kingdom in the 1600s. Her final studio release.

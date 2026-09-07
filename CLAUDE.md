@@ -207,9 +207,13 @@ side-project release, include it — don't refuse or drop it. Set `format:`:
 ```
 
 Values: `Studio`, `Live`, `Live + Studio`, `Compilation`, `Soundtrack`, or a
-credit line like `Fred Wesley & The J.B.'s`. Format tags render only when a
-report actually mixes formats, so set `format` wherever it isn't a plain studio
-album and let the renderer decide whether to show them.
+credit line like `Fred Wesley & The J.B.'s`. **A tag renders wherever you set
+`format`, and nowhere else.** Set it for anything that isn't a plain studio
+album, and for collaborative billing. Don't put `format: Studio` on every row
+unless the report genuinely needs that distinction drawn throughout.
+
+`format` is the only place a badge can appear. Don't try to mark up the notes
+prose — it's markdown, and any HTML in it will be escaped and shown literally.
 
 **Multi-band artists.** For someone like Nick Cave, organize by project rather
 than era. Set `project: true` on the section and give it a `description`:

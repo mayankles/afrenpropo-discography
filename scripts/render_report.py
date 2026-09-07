@@ -208,10 +208,6 @@ def render(r: dict, highlights: set[str]) -> str:
     artist = str(r["artist"]).strip()
     title = str(r.get("title") or f"{artist}: Studio Albums Discography").strip()
 
-    # CLAUDE.md: only tag formats when a report actually mixes them.
-    formats = {str(a.get("format") or "Studio") for _, a in all_albums(r)}
-    show_fmt = len(formats) > 1
-
     out: list[str] = []
     w = out.append
     w("<!DOCTYPE html>")
@@ -260,9 +256,12 @@ def render(r: dict, highlights: set[str]) -> str:
             starred = title_txt in highlights
             classes = f"era-{slot}" + (" highlight-masterpiece" if starred else "")
             star = "⭐ " if starred else ""
-            fmt = ""
-            if show_fmt:
-                fmt = f'<span class="fmt">{inline(album.get("format") or "Studio")}</span>'
+            # A tag appears only where the author set one. The field carries
+            # either a format ("Live") or a credit line ("Dolly Parton, Emmylou
+            # Harris & Linda Ronstadt"), and whether a distinction is worth
+            # drawing is the author's call, not a heuristic's.
+            fmt = (f'<span class="fmt">{inline(album["format"])}</span>'
+                   if str(album.get("format") or "").strip() else "")
             w(f'            <tr class="{classes}">')
             w(f'                <td class="year-album">{star}{inline(title_txt)}'
               f'<br/>{album["year"]}{fmt}</td>')
