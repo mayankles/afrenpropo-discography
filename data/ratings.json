@@ -7,7 +7,7 @@
  "sessions_rated": 53,
  "sessions_dated": 53,
  "sessions_listed": 63,
- "reports": 12,
+ "reports": 13,
  "overall_average": 7.16,
  "curator": {
   "Nick": {
@@ -1589,7 +1589,7 @@
   "start": "2026-09-03",
   "end": "2026-09-17",
   "albums": [],
-  "has_report": false
+  "has_report": true
  },
  "current_issue": null
 }
