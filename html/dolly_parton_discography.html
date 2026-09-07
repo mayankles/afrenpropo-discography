@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolly Parton - Studio Albums, Musicians &amp; Instrumentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg: #17130f; --bg-card: #1f1a15; --bg-soft: #251f19;
+        --ink: #f2e9db; --ink-dim: #a8997f; --amber: #e8b04b; --line: #3a3128;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Fraunces', Georgia, serif;
+        background-color: var(--bg);
+        background-image:
+            radial-gradient(circle at 12% 18%, rgba(232,176,75,0.06), transparent 40%),
+            radial-gradient(circle at 88% 82%, rgba(200,133,43,0.05), transparent 45%);
+        background-attachment: fixed;
+        color: var(--ink);
+        padding: clamp(1rem, 3vw, 2.5rem);
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 1500px; margin: 0 auto; background-color: var(--bg-card);
+        padding: clamp(1.4rem, 3vw, 2.4rem); border: 1px solid var(--line);
+        border-radius: 4px; box-shadow: 0 2px 28px rgba(0,0,0,0.45);
+    }
+    h1 {
+        font-family: 'Fraunces', Georgia, serif; font-weight: 900; text-align: center;
+        color: var(--ink); font-size: clamp(1.7rem, 4vw, 2.1rem);
+        letter-spacing: -0.015em; margin-bottom: 10px; line-height: 1.1;
+    }
+    .subtitle {
+        font-family: 'Spline Sans Mono', monospace; text-align: center;
+        color: var(--ink-dim); margin-bottom: 32px; font-size: 11px;
+        letter-spacing: 0.16em; text-transform: uppercase;
+    }
+
+    .synopsis {
+        margin-bottom: 36px; padding: 22px 26px; background-color: var(--bg-soft);
+        border-left: 4px solid var(--amber); border-radius: 4px;
+        font-size: 14px; line-height: 1.85;
+    }
+    .synopsis p { margin-bottom: 14px; }
+    .synopsis p:last-child { margin-bottom: 0; }
+    .synopsis strong { color: var(--amber); font-weight: 600; }
+    .synopsis em { color: var(--ink); font-style: italic; }
+    .scope-note {
+        font-family: 'Spline Sans Mono', monospace; font-size: 11px;
+        color: var(--ink-dim); font-style: normal; margin-top: 22px; line-height: 1.7;
+    }
+
+    h3 {
+        margin: 34px 0 10px; font-family: 'Fraunces', Georgia, serif;
+        font-weight: 600; font-size: 17px; color: var(--ink);
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 30px; }
+    thead { background-color: #2a231c; position: sticky; top: 0; }
+    th {
+        font-family: 'Spline Sans Mono', monospace; padding: 11px 9px; text-align: left;
+        font-weight: 500; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+        color: var(--ink-dim); border-bottom: 1px solid var(--line);
+    }
+    td {
+        padding: 11px 9px; border-bottom: 1px solid rgba(58,49,40,0.6);
+        vertical-align: top; line-height: 1.7;
+    }
+    tbody tr:hover { background-color: rgba(232,176,75,0.05); }
+    .year-album {
+        font-family: 'Spline Sans Mono', monospace; font-weight: 500;
+        color: var(--ink); width: 180px; font-size: 12px; line-height: 1.5;
+    }
+    .musician-role { display: block; margin-bottom: 2px; font-weight: 500; }
+    .instrument {
+        font-family: 'Spline Sans Mono', monospace; color: var(--ink-dim);
+        font-size: 11px; font-style: normal;
+    }
+
+    .era-label {
+        font-family: 'Spline Sans Mono', monospace; display: inline-block;
+        padding: 3px 9px; border-radius: 3px; font-size: 10px; font-weight: 500;
+        letter-spacing: 0.1em; margin-bottom: 8px; margin-right: 6px;
+    }
+
+    /* One era-* class per era, assigned in the order the eras appear.
+       These seven are validated for this dark surface -- don't invent more. */
+    .era-one   { border-left: 4px solid #4a93d8; }
+    .era-two   { border-left: 4px solid #c9762f; }
+    .era-three { border-left: 4px solid #b56fd0; }
+    .era-four  { border-left: 4px solid #5aa832; }
+    .era-five  { border-left: 4px solid #cf5566; }
+    .era-six   { border-left: 4px solid #2aa294; }
+    .era-seven { border-left: 4px solid #8f8ad4; }
+
+    .era-label.one   { background-color: #273038; color: #96bad9; }
+    .era-label.two   { background-color: #3e2b1a; color: #dbaa7c; }
+    .era-label.three { background-color: #3a2937; color: #d0a6d5; }
+    .era-label.four  { background-color: #2a341a; color: #9ec57e; }
+    .era-label.five  { background-color: #3f2524; color: #df989b; }
+    .era-label.six   { background-color: #21322c; color: #84c2b4; }
+    .era-label.seven { background-color: #332e37; color: #bcb5d7; }
+
+    .highlight-masterpiece {
+        background-color: #392e1c;
+        box-shadow: inset 0 0 10px rgba(232,176,75,0.12);
+        border-left: 6px solid var(--amber) !important;
+    }
+
+    .fmt {
+        font-family: 'Spline Sans Mono', monospace; display: inline-block;
+        font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+        color: var(--ink-dim); border: 1px solid var(--line); border-radius: 3px;
+        padding: 1px 5px; margin-top: 5px;
+    }
+
+    .project-header {
+        font-family: 'Fraunces', Georgia, serif; background-color: #2a231c;
+        color: var(--ink); padding: 14px 18px; border-radius: 4px 4px 0 0;
+        margin: 10px 0 0; font-size: 18px; font-weight: 600;
+    }
+    .project-desc {
+        background-color: var(--bg-soft); padding: 12px 18px; font-size: 13px;
+        color: var(--ink-dim); margin-bottom: 15px;
+        border-left: 4px solid var(--line); line-height: 1.7;
+    }
+
+    /* Most reports still carry a legend after the final table rather than a
+       synopsis at the top. Styled to match the synopsis so they read as
+       deliberate; the left border is neutral rather than amber to rank it
+       below a real synopsis. */
+    .legend {
+        margin-top: 30px; padding: 20px 24px; background-color: var(--bg-soft);
+        border-left: 4px solid var(--line); border-radius: 4px;
+        font-size: 13px; line-height: 1.8;
+    }
+    .legend > strong { color: var(--amber); font-weight: 600; }
+    .legend-item { margin-bottom: 14px; }
+    .legend-item:last-child { margin-bottom: 0; }
+    .legend-item strong { color: var(--amber); font-weight: 600; }
+
+    a { color: var(--amber); }
+
+    @media (max-width: 700px) {
+        body { padding: 0.6rem; }
+        .container { padding: 1.1rem; }
+        table { font-size: 12px; }
+        .year-album { width: auto; min-width: 120px; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Dolly Parton: Studio Albums Discography</h1>
+    <p class="subtitle">Musicians &amp; Instrumentation (1967&ndash;2024)</p>
+
+    <div class="synopsis">
+        <p><strong>Dolly Parton</strong> was born January 19, 1946, the fourth of twelve children raised in a one-room cabin in Sevier County, Tennessee, without electricity or running water. Her father, Robert Lee Parton, couldn't read or write; her mother's family, the Owenses, carried the musical tradition &mdash; hymns, ballads, mountain harmony &mdash; that shaped her ear before she ever picked up a guitar. She was singing on local radio and television as a child and signed to Monument Records in 1965, scoring her first chart single with "Dumb Blonde" in 1966. Her debut LP, <em>Hello, I'm Dolly</em> (1967), caught the attention of <strong>Porter Wagoner</strong>, who hired her to replace Norma Jean on his syndicated television show. What followed was a seven-year professional partnership &mdash; his folksy showmanship set against her voice and songwriting &mdash; that made her a national name, alongside a prolific run of RCA duet albums recorded in parallel with her solo catalog under staff producer <strong>Bob Ferguson</strong>.</p>
+        <p>The Wagoner years produced some of her most enduring writing: <em>Coat of Many Colors</em> (1971) turned childhood poverty into one of country music's most beloved narrative songs, and <em>My Tennessee Mountain Home</em> (1973) mined the same material. But the partnership had grown constricting, and in 1974 she left the show. She said goodbye to Wagoner the only way she knew how &mdash; by writing him a song. "I Will Always Love You," cut for the album <em>Jolene</em> (1974), was delivered to him in his office as notice she was leaving; the split still curdled into a 1979 lawsuit over royalties and business dealings, settled out of court. Freed from the arrangement, she produced <em>New Harvest&hellip;First Gathering</em> (1977) herself, then handed the reins to pop producer <strong>Gary Klein</strong> for <em>Here You Come Again</em> (1977), engineered with new manager <strong>Sandy Gallin</strong> to cross her into the pop charts without losing the steel guitar underneath. It worked: the album went to number one on the country chart and top five on the Hot 100, and the crossover held through <em>Heartbreaker</em> (1978) and into the 1980s, where "9 to 5," her Oscar-nominated theme from her film debut alongside Jane Fonda and Lily Tomlin, made her a movie star as well as a singer. "Islands in the Stream," her signature duet with Kenny Rogers, was written and produced by the Bee Gees but released on Rogers's own album rather than hers &mdash; a fact worth knowing even though it sits outside this list.</p>
+        <p>She left RCA for Columbia in 1987, the same year she joined <strong>Emmylou Harris</strong> and <strong>Linda Ronstadt</strong> for <em>Trio</em>, a harmony-singing landmark produced by George Massenburg that won a Grammy and remains one of the most beloved records any of the three ever made; a shelved sequel, <em>Trio II</em>, finally surfaced in 1999. Her solo Columbia run was uneven &mdash; <em>Rainbow</em> (1987) flopped, but <em>White Limozeen</em> (1989), produced by bluegrass veteran Ricky Skaggs, restored her to the top of the country charts. The defining artistic turn of her later career came at the end of the 1990s, when she began working with producer <strong>Steve Buckingham</strong>, first heard on <em>Eagle When She Flies</em> (1991) and deepened through the 1990s, and used it to make a deliberate return to the string-band sound of her childhood: <em>The Grass Is Blue</em> (1999), <em>Little Sparrow</em> (2001), and the self-produced <em>Halos &amp; Horns</em> (2002) form a bluegrass trilogy that critics still consider her most purely satisfying stretch of recording, anchored by a Grammy win for <em>The Grass Is Blue</em>.</p>
+        <p>From 2008 on she released music through her own label, Dolly Records, in a long-running partnership with producer <strong>Kent Wells</strong> that carried her through <em>Backwoods Barbie</em>, <em>Better Day</em>, <em>Blue Smoke</em>, and beyond. Her 2022 induction into the Rock &amp; Roll Hall of Fame &mdash; which she initially tried to decline, saying she hadn't earned it, before accepting and declaring "I'm a rock star now" &mdash; inspired <em>Rockstar</em> (2023), a covers-and-collaborations record that became the biggest chart debut of her career. Her husband of nearly sixty years, <strong>Carl Dean</strong>, whom she married in secret in 1966 after meeting him outside a Nashville laundromat, died in March 2025 following a long illness. Her final studio release, <em>Smoky Mountain DNA: Family, Faith and Fables</em> (2024), gathered five generations of the Parton and Owens families in a project tracing her music back to its Appalachian roots. Dolly Parton died on August 25, 2026, in Nashville, at 80, after a brief battle with cancer &mdash; closing a six-decade catalog that moved from a mountain cabin to Hollywood and back again without ever losing the thread.</p>
+        <p class="scope-note">Scope: this report covers Parton's solo studio catalog, roughly 40 albums spanning 1967&ndash;2024. Excluded: her live albums, compilations, and soundtrack albums; her thirteen duet LPs with Porter Wagoner (1968&ndash;1980), a separate discography built around a distinct professional partnership; and songs like "Islands in the Stream," which appear on other artists' records rather than her own. Collaborative studio albums credited to Parton alongside named co-artists &mdash; <em>Trio</em>, <em>Trio II</em>, <em>Honky Tonk Angels</em>, and the multi-generational family project <em>Smoky Mountain DNA</em> &mdash; are included, since they were released as Dolly Parton albums proper, though <em>Smoky Mountain DNA</em> is a genuine edge case: it is credited to "Dolly Parton &amp; Family" and functions more as a group heritage project than a conventional solo record. A handful of mid-1970s and early-1980s RCA albums carry thin production/personnel documentation in surviving sources; where a detail could not be confirmed, it is marked "details limited" rather than guessed. No posthumous or archival release had been announced as of this writing.</p>
+    </div>
+
+    <h3><span class="era-label one">THE MONUMENT &amp; PORTER WAGONER YEARS (1967&ndash;1974)</span> Mountain Roots to Nashville Fame</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-one">
+                <td class="year-album">Hello, I'm Dolly<br/>1967</td>
+                <td>Singer, co-writer (10 of 12 tracks, with uncle Bill Owens)</td>
+                <td>Fred Foster</td>
+                <td>Monument. Her debut LP, built around the modest hit "Dumb Blonde" (1966); its reception brought her to Porter Wagoner's attention and led directly to her joining his TV show later in 1967.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">Just Because I'm a Woman<br/>1968</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Her first RCA solo album after signing that year; the title track pushed back at a double standard toward women's sexual pasts in plain, unapologetic terms.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">In the Good Old Days (When Times Were Bad)<br/>1969</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Early set of hardscrabble mountain narratives; establishes the autobiographical vein she'd return to throughout the era.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">My Blue Ridge Mountain Boy<br/>1969</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Details limited beyond the Ferguson-produced, mountain-themed content typical of the run.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">The Fairest of Them All<br/>1970</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Details limited; personnel not well documented in surviving sources.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">The Golden Streets of Glory<br/>1971</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. A gospel-leaning record reflecting the church-and-hymn side of her upbringing.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">Joshua<br/>1971</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Title song gave her a solo number-one country single, a turning point that made clear she could top the charts without Wagoner.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">Coat of Many Colors<br/>1971</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. The title track, about a coat her mother sewed from rags and the cruelty of classmates who mocked it, is among the most-loved songs in country music and her own frequent pick as her best work.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">Touch Your Woman<br/>1972</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Title track was a top-ten country single; continues the Ferguson-era house sound.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">My Favorite Songwriter, Porter Wagoner<br/>1972</td>
+                <td>Singer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. A tribute album of songs written (not sung) by Wagoner &mdash; a solo Parton release, not one of the duet LPs, though the title invites confusion.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">My Tennessee Mountain Home<br/>1973</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. A concept album built entirely around her Sevierville childhood, a companion piece to "Coat of Many Colors."</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">Bubbling Over<br/>1973</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Details limited; a transitional record as the Wagoner partnership neared its end.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">Jolene<br/>1974</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. The title song and "I Will Always Love You" (cut June 12, 1973, at RCA Studio B) both appear here; the latter was written as a direct farewell to Wagoner and marks her exit from his show. One of the era's defining albums.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">Love Is Like a Butterfly<br/>1974</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. The title single was a number-one country hit and closed out the Ferguson/Wagoner-associated run as she stepped fully into a solo career.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label two">SOLO INDEPENDENCE: THE BARGAIN STORE YEARS (1975&ndash;1976)</span> Asserting Creative Control</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-two">
+                <td class="year-album">The Bargain Store<br/>1975</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Title track's romantic metaphor was blunt enough that some radio stations banned it as suggestive &mdash; an early sign of Parton pushing her own material past the label's comfort zone.</td>
+            </tr>
+            <tr class="era-two">
+                <td class="year-album">Dolly<br/>1975</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Details limited; a late Ferguson-era release as she began angling toward broader pop ambitions.</td>
+            </tr>
+            <tr class="era-two">
+                <td class="year-album">All I Can Do<br/>1976</td>
+                <td>Singer, writer</td>
+                <td>Bob Ferguson</td>
+                <td>RCA Victor. Her last album with Ferguson before taking the production reins herself; manager Sandy Gallin signed her this year and began steering her toward a pop crossover.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label three">THE POP CROSSOVER: GARY KLEIN YEARS (1977&ndash;1980)</span> Here You Come Again to Hollywood</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-three">
+                <td class="year-album">New Harvest&hellip;First Gathering<br/>1977</td>
+                <td>Singer, writer, producer</td>
+                <td>Dolly Parton (Gregg Perry, 2 tracks)</td>
+                <td>RCA Victor. Her first self-produced album and first aimed squarely at the pop market, cut in both Nashville and Los Angeles. Hit number one on the country albums chart and earned a Grammy nomination for "(Your Love Keeps Lifting Me) Higher and Higher."</td>
+            </tr>
+            <tr class="era-three">
+                <td class="year-album">Here You Come Again<br/>1977</td>
+                <td>Singer</td>
+                <td>Gary Klein</td>
+                <td>RCA Victor. The crossover breakthrough: the Barry Mann/Cynthia Weil title track (written for Brenda Lee, redirected to Parton) went to number one country and number three pop. Klein kept a steel guitar audible in the mix at her insistence. Won the Grammy for Best Female Country Vocal Performance.</td>
+            </tr>
+            <tr class="era-three">
+                <td class="year-album">Heartbreaker<br/>1978</td>
+                <td>Singer</td>
+                <td>Gary Klein</td>
+                <td>RCA Victor. Continued the polished pop-country sound of its predecessor, with the title track another crossover hit.</td>
+            </tr>
+            <tr class="era-three">
+                <td class="year-album">Great Balls of Fire<br/>1979</td>
+                <td>Singer</td>
+                <td>Gary Klein</td>
+                <td>RCA Victor. Closed out the run of Klein-produced pop-leaning albums heading into the new decade.</td>
+            </tr>
+            <tr class="era-three">
+                <td class="year-album">Dolly, Dolly, Dolly<br/>1980</td>
+                <td>Singer</td>
+                <td>Details limited</td>
+                <td>RCA Victor. A commercially softer, transitional record between the Klein pop run and her film-driven work later in the year.</td>
+            </tr>
+            <tr class="era-three">
+                <td class="year-album">9 to 5 and Odd Jobs<br/>1980</td>
+                <td>Singer, writer</td>
+                <td>Mike Post ("9 to 5" produced by Gregg Perry)</td>
+                <td>RCA Victor. Tied to her film debut in <em>9 to 5</em> alongside Jane Fonda and Lily Tomlin. The Oscar-nominated title song hit number one country and pop; the rest of the album mixed originals with folk and country standards by Woody Guthrie, Mel Tillis, and Merle Travis.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label four">THE HOLLYWOOD &amp; LATE RCA YEARS (1982&ndash;1986)</span> Movie Star, Radio Star</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-four">
+                <td class="year-album">Heartbreak Express<br/>1982</td>
+                <td>Singer, writer</td>
+                <td>Details limited</td>
+                <td>RCA Victor. Released the same year as her film <em>The Best Little Whorehouse in Texas</em>; her Hollywood career was now running parallel to her recording career.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">Burlap &amp; Satin<br/>1983</td>
+                <td>Singer, writer, co-producer</td>
+                <td>Dolly Parton &amp; Gregg Perry</td>
+                <td>RCA Victor. Released the same year as "Islands in the Stream," her signature duet with Kenny Rogers &mdash; written and produced by the Bee Gees but issued on Rogers's own album, <em>Eyes That See in the Dark</em>, not this one.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">The Great Pretender<br/>1984</td>
+                <td>Singer</td>
+                <td>Val Garay</td>
+                <td>RCA Victor. A pop-oriented covers-and-originals set from the same year as her Christmas collaboration with Rogers.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">Once Upon a Christmas<br/>1984</td>
+                <td>Singer</td>
+                <td>Details limited</td>
+                <td>RCA. Her first Christmas album, a full collaborative record with Kenny Rogers.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">Real Love<br/>1985</td>
+                <td>Singer, writer</td>
+                <td>David Malloy</td>
+                <td>RCA Victor. Her last studio album for RCA after nearly twenty years with the label. Title track, a duet with Kenny Rogers, and "Think About Love" both hit number one country.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label five">COLUMBIA YEARS: TRIO &amp; ROOTS REVIVAL (1987&ndash;1993)</span> Harmony Singing, Comeback, Duets</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-five">
+                <td class="year-album">Trio<br/>1987<span class="fmt">Dolly Parton, Emmylou Harris &amp; Linda Ronstadt</span></td>
+                <td>Singer, co-writer</td>
+                <td>George Massenburg; David Lindley, Mark O'Connor</td>
+                <td>Warner Bros. A harmony-singing landmark; went platinum and roughly four million worldwide, won the Grammy for Best Country Performance by a Duo or Group, and was nominated for Album of the Year.</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">Rainbow<br/>1987</td>
+                <td>Singer, executive producer</td>
+                <td>Steve "Gold-E" Goldstein</td>
+                <td>Columbia. Her first solo album after leaving RCA for Columbia; a pop-leaning record, including a duet with Smokey Robinson, that sold poorly (peaking at #153) and scuttled Columbia's original plan to alternate pop and country releases.</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">White Limozeen<br/>1989</td>
+                <td>Singer, writer</td>
+                <td>Ricky Skaggs</td>
+                <td>Columbia. A commercial comeback after <em>Rainbow</em>: RIAA Gold, two number-one country singles ("Why'd You Come in Here Lookin' Like That," "Yellow Roses"), plus a bluegrass-flavored cover of REO Speedwagon's "Time for Me to Fly."</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">Home for Christmas<br/>1990</td>
+                <td>Singer</td>
+                <td>Details limited</td>
+                <td>Columbia. Her second Christmas album.</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">Eagle When She Flies<br/>1991</td>
+                <td>Singer, writer, executive producer</td>
+                <td>Steve Buckingham &amp; Gary Smith</td>
+                <td>Columbia. RIAA Platinum with a strong opening week; the first collaboration with Steve Buckingham, whose partnership with Parton would deepen through the decade and shape her later bluegrass turn.</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">Slow Dancing with the Moon<br/>1993</td>
+                <td>Singer, writer</td>
+                <td>Steve Buckingham</td>
+                <td>Columbia. Continued the Buckingham-produced Columbia sound heading into her all-star duets record the same year.</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">Honky Tonk Angels<br/>1993<span class="fmt">Dolly Parton, Loretta Lynn &amp; Tammy Wynette</span></td>
+                <td>Singer, co-producer</td>
+                <td>Steve Buckingham (co-produced with Parton)</td>
+                <td>Columbia. Billboard called the trio "three country cornerstones" on release; mostly standards, plus originals from all three singers. Certified Gold.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label six">BLUE EYE, BUCKINGHAM &amp; THE BLUEGRASS TRILOGY (1995&ndash;2005)</span> Return to the Mountain Sound</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-six">
+                <td class="year-album">Something Special<br/>1995</td>
+                <td>Singer, writer</td>
+                <td>Steve Buckingham</td>
+                <td>Columbia/Blue Eye. Mixed seven new songs with re-recorded classics, including "I Will Always Love You" as a duet with Vince Gill.</td>
+            </tr>
+            <tr class="era-six">
+                <td class="year-album">Treasures<br/>1996</td>
+                <td>Singer</td>
+                <td>Steve Buckingham</td>
+                <td>Rising Tide/Blue Eye.<span class="fmt">Covers</span> A full album of rock and country covers spanning the 1960s&ndash;80s.</td>
+            </tr>
+            <tr class="era-six">
+                <td class="year-album">Hungry Again<br/>1998</td>
+                <td>Singer, writer</td>
+                <td>Dolly Parton &amp; Richie Owens</td>
+                <td>Decca/Blue Eye. An all-original, stripped-down roots record widely read as a deliberate return to songwriting; her cousin Richie Owens, who would become a long-term collaborator, produces here for the first time.</td>
+            </tr>
+            <tr class="era-six">
+                <td class="year-album">Precious Memories<br/>1999</td>
+                <td>Singer</td>
+                <td>Richie Owens</td>
+                <td>Blue Eye.<span class="fmt">Gospel</span> Sold exclusively at Dollywood, with proceeds going to the Dollywood Foundation.</td>
+            </tr>
+            <tr class="era-six">
+                <td class="year-album">Trio II<br/>1999<span class="fmt">Dolly Parton, Emmylou Harris &amp; Linda Ronstadt</span></td>
+                <td>Singer, co-writer</td>
+                <td>George Massenburg</td>
+                <td>Asylum. Recorded in 1994 but shelved for years by label disputes and scheduling before its eventual release.</td>
+            </tr>
+            <tr class="era-six">
+                <td class="year-album">The Grass Is Blue<br/>1999</td>
+                <td>Singer, writer</td>
+                <td>Steve Buckingham</td>
+                <td>Sugar Hill/Blue Eye. First of a self-described bluegrass trilogy and a career-defining artistic reset. Won the Grammy for Best Bluegrass Album; "Travelin' Prayer" was nominated for Best Female Country Vocal Performance.</td>
+            </tr>
+            <tr class="era-six">
+                <td class="year-album">Little Sparrow<br/>2001</td>
+                <td>Singer, writer</td>
+                <td>Steve Buckingham</td>
+                <td>Sugar Hill/Blue Eye. Second of the bluegrass trilogy; Grammy-nominated for Best Bluegrass Album, and her cover of Collective Soul's "Shine" won Best Female Country Vocal Performance.</td>
+            </tr>
+            <tr class="era-six">
+                <td class="year-album">Halos &amp; Horns<br/>2002</td>
+                <td>Singer, writer, producer</td>
+                <td>Dolly Parton</td>
+                <td>Sugar Hill/Blue Eye. Third of the bluegrass trilogy, self-produced after sessions that began as informal demos. Includes a bluegrass arrangement of Led Zeppelin's "Stairway to Heaven"; Grammy-nominated for Best Country Album.</td>
+            </tr>
+            <tr class="era-six">
+                <td class="year-album">For God and Country<br/>2003</td>
+                <td>Singer</td>
+                <td>Details limited</td>
+                <td>Welk Music Group/Blue Eye.<span class="fmt">Patriotic covers &amp; originals</span> A mixed set of covers and new material released amid post-9/11 patriotic sentiment; a contested classification, sitting between a covers record and an originals album.</td>
+            </tr>
+            <tr class="era-six">
+                <td class="year-album">Those Were the Days<br/>2005</td>
+                <td>Singer</td>
+                <td>Details limited</td>
+                <td>Sugar Hill/Blue Eye.<span class="fmt">Covers</span> Bluegrass-style reworkings of 1960s&ndash;70s folk and pop songs, several featuring the original artists as guests.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label seven">DOLLY RECORDS &amp; THE LATE CATALOG (2008&ndash;2024)</span> Independence, Legacy, and a Rock Star at Last</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-seven">
+                <td class="year-album">Backwoods Barbie<br/>2008</td>
+                <td>Singer, writer, co-producer</td>
+                <td>Dolly Parton &amp; Kent Wells</td>
+                <td>Dolly Records. First release on her own label and her first mainstream country album in close to a decade; opens a long-running partnership with producer Kent Wells that would carry most of her subsequent catalog.</td>
+            </tr>
+            <tr class="era-seven">
+                <td class="year-album">Better Day<br/>2011</td>
+                <td>Singer, writer, co-producer</td>
+                <td>Dolly Parton &amp; Kent Wells</td>
+                <td>Dolly Records/Warner Music Nashville. Upbeat, largely self-written set continuing the Wells partnership.</td>
+            </tr>
+            <tr class="era-seven">
+                <td class="year-album">Blue Smoke<br/>2014</td>
+                <td>Singer, writer, executive producer</td>
+                <td>Kent Wells</td>
+                <td>Dolly Records/Sony Masterworks. Recorded largely at Kent Wells Productions in Franklin, Tennessee; blends country, bluegrass, and gospel material.</td>
+            </tr>
+            <tr class="era-seven">
+                <td class="year-album">Pure &amp; Simple<br/>2016</td>
+                <td>Singer, writer, producer</td>
+                <td>Dolly Parton</td>
+                <td>Dolly Records/RCA. Her seventh number-one country album and first chart-topper in 25 years.</td>
+            </tr>
+            <tr class="era-seven">
+                <td class="year-album">I Believe in You<br/>2017</td>
+                <td>Singer, writer, producer</td>
+                <td>Dolly Parton</td>
+                <td>Dolly Records/Sony.<span class="fmt">Children's album</span> Her first children's record, 14 self-written and performed tracks, with proceeds supporting her Imagination Library literacy program.</td>
+            </tr>
+            <tr class="era-seven">
+                <td class="year-album">A Holly Dolly Christmas<br/>2020</td>
+                <td>Singer, writer</td>
+                <td>Kent Wells</td>
+                <td>Butterfly Records/12Tone Music Group. Her third Christmas album, with guests including Michael Bublé, Willie Nelson, Miley Cyrus, Billy Ray Cyrus, and Jimmy Fallon. Reached number one on Top Country Albums.</td>
+            </tr>
+            <tr class="era-seven">
+                <td class="year-album">Run, Rose, Run<br/>2022</td>
+                <td>Singer, writer, co-producer</td>
+                <td>Dolly Parton, Richard Dennison &amp; Tom Rutledge</td>
+                <td>Butterfly Records. A companion album to the novel she co-wrote with James Patterson, released the same week; twelve originals inspired by the book's plot.</td>
+            </tr>
+            <tr class="era-seven">
+                <td class="year-album">Rockstar<br/>2023</td>
+                <td>Singer, writer</td>
+                <td>Various producers</td>
+                <td>Butterfly Records/Big Machine.<span class="fmt">Rock covers &amp; collaborations</span> Her only rock album, inspired by her 2022 Rock &amp; Roll Hall of Fame induction; 30 tracks with an enormous guest list including Paul McCartney, Ringo Starr, Sting, Elton John, Chris Stapleton, Joan Jett, and Steven Tyler. Debuted at number one simultaneously on Billboard's Top Album Sales, Top Country, Rock, and Alternative Albums charts &mdash; the biggest chart arrival of her career.</td>
+            </tr>
+            <tr class="era-seven">
+                <td class="year-album">Smoky Mountain DNA: Family, Faith and Fables<br/>2024<span class="fmt">Dolly Parton &amp; Family</span></td>
+                <td>Singer, writer, executive producer</td>
+                <td>Richie Owens</td>
+                <td>Owepar Entertainment. A multi-generational family project spanning five generations of the Parton and Owens lines, paired with a four-part docuseries tracing the family's musical roots to the United Kingdom in the 1600s. Her final studio release.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
