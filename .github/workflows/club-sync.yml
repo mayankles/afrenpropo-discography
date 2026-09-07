@@ -6,6 +6,14 @@ name: Club sync
 on:
   schedule:
     - cron: "0 8 * * *"
+  # has_report in ratings.json is a snapshot taken when the stats last ran, so
+  # merging a report PR left the site saying "No report yet" until the next
+  # morning. Refresh as soon as a report lands. The stats commit only touches
+  # data/, which this filter excludes, so it cannot retrigger itself.
+  push:
+    branches: [main]
+    paths:
+      - "html/**"
   workflow_dispatch:
 
 concurrency:
