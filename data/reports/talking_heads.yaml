@@ -1,0 +1,262 @@
+# Worked example of the report format that scripts/render_report.py consumes.
+# Extracted from the hand-generated Talking Heads report; re-rendering this
+# file reproduces that page exactly, so it doubles as a regression fixture.
+
+artist: Talking Heads
+title: 'Talking Heads: Studio Albums Discography'
+subtitle: Musicians & Instrumentation (1977–1988)
+synopsis:
+- >-
+  **David Byrne** and **Chris Frantz** started playing together as the Artistics at the Rhode
+  Island School of Design in 1973, then moved to New York and recruited Frantz's girlfriend **Tina
+  Weymouth** on bass — she learned the instrument specifically for the job, auditioning three
+  times before Byrne would take her. As Talking Heads, the trio played their first show on June
+  5, 1975, opening for the Ramones at CBGB, and signed to Sire Records in November 1976. **Jerry
+  Harrison**, formerly of the Modern Lovers, joined on keyboards and guitar in January 1977, completing
+  the lineup that would stay fixed for the rest of the band's existence. Their debut, *Talking
+  Heads: 77*, produced by Tony Bongiovi and Lance Quinn, translated the nervous, cerebral energy
+  of the Bowery scene into something tighter and stranger than punk — clipped guitar figures,
+  deadpan vocals, and "Psycho Killer" as its calling card.
+- >-
+  The band's defining transformation came from three consecutive albums produced by **Brian Eno**.
+  *More Songs About Buildings and Food* (1978), cut at Compass Point in Nassau, loosened the debut's
+  tension into funkier, more textured arrangements and gave the band a hit with its cover of Al
+  Green's "Take Me to the River." *Fear of Music* (1979) pushed further into paranoid, polyrhythmic
+  territory, with King Crimson's Robert Fripp guesting on guitar. *Remain in Light* (1980) went
+  further still, building layered, single-chord grooves modeled on Fela Kuti and King Sunny Adé
+  with an expanded cast including Adrian Belew, Jon Hassell, and Nona Hendryx. It's now regarded
+  as the band's masterpiece, but making it fractured the group: advance pressings credited the
+  songwriting to "Byrne, Eno, Talking Heads" rather than all four members by name, Frantz and
+  Weymouth felt sidelined during the New York sessions, and the ensuing dispute ended the band's
+  working relationship with Eno.
+- >-
+  A three-year hiatus followed, during which Weymouth and Frantz launched the hit side project
+  Tom Tom Club and Byrne and Eno released *My Life in the Bush of Ghosts*. Talking Heads regrouped
+  to self-produce (with Alex Sadkin) 1983's *Speaking in Tongues*, whose "Burning Down the House"
+  became their only U.S. top-ten single and whose limited Robert Rauschenberg-designed sleeve
+  won a Grammy. Jonathan Demme's concert film *Stop Making Sense* (1984) captured the band at
+  its live peak with an expanded touring ensemble, though it isn't a studio release. *Little Creatures*
+  (1985) and *True Stories* (1986, tied to Byrne's own film of the same name) pivoted toward American
+  roots and pop songcraft and became the band's commercial high-water mark, before *Naked* (1988),
+  cut in Paris with Steve Lillywhite and guests including Johnny Marr, returned to the worldbeat
+  sound of *Remain in Light*.
+- >-
+  Talking Heads dissolved in December 1991; Frantz has said he learned of Byrne's departure from
+  a Los Angeles Times article rather than from Byrne directly. The remaining three toured and
+  recorded as The Heads in the mid-1990s, a name Byrne opposed as trading on the band's legacy,
+  and the personal rift has lingered in public since — Weymouth has called Byrne "incapable of
+  returning friendship." A brief reunion took place at their 2002 Rock and Roll Hall of Fame induction,
+  and the four appeared together again in 2023 around the IMAX reissue of *Stop Making Sense*,
+  though Byrne has repeatedly ruled out a reunion tour or new music; the band reportedly turned
+  down an $80 million tour offer in early 2024. In June 2025, marking the band's 50th anniversary,
+  they released a new "Psycho Killer" music video directed by Mike Mills and starring Saoirse
+  Ronan.
+scope_note: >-
+  Scope: covers all eight Talking Heads studio albums, 1977–1988. Excluded: live albums (*The
+  Name of This Band Is Talking Heads*, *Stop Making Sense*), compilations and remix releases,
+  the 2018 expanded *True Stories* soundtrack combining the film cast's versions (distinct from
+  the band's own *True Stories* album, which is included), and post-breakup work released under
+  the name The Heads (1996), which Byrne never took part in. Also out of scope, per the default
+  for a single-band catalog: members' side and solo projects (Tom Tom Club, Jerry Harrison's and
+  David Byrne's solo work, *My Life in the Bush of Ghosts*), since Talking Heads itself was the
+  constant rather than a rotating cast of side bands.
+eras:
+- name: CBGB ORIGINS
+  years: '1977'
+  descriptor: Art-School Nerves at the Bowery
+  columns:
+  - Album / Year
+  - Core Members
+  - Collaborators / Producers
+  - Label / Notes
+  albums:
+  - title: 'Talking Heads: 77'
+    year: 1977
+    cells:
+    - players:
+      - name: David Byrne
+        instrument: vocals, guitar
+      - name: Chris Frantz
+        instrument: drums, steel pan
+      - name: Tina Weymouth
+        instrument: bass
+      - name: Jerry Harrison
+        instrument: keyboards, guitar
+    - Tony Bongiovi & Lance Quinn, producers; Ed Stasium, engineer
+    - >-
+      Sire (Philips in continental Europe). Recorded at Sundragon and ODO Studios in New York,
+      April–July 1977 — Harrison's first sessions with the band after joining that January. Clipped,
+      wiry art-punk; "Psycho Killer" only reached #92 on the Hot 100 but became the band's signature.
+      A 2024 deluxe reissue added outtakes and a live CBGB recording from October 1977.
+- name: THE ENO TRILOGY
+  years: 1978–1980
+  descriptor: Funk, Paranoia & Polyrhythm
+  columns:
+  - Album / Year
+  - Core Members
+  - Collaborators / Producers
+  - Label / Notes
+  albums:
+  - title: More Songs About Buildings and Food
+    year: 1978
+    cells:
+    - players:
+      - name: David Byrne
+        instrument: vocals, guitar, synth percussion
+      - name: Chris Frantz
+        instrument: drums, percussion
+      - name: Tina Weymouth
+        instrument: bass
+      - name: Jerry Harrison
+        instrument: piano, organ, synth, guitar
+    - Brian Eno, producer — first of three consecutive collaborations
+    - >-
+      Sire. Recorded at Compass Point Studios, Nassau. Eno's layered synths and treatments loosened
+      the debut's tension into something funkier and warmer. The cover of Al Green's "Take Me
+      to the River" became the band's first Top 30 hit and earned the album a gold certification.
+  - title: Fear of Music
+    year: 1979
+    cells:
+    - players:
+      - name: David Byrne
+        instrument: vocals, guitar
+      - name: Chris Frantz
+        instrument: drums, percussion
+      - name: Tina Weymouth
+        instrument: bass, vocals
+      - name: Jerry Harrison
+        instrument: guitar, keyboards, vocals
+    - Brian Eno, co-producer; guest guitar from King Crimson's Robert Fripp
+    - >-
+      Sire. Sessions began in Frantz and Weymouth's Long Island City loft before moving to several
+      New York studios (the Hit Factory, Atlantic, R.P.M., Record Plant). Paranoid, geopolitically
+      charged lyrics over increasingly unconventional rhythms; the embossed, tread-plate cover
+      was Grammy-nominated for Best Recording Package. Gold-certified in 1985.
+  - title: Remain in Light
+    year: 1980
+    cells:
+    - players:
+      - name: David Byrne
+        instrument: vocals, guitar, keyboards
+      - name: Chris Frantz
+        instrument: drums, percussion
+      - name: Tina Weymouth
+        instrument: bass, keyboards
+      - name: Jerry Harrison
+        instrument: keyboards, guitar
+    - >-
+      Brian Eno, producer; Adrian Belew (guitar), Jon Hassell (trumpet), Nona Hendryx (vocals),
+      Robert Palmer (percussion)
+    - >-
+      Sire. Built at Compass Point and Sigma Sound from studio jams layering interlocking, single-chord
+      grooves inspired by Fela Kuti and King Sunny Adé. A dispute over songwriting credits — advance
+      pressings read "Byrne, Eno, Talking Heads" rather than naming all four members — left Frantz
+      and Weymouth feeling sidelined and ended the band's collaboration with Eno. Selected for
+      the National Recording Registry in 2017; gold in the U.S. and Canada.
+- name: THE COMMERCIAL BREAKTHROUGH
+  years: '1983'
+  descriptor: Burning Down the House
+  columns:
+  - Album / Year
+  - Core Members
+  - Collaborators / Producers
+  - Label / Notes
+  albums:
+  - title: Speaking in Tongues
+    year: 1983
+    cells:
+    - players:
+      - name: David Byrne
+        instrument: vocals, guitar, keyboards
+      - name: Chris Frantz
+        instrument: drums, synthesizer
+      - name: Tina Weymouth
+        instrument: synth bass, double bass
+      - name: Jerry Harrison
+        instrument: keyboards, guitar
+    - >-
+      Alex Sadkin, co-producer, with the band; Wally Badarou & Bernie Worrell (synths), Alex Weir
+      (guitar), Steve Scales & David Van Tieghem (percussion), Nona Hendryx & Dolette McDonald
+      (vocals)
+    - >-
+      Sire. Self-produced comeback after a three-year hiatus spent on Tom Tom Club and Byrne/Eno's
+      *My Life in the Bush of Ghosts*. "Burning Down the House" became the band's only U.S. top-ten
+      single, and their highest-charting studio album (#15). The limited-edition Robert Rauschenberg
+      sleeve — clear vinyl with rotating color discs — won a Grammy for Best Recording Package.
+      Jonathan Demme's concert film *Stop Making Sense* (1984) toured this material with an expanded
+      band, but is a live release and outside this report's scope.
+- name: AMERICANA PIVOT
+  years: 1985–1986
+  descriptor: Big Suits & Small Towns
+  columns:
+  - Album / Year
+  - Core Members
+  - Collaborators / Producers
+  - Label / Notes
+  albums:
+  - title: Little Creatures
+    year: 1985
+    cells:
+    - players:
+      - name: David Byrne
+        instrument: vocals, guitar
+      - name: Chris Frantz
+        instrument: drums
+      - name: Tina Weymouth
+        instrument: bass, vocals
+      - name: Jerry Harrison
+        instrument: keyboards, guitar, vocals
+    - Self-produced; Lenny Pickett (sax), Eric Weissberg (pedal steel), backing vocalists Erin
+      Dickens & Diva Gray
+    - >-
+      Sire/EMI. A country- and roots-flavored turn away from *Remain in Light*'s polyrhythms.
+      Howard Finster's cover art won Rolling Stone's album cover of the year; the album itself
+      topped the Village Voice Pazz & Jop critics' poll and became the band's best-selling studio
+      record, with "And She Was" and "Road to Nowhere" as its singles.
+  - title: True Stories
+    year: 1986
+    cells:
+    - players:
+      - name: David Byrne
+        instrument: vocals, guitar
+      - name: Chris Frantz
+        instrument: drums
+      - name: Tina Weymouth
+        instrument: bass
+      - name: Jerry Harrison
+        instrument: keyboards, guitar
+    - Self-produced; Paulinho da Costa (percussion), Pops Staples (vocal on "Papa Legba")
+    - >-
+      Sire. The band's own studio versions of songs from Byrne's satirical film *True Stories*,
+      set in a fictional Texas town — the film itself used different cast performances, later
+      compiled separately in 2018. "Wild Wild Life" won two 1987 MTV Video Music Awards; the album's
+      sixth track, "Radio Head," later gave a British band its name.
+- name: THE FINAL ALBUM
+  years: '1988'
+  descriptor: Paris, Worldbeat & the End
+  columns:
+  - Album / Year
+  - Core Members
+  - Collaborators / Producers
+  - Label / Notes
+  albums:
+  - title: Naked
+    year: 1988
+    cells:
+    - players:
+      - name: David Byrne
+        instrument: vocals, guitar
+      - name: Chris Frantz
+        instrument: drums
+      - name: Tina Weymouth
+        instrument: bass
+      - name: Jerry Harrison
+        instrument: guitar, keyboards
+    - >-
+      Steve Lillywhite, co-producer, with the band; Johnny Marr (guitar), Kirsty MacColl (vocals),
+      Mory Kanté (kora), horn and percussion sections
+    - >-
+      Sire/Fly. Instrumental tracks cut at Studio Davout in Paris, vocals and overdubs finished
+      at Sigma Sound in New York, August–December 1987. A return to the Afrobeat-inflected worldbeat
+      of *Remain in Light* after two pop-leaning records. The band's eighth and final studio album;
+      they entered hiatus after its release and formally disbanded in December 1991.
