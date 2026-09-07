@@ -202,6 +202,33 @@ def looks_like_artist(value) -> bool:
     return any(ch.isalpha() for ch in str(value))
 
 
+# Unchosen album slots are typed as placeholders rather than left blank.
+PLACEHOLDER_ALBUMS = {"tbd", "tba", "t.b.d", "t.b.a", "n/a", "na", "none",
+                      "unknown", "unchosen", "?", "-", "--", "..."}
+
+
+def looks_like_album(value) -> bool:
+    """Is this cell a real album title?
+
+    The sheet is filled in over a fortnight, so slots the club hasn't chosen
+    yet hold "TBD". Passing those downstream commissions a report that
+    highlights an album called TBD.
+    """
+    if value is None or hasattr(value, "strftime"):
+        return False
+    text = str(value).strip()
+    if not text or text.lower().strip(".!") in PLACEHOLDER_ALBUMS:
+        return False
+    return any(ch.isalnum() for ch in text)      # rejects separators like "| |"
+
+
+def album_title(value) -> str:
+    """Tidy an album cell: collapse whitespace, drop a spurious .0 on numbers."""
+    if isinstance(value, float) and value.is_integer():
+        return str(int(value))
+    return re.sub(r"\s+", " ", str(value)).strip()
+
+
 def _num(value):
     return float(value) if isinstance(value, (int, float)) else None
 
@@ -235,8 +262,11 @@ def read_sessions(ws, header, header_row, members, aliases) -> list[dict]:
                        if "gender" in header and ws.cell(row, col("gender")).value else None),
             "start": _date(ws.cell(row, col("session start")).value),
             "end": _date(ws.cell(row, col("session end")).value),
-            "albums": [str(ws.cell(row, c).value).strip()
-                       for c in albums if ws.cell(row, c).value],
+            "albums": [album_title(ws.cell(row, c).value)
+                       for c in albums if looks_like_album(ws.cell(row, c).value)],
+            "albums_skipped": sum(1 for c in albums
+                                  if ws.cell(row, c).value is not None
+                                  and not looks_like_album(ws.cell(row, c).value)),
             "scores": rated,
             "average": round(sum(rated.values()) / len(rated), 2) if rated else None,
             "stdev": round(stdev(list(rated.values())), 3) if len(rated) > 1 else None,
@@ -442,7 +472,10 @@ def cmd_check(args):
     print(f"Session        : {current['start']} -> {current['end']}")
     print(f"Report slug    : {current['slug']}")
     print(f"Report file    : html/{current['slug']}_discography.html")
-    print(f"Albums         : {', '.join(current['albums']) or '(none listed)'}")
+    skipped = current["albums_skipped"]
+    print(f"Albums         : {', '.join(current['albums']) or '(none listed)'}"
+          + (f"  [{skipped} placeholder cell{'s' if skipped != 1 else ''} ignored]"
+             if skipped else ""))
     print(f"Needs writing  : {'YES' if needed else 'no, already in the repo'}")
     emit_github_output({
         "needed": str(needed).lower(),
