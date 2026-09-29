@@ -6,7 +6,7 @@
  ],
  "sessions_rated": 53,
  "sessions_dated": 53,
- "sessions_listed": 63,
+ "sessions_listed": 64,
  "reports": 13,
  "overall_average": 7.16,
  "curator": {
@@ -1555,6 +1555,11 @@
    "artist": "Dolly Parton",
    "slug": "dolly_parton",
    "submitter": "Mayank"
+  },
+  {
+   "artist": "Blues Traveler",
+   "slug": "blues_traveler",
+   "submitter": null
   },
   {
    "artist": "Keith Jarrett",
