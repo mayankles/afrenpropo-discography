@@ -7,7 +7,7 @@
  "sessions_rated": 54,
  "sessions_dated": 54,
  "sessions_listed": 66,
- "reports": 13,
+ "reports": 14,
  "overall_average": 7.15,
  "curator": {
   "Nick": {
@@ -1634,7 +1634,7 @@
    "Stay Sick",
    "Smell of Female"
   ],
-  "has_report": false
+  "has_report": true
  },
  "current_issue": null
 }
