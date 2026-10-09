@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cramps - Studio Albums, Musicians &amp; Instrumentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Canonical report stylesheet -- the single source of truth for report
+   appearance. scripts/render_report.py inlines this into every generated
+   report. Edit here, re-render, and every report changes together. */
+
+:root {
+    --bg: #17130f; --bg-card: #1f1a15; --bg-soft: #251f19;
+    --ink: #f2e9db; --ink-dim: #a8997f; --amber: #e8b04b; --line: #3a3128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Fraunces', Georgia, serif;
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(232,176,75,0.06), transparent 40%),
+        radial-gradient(circle at 88% 82%, rgba(200,133,43,0.05), transparent 45%);
+    background-attachment: fixed;
+    color: var(--ink);
+    padding: clamp(1rem, 3vw, 2.5rem);
+    line-height: 1.6;
+}
+.container {
+    max-width: 1500px; margin: 0 auto; background-color: var(--bg-card);
+    padding: clamp(1.4rem, 3vw, 2.4rem); border: 1px solid var(--line);
+    border-radius: 4px; box-shadow: 0 2px 28px rgba(0,0,0,0.45);
+}
+h1 {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 900; text-align: center;
+    color: var(--ink); font-size: clamp(1.7rem, 4vw, 2.1rem);
+    letter-spacing: -0.015em; margin-bottom: 10px; line-height: 1.1;
+}
+.subtitle {
+    font-family: 'Spline Sans Mono', monospace; text-align: center;
+    color: var(--ink-dim); margin-bottom: 32px; font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+}
+
+.synopsis {
+    margin-bottom: 36px; padding: 22px 26px; background-color: var(--bg-soft);
+    border-left: 4px solid var(--amber); border-radius: 4px;
+    font-size: 14px; line-height: 1.85;
+}
+.synopsis p { margin-bottom: 14px; }
+.synopsis p:last-child { margin-bottom: 0; }
+.synopsis strong { color: var(--amber); font-weight: 600; }
+.synopsis em { color: var(--ink); font-style: italic; }
+.scope-note {
+    font-family: 'Spline Sans Mono', monospace; font-size: 11px;
+    color: var(--ink-dim); font-style: normal; margin-top: 22px; line-height: 1.7;
+}
+
+h3 {
+    margin: 34px 0 10px; font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600; font-size: 17px; color: var(--ink);
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 30px; }
+thead { background-color: #2a231c; position: sticky; top: 0; }
+th {
+    font-family: 'Spline Sans Mono', monospace; padding: 11px 9px; text-align: left;
+    font-weight: 500; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-dim); border-bottom: 1px solid var(--line);
+}
+td {
+    padding: 11px 9px; border-bottom: 1px solid rgba(58,49,40,0.6);
+    vertical-align: top; line-height: 1.7;
+}
+tbody tr:hover { background-color: rgba(232,176,75,0.05); }
+.year-album {
+    font-family: 'Spline Sans Mono', monospace; font-weight: 500;
+    color: var(--ink); width: 180px; font-size: 12px; line-height: 1.5;
+}
+.musician-role { display: block; margin-bottom: 2px; font-weight: 500; }
+.instrument {
+    font-family: 'Spline Sans Mono', monospace; color: var(--ink-dim);
+    font-size: 11px; font-style: normal;
+}
+
+.era-label {
+    font-family: 'Spline Sans Mono', monospace; display: inline-block;
+    padding: 3px 9px; border-radius: 3px; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.1em; margin-bottom: 8px; margin-right: 6px;
+}
+
+/* One era-* class per era, assigned in the order the eras appear.
+   These seven are validated for this dark surface -- don't invent more. */
+.era-one   { border-left: 4px solid #4a93d8; }
+.era-two   { border-left: 4px solid #c9762f; }
+.era-three { border-left: 4px solid #b56fd0; }
+.era-four  { border-left: 4px solid #5aa832; }
+.era-five  { border-left: 4px solid #cf5566; }
+.era-six   { border-left: 4px solid #2aa294; }
+.era-seven { border-left: 4px solid #8f8ad4; }
+
+.era-label.one   { background-color: #273038; color: #96bad9; }
+.era-label.two   { background-color: #3e2b1a; color: #dbaa7c; }
+.era-label.three { background-color: #3a2937; color: #d0a6d5; }
+.era-label.four  { background-color: #2a341a; color: #9ec57e; }
+.era-label.five  { background-color: #3f2524; color: #df989b; }
+.era-label.six   { background-color: #21322c; color: #84c2b4; }
+.era-label.seven { background-color: #332e37; color: #bcb5d7; }
+
+.highlight-masterpiece {
+    background-color: #392e1c;
+    box-shadow: inset 0 0 10px rgba(232,176,75,0.12);
+    border-left: 6px solid var(--amber) !important;
+}
+
+.fmt {
+    font-family: 'Spline Sans Mono', monospace; display: inline-block;
+    font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-dim); border: 1px solid var(--line); border-radius: 3px;
+    padding: 1px 5px; margin-top: 5px;
+}
+
+.project-header {
+    font-family: 'Fraunces', Georgia, serif; background-color: #2a231c;
+    color: var(--ink); padding: 14px 18px; border-radius: 4px 4px 0 0;
+    margin: 10px 0 0; font-size: 18px; font-weight: 600;
+}
+.project-desc {
+    background-color: var(--bg-soft); padding: 12px 18px; font-size: 13px;
+    color: var(--ink-dim); margin-bottom: 15px;
+    border-left: 4px solid var(--line); line-height: 1.7;
+}
+
+/* Most reports still carry a legend after the final table rather than a
+   synopsis at the top. Styled to match the synopsis so they read as
+   deliberate; the left border is neutral rather than amber to rank it
+   below a real synopsis. */
+.legend {
+    margin-top: 30px; padding: 20px 24px; background-color: var(--bg-soft);
+    border-left: 4px solid var(--line); border-radius: 4px;
+    font-size: 13px; line-height: 1.8;
+}
+.legend > strong { color: var(--amber); font-weight: 600; }
+.legend-item { margin-bottom: 14px; }
+.legend-item:last-child { margin-bottom: 0; }
+.legend-item strong { color: var(--amber); font-weight: 600; }
+
+a { color: var(--amber); }
+
+@media (max-width: 700px) {
+    body { padding: 0.6rem; }
+    .container { padding: 1.1rem; }
+    table { font-size: 12px; }
+    .year-album { width: auto; min-width: 120px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>The Cramps: Studio Albums Discography</h1>
+    <p class="subtitle">Musicians &amp; Instrumentation (1980–2026)</p>
+
+    <div class="synopsis">
+        <p><strong>Lux Interior</strong> and <strong>Poison Ivy Rorschach</strong> met in Sacramento in 1972, bonded over art and record collecting, and moved to Akron, Ohio in 1973 and then to New York in 1975, where they landed in the CBGB scene. The first full lineup, in April 1976, paired the couple with guitarist <strong>Bryan Gregory</strong> and drummer Pam Balam; Miriam Linna replaced Balam, and <strong>Nick Knox</strong> took the drum stool in September 1977. Nobody else in the New York scene sounded like them: no bass, a wall of reverb-soaked guitar, and a singer who treated 1950s rockabilly, surf, garage and horror-movie kitsch as scripture. They cut their first singles in Memphis in 1977 with <strong>Alex Chilton</strong> producing at Ardent Studios, and Miles Copeland signed them to I.R.S. Records.</p>
+        <p>Lux and Ivy are the constant. Lux was the frontman, lyricist and visual designer, and Ivy was the guitarist, arranger and, on most records, co-producer, the person who decided what a song needed and what it didn't. Everyone else rotated around them. Chilton returned for the 1980 debut <em>Songs the Lord Taught Us</em>, tracked at Phillips Recording in Memphis. Soon afterward the band relocated to Los Angeles, where Gregory was replaced by <strong>Kid Congo Powers</strong> of the Gun Club. That lineup made <em>Psychedelic Jungle</em> (1981), the band's first self-produced album, and then went quiet. A dispute with Copeland over royalties and creative rights led to a court case that held up new releases until 1983. The live album <em>Smell of Female</em> and the singles compilation <em>…Off the Bone</em> arrived that year as stopgaps, and Powers left around the same time.</p>
+        <p>The band's second life began with 1986's <em>A Date with Elvis</em>, on the independent Big Beat label, with Ivy covering bass herself before <strong>Candy Del Mar</strong> became the permanent bassist. They stayed on that footing through <em>Stay Sick!</em> (1990), the last studio album with Knox, whose departure with Del Mar in 1991 opened the era of <strong>Slim Chance</strong> on bass and a revolving drum chair: Jim Sclavunos on <em>Look Mom No Head!</em>, then <strong>Harry Drumdini</strong>, who drummed from 1993 to 2003 and again from 2006 to 2009. <em>Flamejob</em> (1994) and <em>Big Beat from Badsville</em> (1997) were recorded at Earle Mankey's home studio in Thousand Oaks. The band made some of its most visible pop-culture appearances in these years, including a spot on <em>Late Night with Conan O'Brien</em> in 1994 and a 1995 Halloween episode of <em>Beverly Hills, 90210</em>. Their only UK top-40 single, "Bikini Girls with Machine Guns," came from <em>Stay Sick!</em>.</p>
+        <p><em>Fiends of Dope Island</em> (2003), the first release on their revived Vengeance Records, was the last studio album. The band played its final show on November 4, 2006, at the Marquee Theater in Tempe, Arizona. Bryan Gregory had died on January 10, 2001, at age 49, and Lux Interior died on February 4, 2009, of an aortic dissection, which ended the band. Poison Ivy has since looked after the catalog. In 2026 she revived Vengeance with In The Red's Larry Hardy and engineer Jimmy Maslon under the banner The Cramps Inc., and issued <em>Gravest Gravy</em>, a set of shelved October 1977 Chilton sessions. The Cramps never charted high, and their influence is easier to hear in psychobilly, garage punk and goth than in their sales.</p>
+        <p class="scope-note">Scope: all studio albums from <em>Songs the Lord Taught Us</em> (1980) to <em>Fiends of Dope Island</em> (2003), plus three releases that are not studio albums but were chosen by the club or sit in the catalog's gaps, each tagged in the table: the live album <em>Smell of Female</em> (1983), the compilation <em>…Off the Bone</em> (1983), and the archival <em>Gravest Gravy</em> (2026), a collection of 1977 sessions. Excluded: the EPs <em>Gravest Hits</em> (1979), <em>Blues Fix</em> (1992) and <em>Ultra Twist</em> (1994); the other compilations (<em>Bad Music for Bad People</em>, <em>Greatest Hits</em>, <em>How to Make a Monster</em>); the live album <em>RockinnReelininAucklandNewZealandXXX</em> (1987); and the filmed <em>Live at Napa State Mental Hospital</em> (1978). These are omitted to keep the report focused on the core catalog. <em>…Off the Bone</em> is a compilation of singles and EP tracks, and some of its material is shared with other releases. <em>Songs the Lord Taught Us</em> was released on Illegal in the UK and I.R.S. in the US, and sources differ on which counts as the original label. No side projects are covered, since the band was the constant and the members' other work was minor.</p>
+    </div>
+
+    <h3><span class="era-label one">MEMPHIS DEBUT (1979–1980)</span> Alex Chilton &amp; the Original Two-Guitar Lineup</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-one highlight-masterpiece">
+                <td class="year-album">⭐ Songs the Lord Taught Us<br/>1980</td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitar</span><span class="musician-role">Bryan Gregory</span><span class="instrument">guitar</span><span class="musician-role">Nick Knox</span><span class="instrument">drums</span></td>
+                <td>Alex Chilton, producer, and credited as "Booker C" on organ on "Fever"; John Hampton, engineer</td>
+                <td>Illegal (UK) / I.R.S. (US). Recorded 1979–1980 at Phillips Recording in Memphis. A bass-less, reverb-heavy debut built on rockabilly, garage and surf covers, including the Sonics' "Strychnine" and a "Fever" taken from Little Willie John. "Garbageman" was the only single. Later critics rated it highly, and Rolling Stone put it on a 2020 list of the best albums of 1980.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label two">THE KID CONGO ERA (1981–1983)</span> Los Angeles, Lawsuits &amp; a Live Rescue</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-two highlight-masterpiece">
+                <td class="year-album">⭐ Psychedelic Jungle<br/>1981</td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitar</span><span class="musician-role">Kid Congo Powers</span><span class="instrument">guitar</span><span class="musician-role">Nick Knox</span><span class="instrument">drums</span></td>
+                <td>Self-produced by the Cramps; Paul McKenna, engineer</td>
+                <td>I.R.S. (US/UK). Recorded January 1981 at A&amp;M Studios in Hollywood, released March 27. Seven of the 14 tracks are Interior/Rorschach originals, with the rest drawn from 1950s and 60s rock and roll, rockabilly and garage singles, including "Green Door" and "Goo Goo Muck." The latter found new audiences through <em>The Texas Chainsaw Massacre Part 2</em> (1986) and the TV series <em>Wednesday</em>. Its release was followed by the royalty dispute with Miles Copeland that stalled new releases until 1983.</td>
+            </tr>
+            <tr class="era-two highlight-masterpiece">
+                <td class="year-album">⭐ Smell of Female<br/>1983<span class="fmt">Live</span></td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals, harmonica, percussion</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">lead guitar, bass</span><span class="musician-role">Kid Congo Powers</span><span class="instrument">guitar</span><span class="musician-role">Nick Knox</span><span class="instrument">drums</span></td>
+                <td>The Cramps, producers; Paul McKenna, engineer; Eddy Schreyer, mastering</td>
+                <td>Big Beat (UK) / Enigma (US) / New Rose (France). Recorded February 25–26, 1983 at the Peppermint Lounge in New York, as the court case kept the band from issuing studio work. Short at 20:16 in its original form, but expanded to 32:54 with bonus tracks later. Includes "Faster Pussycat" and the Count Five's "Psychotic Reaction." It reached No. 74 on the UK albums chart. Powers left around this time, with no reason given.</td>
+            </tr>
+            <tr class="era-two highlight-masterpiece">
+                <td class="year-album">⭐ …Off the Bone<br/>1983<span class="fmt">Compilation</span></td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitar</span><span class="musician-role">Bryan Gregory</span><span class="instrument">guitar</span><span class="musician-role">Kid Congo Powers</span><span class="instrument">guitar</span><span class="musician-role">Nick Knox</span><span class="instrument">drums</span></td>
+                <td>Alex Chilton and the Cramps, producers (1977–1979 material)</td>
+                <td>Illegal (UK). A 15-track collection of the early singles plus a cut from the <em>Gravest Hits</em> EP, including "Human Fly," "Surfin' Bird," "Garbage Man," "Fever" and "Goo Goo Muck (Single Mix)." Its first pressing had an anaglyph 3D cover with red-and-blue glasses in the sleeve. It peaked at No. 44 on the UK albums chart.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label three">THE BIG BEAT YEARS (1986–1991)</span> Bass Arrives, Knox Leaves</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-three">
+                <td class="year-album">A Date with Elvis<br/>1986</td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitars, bass, vocals on two tracks</span><span class="musician-role">Nick Knox</span><span class="instrument">drums, bongos</span></td>
+                <td>The Cramps, producers; Steve McMillan and Mark Ettel, engineers; the McMartin Preschool Choir, with Fur Dixon, on "People Ain't No Good"</td>
+                <td>Big Beat (UK) / Enigma (US, 1990). Recorded at Ocean Way in Hollywood; sources differ on whether it was early or fall 1985. Ivy played the bass, and Fur Dixon joined for the world tour. "Can Your Pussy Do the Dog?" was the band's first UK singles-chart entry, and the album reached No. 34 in the UK. "Kizmiaz" is the only Cramps album track sung by Ivy.</td>
+            </tr>
+            <tr class="era-three highlight-masterpiece">
+                <td class="year-album">⭐ Stay Sick!<br/>1990</td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitar</span><span class="musician-role">Candy Del Mar</span><span class="instrument">bass</span><span class="musician-role">Nick Knox</span><span class="instrument">drums</span></td>
+                <td>Poison Ivy, producer; Steve Macmillan, engineer</td>
+                <td>Enigma. Recorded in 1989 at Music Grinder Studios in Hollywood and released February 12, 1990. Nick Knox's last studio album. It produced "Bikini Girls with Machine Guns," the band's only UK top-40 single (No. 35), and closes on a cover of Jimmie Rodgers' "Muleskinner Blues." The title is a tribute to a saying of the TV horror host Ghoulardi. It reached No. 62 in the UK.</td>
+            </tr>
+            <tr class="era-three">
+                <td class="year-album">Look Mom No Head!<br/>1991</td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitar</span><span class="musician-role">Slim Chance</span><span class="instrument">bass</span><span class="musician-role">Jim Sclavunos</span><span class="instrument">drums</span></td>
+                <td>Poison Ivy, producer; Steve Macmillan, engineer; Iggy Pop, guest vocals on "Miniskirt Blues"</td>
+                <td>Restless/Enigma (US) / Big Beat via Ace (UK). Recorded and mixed at Ocean Way Studios in Hollywood, June 21 to July 14, 1991, with a new rhythm section following the exits of Del Mar and Knox. "Miniskirt Blues" is a cover of a 1967 Flower Children song.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label four">THE MANKEY SESSIONS (1994–2003)</span> Home Studio, Own Label</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-four">
+                <td class="year-album">Flamejob<br/>1994</td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitars, theremin</span><span class="musician-role">Slim Chance</span><span class="instrument">bass</span><span class="musician-role">Harry Drumdini</span><span class="instrument">drums</span></td>
+                <td>Poison Ivy and Lux Interior, producers; Earle Mankey, engineer</td>
+                <td>Creation (released through The Medicine Label). Recorded and mixed in 1994 at Earle Mankey's Psychedelic Shack in Thousand Oaks, California, and released October 11. Singles included "Ultra Twist," and the album closes on Bobby Troup's "Route 66." Chart positions: details limited.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">Big Beat from Badsville<br/>1997</td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitars, theremin</span><span class="musician-role">Slim Chance</span><span class="instrument">bass</span><span class="musician-role">Harry Drumdini</span><span class="instrument">drums</span></td>
+                <td>Poison Ivy and Lux Interior, producers; Earle Mankey, engineer</td>
+                <td>Epitaph. Recorded and mixed in May 1997 at Mankey's home studio. The only Cramps album made up entirely of Interior/Rorschach originals. A 2001 Vengeance reissue added four bonus tracks.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">Fiends of Dope Island<br/>2003</td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals, harmonica, maracas</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitars, echo-theremin</span><span class="musician-role">Chopper Franklin</span><span class="instrument">bass, rhythm guitar on "Taboo"</span><span class="musician-role">Harry Drumdini</span><span class="instrument">drums</span></td>
+                <td>Poison Ivy and Lux Interior, producers; mixed and mastered at Earle Mankey's Psychedelic Shack</td>
+                <td>Vengeance. Recorded August 2002 in Hollywood and released on the band's own revived label. The title comes from the 1959 film <em>Fiend of Dope Island</em>. Covers include "Taboo" and Jerry Reed's "Oowee Baby." The last Cramps studio album.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label five">THE VAULT (2026)</span> Shelved Memphis Tapes</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-five">
+                <td class="year-album">Gravest Gravy<br/>2026<span class="fmt">Archival (1977 sessions)</span></td>
+                <td><span class="musician-role">Lux Interior</span><span class="instrument">vocals</span><span class="musician-role">Poison Ivy Rorschach</span><span class="instrument">guitar</span><span class="musician-role">Remaining 1977 lineup</span><span class="instrument">details limited</span></td>
+                <td>Alex Chilton, producer (organ on some tracks); mixed 1989 by Lux and Ivy at Present Time Recorders, North Hollywood; liner notes by Henry Rollins</td>
+                <td>Vengeance, released August 21, 2026 through The Cramps Inc. Material from the October 1977 Ardent Studios sessions in Memphis, shelved after mixing in the late 1980s. It includes early versions of songs later heard on <em>Psychedelic Jungle</em>, as well as covers. Full personnel: details limited.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
