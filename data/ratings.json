@@ -4,11 +4,11 @@
   "Evan",
   "Mayank"
  ],
- "sessions_rated": 53,
- "sessions_dated": 53,
- "sessions_listed": 64,
+ "sessions_rated": 54,
+ "sessions_dated": 54,
+ "sessions_listed": 66,
  "reports": 13,
- "overall_average": 7.16,
+ "overall_average": 7.15,
  "curator": {
   "Nick": {
    "picks": 18,
@@ -17,27 +17,27 @@
    "gap": 1.3
   },
   "Evan": {
-   "picks": 17,
-   "curator_score": 6.88,
-   "self_score": 7.69,
-   "gap": 0.81
+   "picks": 18,
+   "curator_score": 6.94,
+   "self_score": 7.73,
+   "gap": 0.78
   },
   "Mayank": {
-   "picks": 17,
-   "curator_score": 6.83,
-   "self_score": 7.75,
-   "gap": 0.92
+   "picks": 18,
+   "curator_score": 6.82,
+   "self_score": 7.71,
+   "gap": 0.89
   }
  },
  "taste": {
-  "Evan|Nick": 0.36,
-  "Evan|Mayank": 0.187,
-  "Mayank|Nick": 0.233
+  "Evan|Nick": 0.358,
+  "Evan|Mayank": 0.186,
+  "Mayank|Nick": 0.236
  },
  "contrarian": {
   "Nick": 1.16,
-  "Evan": 1.15,
-  "Mayank": 1.05
+  "Evan": 1.14,
+  "Mayank": 1.04
  },
  "genres": [
   {
@@ -46,14 +46,14 @@
    "average": 7.81
   },
   {
-   "genre": "Folk/Country",
-   "sessions": 6,
-   "average": 7.61
-  },
-  {
    "genre": "Jazz",
    "sessions": 6,
    "average": 7.58
+  },
+  {
+   "genre": "Folk/Country",
+   "sessions": 7,
+   "average": 7.48
   },
   {
    "genre": "Indie/Alt",
@@ -404,6 +404,12 @@
    "artist": "James Brown",
    "average": 8.08,
    "rolling6": 7.69
+  },
+  {
+   "date": "2026-09-03",
+   "artist": "Dolly Parton",
+   "average": 6.71,
+   "rolling6": 7.56
   }
  ],
  "ranked": [
@@ -579,7 +585,7 @@
   {
    "artist": "James Brown",
    "slug": "james_brown",
-   "submitter": null,
+   "submitter": "Evan",
    "genre": "Funk/Soul",
    "start": "2026-08-22",
    "average": 8.08,
@@ -1231,6 +1237,28 @@
    ]
   },
   {
+   "artist": "Dolly Parton",
+   "slug": "dolly_parton",
+   "submitter": "Mayank",
+   "genre": "Folk/Country",
+   "start": "2026-09-03",
+   "average": 6.71,
+   "stdev": 0.615,
+   "scores": {
+    "Nick": 6.0,
+    "Evan": 7.12,
+    "Mayank": 7.0
+   },
+   "has_report": true,
+   "albums": [
+    "Coat of Many Colors",
+    "Jolene",
+    "Trio",
+    "Little Sparrow",
+    "Pure & Simple"
+   ]
+  },
+  {
    "artist": "Cocteau Twins",
    "slug": "cocteau_twins",
    "submitter": "Evan",
@@ -1464,7 +1492,8 @@
    "has_report": false,
    "albums": [
     "Begin to Hope",
-    "Soviet Kitsch"
+    "Soviet Kitsch",
+    "11:11"
    ]
   },
   {
@@ -1552,11 +1581,6 @@
    "submitter": "Mayank"
   },
   {
-   "artist": "Dolly Parton",
-   "slug": "dolly_parton",
-   "submitter": "Mayank"
-  },
-  {
    "artist": "Blues Traveler",
    "slug": "blues_traveler",
    "submitter": null
@@ -1582,25 +1606,35 @@
    "submitter": "Nick"
   },
   {
+   "artist": "The Cramps",
+   "slug": "cramps",
+   "submitter": "Nick"
+  },
+  {
    "artist": "Jeff Lynne & ELO",
    "slug": "jeff_lynne_elo",
    "submitter": "Evan"
+  },
+  {
+   "artist": "Roy Orbinson",
+   "slug": "roy_orbinson",
+   "submitter": null
   }
  ],
  "current": {
-  "artist": "Dolly Parton",
-  "slug": "dolly_parton",
-  "submitter": "Mayank",
-  "start": "2026-09-03",
-  "end": "2026-09-17",
+  "artist": "The Cramps",
+  "slug": "cramps",
+  "submitter": "Nick",
+  "start": "2026-10-09",
+  "end": "2026-10-22",
   "albums": [
-   "Coat of Many Colors",
-   "Jolene",
-   "Trio",
-   "Little Sparrow",
-   "Pure & Simple"
+   "Psychedelic Jungle",
+   "Songs the Lord Taught Us",
+   "Off the Bone",
+   "Stay Sick",
+   "Smell of Female"
   ],
-  "has_report": true
+  "has_report": false
  },
  "current_issue": null
 }
