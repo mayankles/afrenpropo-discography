@@ -7,7 +7,7 @@
  "sessions_rated": 55,
  "sessions_dated": 55,
  "sessions_listed": 66,
- "reports": 14,
+ "reports": 15,
  "overall_average": 7.14,
  "curator": {
   "Nick": {
@@ -1662,7 +1662,7 @@
    "There Is Only One Roy Orbison",
    "Traveling Wilburys Vol. 1"
   ],
-  "has_report": false
+  "has_report": true
  },
  "current_issue": null
 }
