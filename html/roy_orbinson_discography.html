@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roy Orbison - Studio Albums, Musicians &amp; Instrumentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Canonical report stylesheet -- the single source of truth for report
+   appearance. scripts/render_report.py inlines this into every generated
+   report. Edit here, re-render, and every report changes together. */
+
+:root {
+    --bg: #17130f; --bg-card: #1f1a15; --bg-soft: #251f19;
+    --ink: #f2e9db; --ink-dim: #a8997f; --amber: #e8b04b; --line: #3a3128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Fraunces', Georgia, serif;
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(232,176,75,0.06), transparent 40%),
+        radial-gradient(circle at 88% 82%, rgba(200,133,43,0.05), transparent 45%);
+    background-attachment: fixed;
+    color: var(--ink);
+    padding: clamp(1rem, 3vw, 2.5rem);
+    line-height: 1.6;
+}
+.container {
+    max-width: 1500px; margin: 0 auto; background-color: var(--bg-card);
+    padding: clamp(1.4rem, 3vw, 2.4rem); border: 1px solid var(--line);
+    border-radius: 4px; box-shadow: 0 2px 28px rgba(0,0,0,0.45);
+}
+h1 {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 900; text-align: center;
+    color: var(--ink); font-size: clamp(1.7rem, 4vw, 2.1rem);
+    letter-spacing: -0.015em; margin-bottom: 10px; line-height: 1.1;
+}
+.subtitle {
+    font-family: 'Spline Sans Mono', monospace; text-align: center;
+    color: var(--ink-dim); margin-bottom: 32px; font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+}
+
+.synopsis {
+    margin-bottom: 36px; padding: 22px 26px; background-color: var(--bg-soft);
+    border-left: 4px solid var(--amber); border-radius: 4px;
+    font-size: 14px; line-height: 1.85;
+}
+.synopsis p { margin-bottom: 14px; }
+.synopsis p:last-child { margin-bottom: 0; }
+.synopsis strong { color: var(--amber); font-weight: 600; }
+.synopsis em { color: var(--ink); font-style: italic; }
+.scope-note {
+    font-family: 'Spline Sans Mono', monospace; font-size: 11px;
+    color: var(--ink-dim); font-style: normal; margin-top: 22px; line-height: 1.7;
+}
+
+h3 {
+    margin: 34px 0 10px; font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600; font-size: 17px; color: var(--ink);
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 30px; }
+thead { background-color: #2a231c; position: sticky; top: 0; }
+th {
+    font-family: 'Spline Sans Mono', monospace; padding: 11px 9px; text-align: left;
+    font-weight: 500; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-dim); border-bottom: 1px solid var(--line);
+}
+td {
+    padding: 11px 9px; border-bottom: 1px solid rgba(58,49,40,0.6);
+    vertical-align: top; line-height: 1.7;
+}
+tbody tr:hover { background-color: rgba(232,176,75,0.05); }
+.year-album {
+    font-family: 'Spline Sans Mono', monospace; font-weight: 500;
+    color: var(--ink); width: 180px; font-size: 12px; line-height: 1.5;
+}
+.musician-role { display: block; margin-bottom: 2px; font-weight: 500; }
+.instrument {
+    font-family: 'Spline Sans Mono', monospace; color: var(--ink-dim);
+    font-size: 11px; font-style: normal;
+}
+
+.era-label {
+    font-family: 'Spline Sans Mono', monospace; display: inline-block;
+    padding: 3px 9px; border-radius: 3px; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.1em; margin-bottom: 8px; margin-right: 6px;
+}
+
+/* One era-* class per era, assigned in the order the eras appear.
+   These seven are validated for this dark surface -- don't invent more. */
+.era-one   { border-left: 4px solid #4a93d8; }
+.era-two   { border-left: 4px solid #c9762f; }
+.era-three { border-left: 4px solid #b56fd0; }
+.era-four  { border-left: 4px solid #5aa832; }
+.era-five  { border-left: 4px solid #cf5566; }
+.era-six   { border-left: 4px solid #2aa294; }
+.era-seven { border-left: 4px solid #8f8ad4; }
+
+.era-label.one   { background-color: #273038; color: #96bad9; }
+.era-label.two   { background-color: #3e2b1a; color: #dbaa7c; }
+.era-label.three { background-color: #3a2937; color: #d0a6d5; }
+.era-label.four  { background-color: #2a341a; color: #9ec57e; }
+.era-label.five  { background-color: #3f2524; color: #df989b; }
+.era-label.six   { background-color: #21322c; color: #84c2b4; }
+.era-label.seven { background-color: #332e37; color: #bcb5d7; }
+
+.highlight-masterpiece {
+    background-color: #392e1c;
+    box-shadow: inset 0 0 10px rgba(232,176,75,0.12);
+    border-left: 6px solid var(--amber) !important;
+}
+
+.fmt {
+    font-family: 'Spline Sans Mono', monospace; display: inline-block;
+    font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-dim); border: 1px solid var(--line); border-radius: 3px;
+    padding: 1px 5px; margin-top: 5px;
+}
+
+.project-header {
+    font-family: 'Fraunces', Georgia, serif; background-color: #2a231c;
+    color: var(--ink); padding: 14px 18px; border-radius: 4px 4px 0 0;
+    margin: 10px 0 0; font-size: 18px; font-weight: 600;
+}
+.project-desc {
+    background-color: var(--bg-soft); padding: 12px 18px; font-size: 13px;
+    color: var(--ink-dim); margin-bottom: 15px;
+    border-left: 4px solid var(--line); line-height: 1.7;
+}
+
+/* Most reports still carry a legend after the final table rather than a
+   synopsis at the top. Styled to match the synopsis so they read as
+   deliberate; the left border is neutral rather than amber to rank it
+   below a real synopsis. */
+.legend {
+    margin-top: 30px; padding: 20px 24px; background-color: var(--bg-soft);
+    border-left: 4px solid var(--line); border-radius: 4px;
+    font-size: 13px; line-height: 1.8;
+}
+.legend > strong { color: var(--amber); font-weight: 600; }
+.legend-item { margin-bottom: 14px; }
+.legend-item:last-child { margin-bottom: 0; }
+.legend-item strong { color: var(--amber); font-weight: 600; }
+
+a { color: var(--amber); }
+
+@media (max-width: 700px) {
+    body { padding: 0.6rem; }
+    .container { padding: 1.1rem; }
+    table { font-size: 12px; }
+    .year-album { width: auto; min-width: 120px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Roy Orbison: Landmark Albums &amp; Collaborations</h1>
+    <p class="subtitle">Musicians &amp; Instrumentation (1961–1989)</p>
+
+    <div class="synopsis">
+        <p><strong>Roy Orbison</strong> was born in Vernon, Texas, in 1936 and started out as a rockabilly: his band the Teen Kings cut "Ooby Dooby" in Clovis, New Mexico, in 1956, and he then signed to <strong>Sam Phillips</strong>' Sun Records. Sun never found a way to use the voice. His breakthrough came after he left, at Nashville's <strong>Monument Records</strong> under producer <strong>Fred Foster</strong>, who recorded him at RCA Victor's Studio B with the city's top session players. "Only the Lonely" (1960), "Running Scared" and "Crying" (1961), "In Dreams" (1963) and "Oh, Pretty Woman" (1964) were operatic, minor-key songs of heartbreak, built on his own writing (often with Joe Melson or Bill Dees) and a three-octave voice that made the dark glasses and the stillness onstage feel like part of the song.</p>
+        <p>The Monument records are the core of his legacy. They were singles-driven, but <em>Lonely and Blue</em> (1961) and <em>Crying</em> (1962) show Foster's approach at album length: sparse rhythm sections, strings and backing vocals used as drama, and Orbison singing ballads, pop standards and country songs as if they were all his. In mid-1965 he left for <strong>MGM</strong> on a reported million-dollar deal covering years of albums and film work, with manager <strong>Wesley Rose</strong> now producing. The records that followed, from <em>There Is Only One Roy Orbison</em> on, were more varied and less distinctive, and the film ambitions fizzled with <em>The Fastest Guitar Alive</em> (1967). Hits dried up in the US while he stayed popular in Britain and Australia.</p>
+        <p>The personal toll was severe. His wife Claudette was killed in a motorcycle accident in June 1966, and in September 1968, while he was on tour in Britain, a fire at his Hendersonville home killed his two eldest sons. Records from this period, such as <em>Roy Orbison's Many Moods</em> (1969), mostly show a professional singer carrying on, with covers of standards beside songs co-written with Dees. The 1970s were lean: a one-off for Mercury, a return to Monument for <em>Regeneration</em> (1976), open-heart surgery in January 1978, and <em>Laminar Flow</em> (1979) on Asylum, cut in Muscle Shoals. Meanwhile other artists kept his songs alive, including Linda Ronstadt's "Blue Bayou" and Don McLean's "Crying."</p>
+        <p>The revival came in the 1980s. The 1986 film <em>Blue Velvet</em> used "In Dreams," he was inducted into the Rock and Roll Hall of Fame in 1987, and a new deal with Virgin brought him together with <strong>Jeff Lynne</strong>. That led to the <strong>Traveling Wilburys</strong>, the supergroup with <strong>George Harrison</strong>, <strong>Bob Dylan</strong>, Lynne and <strong>Tom Petty</strong>, whose first album came out in October 1988. Orbison died of a heart attack on December 6, 1988, at 52, shortly after finishing his own comeback record. <em>Mystery Girl</em> (1989), with Lynne, Petty, Harrison and Bono among the contributors, was his highest-charting US album and closed the catalog as a living artist's work. Since then the estate has issued live sets and orchestral reworkings of his vocals, but nothing that changes the picture.</p>
+        <p class="scope-note">Scope: a landmark selection of studio albums across Orbison's career, 1961–1989, not a full inventory (the MGM years alone produced more than a dozen LPs, and only the most useful are covered). Included on request: <em>Traveling Wilburys Vol. 1</em> (1988), a group release credited to a band Orbison was one member of, tagged as such. Excluded: live albums (<em>A Black &amp; White Night Live</em>, <em>The Last Concert</em>), the 1987 re-recording set <em>In Dreams: The Greatest Hits</em>, compilations and box sets, <em>Class of '55</em> (1986, a multi-artist reunion album), the posthumous orchestral albums <em>A Love So Beautiful</em> (2017) and <em>Unchained Melodies</em> (2018), the posthumous <em>King of Hearts</em> (1992) and <em>One of the Lonely Ones</em> (2015), and film soundtracks. <em>Roy Orbison at the Rock House</em> (1961) is a contested case: it is an archival Sun release assembled after he had left the label, with overdubs added, so it is tagged as such. A search for 2025–2026 releases found nothing confirmed. Personnel are given where sources name them; many MGM-era musician credits are "details limited."</p>
+    </div>
+
+    <h3><span class="era-label one">SUN RECORDS (1956–1958)</span> Rockabilly Beginnings</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-one">
+                <td class="year-album">Roy Orbison at the Rock House<br/>1961<span class="fmt">Compilation</span></td>
+                <td><span class="musician-role">Roy Orbison</span><span class="instrument">lead vocals, lead guitar</span><span class="musician-role">The Teen Kings</span><span class="instrument">backing band</span></td>
+                <td>Sam Phillips, producer; other musicians, details limited</td>
+                <td>Sun. An archival release: recorded at Sun in 1956–58 and issued in December 1961, after Orbison had gone to Monument, to capitalize on his success there. Rockabilly rather than ballads, mostly Orbison originals though the writing credits went to Phillips; most tracks were overdubbed later. Retitled <em>The Exciting Sounds of Roy Orbison</em> in the UK (1964, #17).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label two">THE MONUMENT YEARS (1961–1962)</span> Nashville's Operatic Heartbreak</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-two">
+                <td class="year-album">Lonely and Blue<br/>1961</td>
+                <td><span class="musician-role">Roy Orbison</span><span class="instrument">vocals</span></td>
+                <td>Fred Foster, producer; Boots Randolph (sax, on "I'll Say It's My Fault"); full personnel, details limited</td>
+                <td>Monument. His debut album, cut mainly in September 1960 at RCA Studio B in Nashville. "Only the Lonely" (#2 US, #1 UK), "Blue Angel" (#9) and "I'm Hurtin'" (#27) were hit singles; the rest mixes country and pop covers such as "Bye Bye Love" and "I Can't Stop Loving You." Reached #14 in the UK in 1963.</td>
+            </tr>
+            <tr class="era-two highlight-masterpiece">
+                <td class="year-album">⭐ Crying<br/>1962</td>
+                <td><span class="musician-role">Roy Orbison</span><span class="instrument">vocals, guitar</span></td>
+                <td>Fred Foster, producer; Bill Porter, engineer. Session players include Hank Garland, Scotty Moore and Grady Martin (guitar), Bob Moore (bass), Floyd Cramer (piano), Buddy Harman and John Greubel (drums), Charlie McCoy (harmonica), Boots Randolph and Harry Johnson (sax)</td>
+                <td>Monument. Recorded at RCA Victor Studio B, Nashville. Holds two of his biggest singles, "Running Scared" (#1 on the Hot 100) and the title song (#2), alongside covers of "The Great Pretender" and "Love Hurts." The album reached #21 in the US and #17 in the UK. The title song later earned a Grammy Hall of Fame award (2002).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label three">THE BIG HITS (1963)</span> In Dreams</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-three highlight-masterpiece">
+                <td class="year-album">⭐ In Dreams<br/>1963</td>
+                <td><span class="musician-role">Roy Orbison</span><span class="instrument">vocals</span></td>
+                <td>Fred Foster, producer; session personnel, details limited</td>
+                <td>Monument. Recorded at RCA Victor Studio B. The title track reached #7 on the Hot 100 and #6 in the UK, and was later used to chilling effect in <em>Blue Velvet</em> (1986). "Blue Bayou" (written with Joe Melson) peaked at #29 in the US and #3 in the UK, and was later a huge hit for Linda Ronstadt. Also covers "Dream," "All I Have to Do Is Dream" and "My Prayer." The album reached #35 in the US and #6 in the UK.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label four">THE MGM YEARS (1965–1979)</span> Big Contract, Private Tragedy</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-four highlight-masterpiece">
+                <td class="year-album">⭐ There Is Only One Roy Orbison<br/>1965</td>
+                <td><span class="musician-role">Roy Orbison</span><span class="instrument">vocals</span></td>
+                <td>Wesley Rose &amp; Jim Vienneau, producers; session musicians, details limited</td>
+                <td>MGM. His first MGM album, recorded at RCA Studios, Nashville, after his Monument contract expired. The move was reported to be worth $1 million. Includes "Ride Away" (#25 US) and a re-cut of his own "Claudette." Reached #55 in the US and #10 in the UK.</td>
+            </tr>
+            <tr class="era-four highlight-masterpiece">
+                <td class="year-album">⭐ Roy Orbison's Many Moods<br/>1969</td>
+                <td><span class="musician-role">Roy Orbison</span><span class="instrument">vocals</span></td>
+                <td>Wesley Rose, producer; Val Valentin, engineer; arrangements by Jim Hall and Emory Gordy Jr. on some tracks; session personnel, details limited</td>
+                <td>MGM. Written when he was in the aftermath of the 1966 and 1968 family tragedies. Part originals ("Heartache," "Walk On" and "Yesterday's Child," co-written with Bill Dees), part covers ("Unchained Melody," "More," "What Now, My Love"). Singles charted in the UK at #44 and #39. "Heartache" was re-recorded for <em>I'm Still in Love with You</em> (1975).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label five">THE WILDERNESS &amp; THE COMEBACK (1979–1989)</span> Muscle Shoals, Wilburys &amp; Mystery Girl</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Artist's Role</th><th>Producers &amp; Key Musicians</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-five">
+                <td class="year-album">Laminar Flow<br/>1979</td>
+                <td><span class="musician-role">Roy Orbison</span><span class="instrument">vocals</span></td>
+                <td>Clayton Ivey &amp; Terry Woodford, producers; Larry Byrom, Mac McAnally (guitar), Jim Horn (sax), Bob Wray and Lonnie Ledford (bass), Lenny LeBlanc (drums), Ivey (keyboards)</td>
+                <td>Asylum. Recorded in February 1979 at Wishbone Studio, Muscle Shoals, a year after his open-heart surgery. A soft-rock record with singles "Easy Way Out" and "Poor Baby"; the closing "Hound Dog Man" is a tribute to Elvis Presley. Commercially it did little.</td>
+            </tr>
+            <tr class="era-five highlight-masterpiece">
+                <td class="year-album">⭐ Traveling Wilburys Vol. 1<br/>1988<span class="fmt">Traveling Wilburys (group release)</span></td>
+                <td><span class="musician-role">Roy Orbison</span><span class="instrument">vocals (as Lefty Wilbury)</span><span class="musician-role">George Harrison</span><span class="instrument">vocals, guitars (as Nelson Wilbury)</span><span class="musician-role">Jeff Lynne</span><span class="instrument">vocals, guitars, keyboards, bass (as Otis Wilbury)</span><span class="musician-role">Bob Dylan</span><span class="instrument">vocals, guitar (as Lucky Wilbury)</span><span class="musician-role">Tom Petty</span><span class="instrument">vocals, guitar (as Charlie T. Wilbury Jr.)</span></td>
+                <td>Jeff Lynne &amp; George Harrison, producers (as Otis and Nelson Wilbury); Jim Keltner (drums), Jim Horn (sax), Ray Cooper (percussion), Ian Wallace (toms on "Handle with Care")</td>
+                <td>Wilbury/Warner Bros. "Handle with Care" was taped at Dylan's Malibu home, and the rest was cut in nine days in May 1988 at Dave Stewart's studio in Los Angeles, with overdubs at Harrison's studio in Henley-on-Thames. A supergroup album, not a solo record. Reached #3 in the US (triple platinum) and #16 in the UK, and won the 1990 Grammy for best rock performance by a duo or group. Orbison died less than two months after release.</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">Mystery Girl<br/>1989</td>
+                <td><span class="musician-role">Roy Orbison</span><span class="instrument">vocals</span></td>
+                <td>Jeff Lynne (most tracks), Mike Campbell, Bono ("She's a Mystery to Me," written with the Edge), T Bone Burnett and Barbara Orbison, producers; Tom Petty, George Harrison, Mike Campbell, Howie Epstein, Benmont Tench, Jim Keltner</td>
+                <td>Virgin. Posthumous: recorded July 1987–November 1988 at Rumbo Recorders, A&amp;M Studios and FPSHOT, and released January 30, 1989 (UK). "You Got It" reached #9 on the Hot 100. His highest-charting US album (#5) and #2 in the UK.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
