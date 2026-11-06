@@ -4,11 +4,11 @@
   "Evan",
   "Mayank"
  ],
- "sessions_rated": 55,
- "sessions_dated": 55,
+ "sessions_rated": 56,
+ "sessions_dated": 56,
  "sessions_listed": 66,
  "reports": 15,
- "overall_average": 7.14,
+ "overall_average": 7.15,
  "curator": {
   "Nick": {
    "picks": 19,
@@ -17,10 +17,10 @@
    "gap": 1.19
   },
   "Evan": {
-   "picks": 18,
-   "curator_score": 6.94,
-   "self_score": 7.73,
-   "gap": 0.78
+   "picks": 19,
+   "curator_score": 6.97,
+   "self_score": 7.74,
+   "gap": 0.77
   },
   "Mayank": {
    "picks": 18,
@@ -30,20 +30,25 @@
   }
  },
  "taste": {
-  "Evan|Nick": 0.351,
-  "Evan|Mayank": 0.168,
-  "Mayank|Nick": 0.244
+  "Evan|Nick": 0.356,
+  "Evan|Mayank": 0.16,
+  "Mayank|Nick": 0.235
  },
  "contrarian": {
   "Nick": 1.15,
-  "Evan": 1.15,
-  "Mayank": 1.04
+  "Evan": 1.14,
+  "Mayank": 1.05
  },
  "genres": [
   {
    "genre": "Funk/Soul",
    "sessions": 4,
    "average": 7.81
+  },
+  {
+   "genre": "Rockabilly",
+   "sessions": 1,
+   "average": 7.63
   },
   {
    "genre": "Jazz",
@@ -421,6 +426,12 @@
    "artist": "The Cramps",
    "average": 6.68,
    "rolling6": 7.3
+  },
+  {
+   "date": "2026-10-23",
+   "artist": "Roy Orbinson",
+   "average": 7.63,
+   "rolling6": 7.46
   }
  ],
  "ranked": [
@@ -841,6 +852,28 @@
     "Speak To Me",
     "Arclight",
     "Squint"
+   ]
+  },
+  {
+   "artist": "Roy Orbinson",
+   "slug": "roy_orbinson",
+   "submitter": "Evan",
+   "genre": "Rockabilly",
+   "start": "2026-10-23",
+   "average": 7.63,
+   "stdev": 0.814,
+   "scores": {
+    "Nick": 8.2,
+    "Evan": 8.0,
+    "Mayank": 6.7
+   },
+   "has_report": true,
+   "albums": [
+    "Crying",
+    "In Dreams",
+    "Roy Orbison’s Many Moods",
+    "There Is Only One Roy Orbison",
+    "Traveling Wilburys Vol. 1"
    ]
   },
   {
@@ -1599,11 +1632,6 @@
    "submitter": "Mayank"
   },
   {
-   "artist": "Wolfmother",
-   "slug": "wolfmother",
-   "submitter": "Mayank"
-  },
-  {
    "artist": "Daft Punk",
    "slug": "daft_punk",
    "submitter": "Mayank"
@@ -1616,6 +1644,11 @@
   {
    "artist": "Blues Traveler",
    "slug": "blues_traveler",
+   "submitter": null
+  },
+  {
+   "artist": "Alanis Morrisette",
+   "slug": "alanis_morrisette",
    "submitter": null
   },
   {
@@ -1642,27 +1675,16 @@
    "artist": "Jeff Lynne & ELO",
    "slug": "jeff_lynne_elo",
    "submitter": "Evan"
-  },
-  {
-   "artist": "Roy Orbinson",
-   "slug": "roy_orbinson",
-   "submitter": "Evan"
   }
  ],
  "current": {
-  "artist": "Roy Orbinson",
-  "slug": "roy_orbinson",
-  "submitter": "Evan",
-  "start": "2026-10-23",
-  "end": "2026-11-05",
-  "albums": [
-   "Crying",
-   "In Dreams",
-   "Roy Orbison’s Many Moods",
-   "There Is Only One Roy Orbison",
-   "Traveling Wilburys Vol. 1"
-  ],
-  "has_report": true
+  "artist": "Blues Traveler",
+  "slug": "blues_traveler",
+  "submitter": null,
+  "start": null,
+  "end": null,
+  "albums": [],
+  "has_report": false
  },
  "current_issue": null
 }
