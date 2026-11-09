@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blues Traveler - Studio Albums, Musicians &amp; Instrumentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Canonical report stylesheet -- the single source of truth for report
+   appearance. scripts/render_report.py inlines this into every generated
+   report. Edit here, re-render, and every report changes together. */
+
+:root {
+    --bg: #17130f; --bg-card: #1f1a15; --bg-soft: #251f19;
+    --ink: #f2e9db; --ink-dim: #a8997f; --amber: #e8b04b; --line: #3a3128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Fraunces', Georgia, serif;
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(232,176,75,0.06), transparent 40%),
+        radial-gradient(circle at 88% 82%, rgba(200,133,43,0.05), transparent 45%);
+    background-attachment: fixed;
+    color: var(--ink);
+    padding: clamp(1rem, 3vw, 2.5rem);
+    line-height: 1.6;
+}
+.container {
+    max-width: 1500px; margin: 0 auto; background-color: var(--bg-card);
+    padding: clamp(1.4rem, 3vw, 2.4rem); border: 1px solid var(--line);
+    border-radius: 4px; box-shadow: 0 2px 28px rgba(0,0,0,0.45);
+}
+h1 {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 900; text-align: center;
+    color: var(--ink); font-size: clamp(1.7rem, 4vw, 2.1rem);
+    letter-spacing: -0.015em; margin-bottom: 10px; line-height: 1.1;
+}
+.subtitle {
+    font-family: 'Spline Sans Mono', monospace; text-align: center;
+    color: var(--ink-dim); margin-bottom: 32px; font-size: 11px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+}
+
+.synopsis {
+    margin-bottom: 36px; padding: 22px 26px; background-color: var(--bg-soft);
+    border-left: 4px solid var(--amber); border-radius: 4px;
+    font-size: 14px; line-height: 1.85;
+}
+.synopsis p { margin-bottom: 14px; }
+.synopsis p:last-child { margin-bottom: 0; }
+.synopsis strong { color: var(--amber); font-weight: 600; }
+.synopsis em { color: var(--ink); font-style: italic; }
+.scope-note {
+    font-family: 'Spline Sans Mono', monospace; font-size: 11px;
+    color: var(--ink-dim); font-style: normal; margin-top: 22px; line-height: 1.7;
+}
+
+h3 {
+    margin: 34px 0 10px; font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600; font-size: 17px; color: var(--ink);
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 30px; }
+thead { background-color: #2a231c; position: sticky; top: 0; }
+th {
+    font-family: 'Spline Sans Mono', monospace; padding: 11px 9px; text-align: left;
+    font-weight: 500; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-dim); border-bottom: 1px solid var(--line);
+}
+td {
+    padding: 11px 9px; border-bottom: 1px solid rgba(58,49,40,0.6);
+    vertical-align: top; line-height: 1.7;
+}
+tbody tr:hover { background-color: rgba(232,176,75,0.05); }
+.year-album {
+    font-family: 'Spline Sans Mono', monospace; font-weight: 500;
+    color: var(--ink); width: 180px; font-size: 12px; line-height: 1.5;
+}
+.musician-role { display: block; margin-bottom: 2px; font-weight: 500; }
+.instrument {
+    font-family: 'Spline Sans Mono', monospace; color: var(--ink-dim);
+    font-size: 11px; font-style: normal;
+}
+
+.era-label {
+    font-family: 'Spline Sans Mono', monospace; display: inline-block;
+    padding: 3px 9px; border-radius: 3px; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.1em; margin-bottom: 8px; margin-right: 6px;
+}
+
+/* One era-* class per era, assigned in the order the eras appear.
+   These seven are validated for this dark surface -- don't invent more. */
+.era-one   { border-left: 4px solid #4a93d8; }
+.era-two   { border-left: 4px solid #c9762f; }
+.era-three { border-left: 4px solid #b56fd0; }
+.era-four  { border-left: 4px solid #5aa832; }
+.era-five  { border-left: 4px solid #cf5566; }
+.era-six   { border-left: 4px solid #2aa294; }
+.era-seven { border-left: 4px solid #8f8ad4; }
+
+.era-label.one   { background-color: #273038; color: #96bad9; }
+.era-label.two   { background-color: #3e2b1a; color: #dbaa7c; }
+.era-label.three { background-color: #3a2937; color: #d0a6d5; }
+.era-label.four  { background-color: #2a341a; color: #9ec57e; }
+.era-label.five  { background-color: #3f2524; color: #df989b; }
+.era-label.six   { background-color: #21322c; color: #84c2b4; }
+.era-label.seven { background-color: #332e37; color: #bcb5d7; }
+
+.highlight-masterpiece {
+    background-color: #392e1c;
+    box-shadow: inset 0 0 10px rgba(232,176,75,0.12);
+    border-left: 6px solid var(--amber) !important;
+}
+
+.fmt {
+    font-family: 'Spline Sans Mono', monospace; display: inline-block;
+    font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-dim); border: 1px solid var(--line); border-radius: 3px;
+    padding: 1px 5px; margin-top: 5px;
+}
+
+.project-header {
+    font-family: 'Fraunces', Georgia, serif; background-color: #2a231c;
+    color: var(--ink); padding: 14px 18px; border-radius: 4px 4px 0 0;
+    margin: 10px 0 0; font-size: 18px; font-weight: 600;
+}
+.project-desc {
+    background-color: var(--bg-soft); padding: 12px 18px; font-size: 13px;
+    color: var(--ink-dim); margin-bottom: 15px;
+    border-left: 4px solid var(--line); line-height: 1.7;
+}
+
+/* Most reports still carry a legend after the final table rather than a
+   synopsis at the top. Styled to match the synopsis so they read as
+   deliberate; the left border is neutral rather than amber to rank it
+   below a real synopsis. */
+.legend {
+    margin-top: 30px; padding: 20px 24px; background-color: var(--bg-soft);
+    border-left: 4px solid var(--line); border-radius: 4px;
+    font-size: 13px; line-height: 1.8;
+}
+.legend > strong { color: var(--amber); font-weight: 600; }
+.legend-item { margin-bottom: 14px; }
+.legend-item:last-child { margin-bottom: 0; }
+.legend-item strong { color: var(--amber); font-weight: 600; }
+
+a { color: var(--amber); }
+
+@media (max-width: 700px) {
+    body { padding: 0.6rem; }
+    .container { padding: 1.1rem; }
+    table { font-size: 12px; }
+    .year-album { width: auto; min-width: 120px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Blues Traveler: Studio Albums Discography</h1>
+    <p class="subtitle">Musicians &amp; Instrumentation (1990–2023)</p>
+
+    <div class="synopsis">
+        <p><strong>John Popper</strong> and <strong>Brendan Hill</strong> started playing together in high school in Princeton, New Jersey, in the mid-1980s, in a garage band that went through names such as the Establishment and Blues Band before settling on Blues Traveler, a nod to Gozer the Traveler from <em>Ghostbusters</em>. Guitarist <strong>Chan Kinchla</strong> and bassist <strong>Bobby Sheehan</strong> completed the lineup that moved to New York, played the club circuit, and signed with A&amp;M Records. Popper is the band's centre of gravity: a singer and songwriter whose harmonica playing, fast enough to be a calling card and a running joke, treats the instrument as a lead guitar. Around him, Chan Kinchla supplies guitar and mandolin, Hill the drums and percussion, and Sheehan was the melodic, elastic bass underneath. The self-titled debut (1990) captured a jam-structured band built on blues riffs, and <em>Travelers and Thieves</em> (1991) and <em>Save His Soul</em> (1993) deepened it while the live following grew. In 1992 the band helped found the H.O.R.D.E. touring festival, a template for the jam-band circuit of the decade.</p>
+        <p><em>Four</em> (1994) turned that cult following into a mainstream hit. Recorded at Bearsville Studios in Woodstock, New York, with producers <strong>Michael Barbiero</strong> and <strong>Steve Thompson</strong>, it peaked at No. 8 on the Billboard 200, went six times platinum in the U.S., and produced "Run-Around" (No. 8 on the Hot 100, and the 1995 Grammy winner for Best Rock Performance by a Duo or Group) and "Hook." The same team returned for <em>Straight On till Morning</em> (1997), which reached No. 11 and went platinum. It would be the last album with Sheehan. He died of an accidental drug overdose in New Orleans on August 20, 1999, and the band had to decide whether to continue. They did, adding <strong>Tad Kinchla</strong>, Chan's younger brother, on bass after an audition, and keyboardist <strong>Ben Wilson</strong> in January 2000, which gave the group a keyboard voice it had never had before.</p>
+        <p>The post-Sheehan years were rebuilding years. A free online release in 2000, <em>Decisions of the Sky</em>, came first, then <em>Bridge</em> (2001), the band's last album for A&amp;M, which dropped them in 2002. Since then Blues Traveler has worked across a string of labels, among them Sanctuary, Vanguard, Verve Forecast, 429, Loud &amp; Proud, BMG and Round Hill, and has largely stayed independent of the major-label chart game while remaining a reliable touring act, a regular July 4 headliner at Red Rocks since 1994 (except 1999 and 2020). The albums of this era range widely: a producer-driven roots record with the late Jay Bennett (<em>¡Bastardos!</em>, 2005), a record built entirely on guest duets with younger pop and rock acts (<em>Blow Up the Moon</em>, 2015), and a pair of covers albums, one of blues standards and one of soul.</p>
+        <p><em>Traveler's Blues</em> (2021), produced by <strong>Matt Rollings</strong> with guests including Keb' Mo', Warren Haynes, Kingfish Ingram and The War and Treaty, reached No. 1 on Billboard's Top Blues Albums chart and was nominated for the Grammy for Best Traditional Blues Album. <em>Traveler's Soul</em> (2023) followed with R&amp;B and soul covers. In 2024 the band toured <em>Four</em> in full for its thirtieth anniversary, and in 2025 it co-headlined with Gin Blossoms and Spin Doctors, releasing a cover of R. Dean Taylor's "Indiana Wants Me" with them, with further 2026 dates announced. All five members of the current lineup (Popper, Chan Kinchla, Hill, Tad Kinchla and Wilson) are still together, though no new studio album since <em>Traveler's Soul</em> turned up in research for this report.</p>
+        <p class="scope-note">Scope: covers Blues Traveler's studio albums, 1990–2023, sixteen in all, plus <em>Decisions of the Sky</em> (2000), which was released free online as a short digital set rather than a conventional album and is tagged as such. Excluded: live albums (<em>Live from the Fall</em>, <em>Live: What You and I Have Been Through</em>, <em>Live on the Rocks</em>, <em>On Tour Forever</em>, <em>¡Bastardos en Vivo!</em>), compilations (<em>Travelogue</em>, <em>25</em>, <em>Icon</em>, <em>The Definitive Collection</em>), and members' solo work, including John Popper's solo albums and side projects, since Blues Traveler itself has been the constant. Contested or unverified details are flagged in the rows: several producer credits and the label of <em>Cover Yourself</em> conflict between sources or could not be confirmed. <em>Blow Up the Moon</em>, <em>Traveler's Blues</em> and <em>Traveler's Soul</em> are tagged by format because they are guest-driven or cover records. Years follow the discography listing, so <em>Traveler's Blues</em> is dated 2021 although its release was reported as delayed from July to October.</p>
+    </div>
+
+    <h3><span class="era-label one">A&amp;M BEGINNINGS (1990–1993)</span> Harmonica, Jams &amp; H.O.R.D.E.</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-one">
+                <td class="year-album">Blues Traveler<br/>1990</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Bobby Sheehan</span><span class="instrument">bass</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Justin Niebank, producer; Joan Osborne (backing vocals), Howie Wyeth (piano), Arnie Lawrence (soprano sax), Chris Barron (backing vocals)</td>
+                <td>A&amp;M. Recorded February 19 to March 3, 1990, and released that May. Jam-structured songs built on basic blues riffs, with Popper's harmonica at the centre. Peaked at No. 136 on the Billboard 200 and later went gold.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">Travelers and Thieves<br/>1991</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Bobby Sheehan</span><span class="instrument">bass</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Jim Gaines and Blues Traveler, producers; Gregg Allman (Hammond B3, vocals on "Mountain Cry"), Chris Barron (backing vocals)</td>
+                <td>A&amp;M. Recorded in 1991 at Master Sound in Astoria, Queens, and RPM Studios in Manhattan; released September 3. Singles were "All in the Groove," "Sweet Pain" and "Mountain Cry." Peaked at No. 125 and went gold. An early two-CD pressing bundled the live <em>On Tour Forever</em>.</td>
+            </tr>
+            <tr class="era-one">
+                <td class="year-album">Save His Soul<br/>1993</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Bobby Sheehan</span><span class="instrument">bass</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Dave Swanson and Blues Traveler, producers; Paul Shaffer (Hammond organ), Avram Lavinsky (string arrangements), a string section and backing vocalists</td>
+                <td>A&amp;M. Singles "Conquer Me" and "Defense &amp; Desire," the latter about Manhattan's Nightingale Bar. "Letter from a Friend" was written for Dave Graham, son of promoter Bill Graham, after his death in 1991. Peaked at No. 72 and went gold; the band had co-founded H.O.R.D.E. the year before.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label two">THE BREAKTHROUGH (1994–1997)</span> Run-Around &amp; Platinum Sales</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-two">
+                <td class="year-album">four<br/>1994</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Bobby Sheehan</span><span class="instrument">bass</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Michael Barbiero and Steve Thompson, producers; Warren Haynes (slide guitar on "The Mountains Win Again"), Chuck Leavell, Paul Shaffer</td>
+                <td>A&amp;M. Recorded 1993–94 at Bearsville Studios in Woodstock, New York; released September 13, 1994. Peaked at No. 8, six times platinum in the U.S. and twice platinum in Canada. "Run-Around" reached No. 8 on the Hot 100 and won the 1995 Grammy for Best Rock Performance by a Duo or Group; "Hook" reached No. 23.</td>
+            </tr>
+            <tr class="era-two">
+                <td class="year-album">Straight On till Morning<br/>1997</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Bobby Sheehan</span><span class="instrument">bass</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Steve Thompson and Michael Barbiero, producers; Warren Haynes (slide guitar)</td>
+                <td>A&amp;M. Released July 1, 1997; peaked at No. 11 and went platinum. Title and cover art come from Peter Pan's directions to Neverland. "Carolina Blues" reached No. 4 on the Mainstream Rock chart. The last album with Bobby Sheehan, who died in August 1999.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label three">AFTER SHEEHAN (2000–2003)</span> New Bassist, New Keyboardist, Last Days at A&amp;M</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-three">
+                <td class="year-album">Decisions of the Sky: A Traveler's Tale of Sun and Storm<br/>2000<span class="fmt">Digital EP</span></td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Brendan Hill, producer; artwork by Rich Homburger</td>
+                <td>Blues Traveler Publishing. Posted free on the band's website one track per week in autumn 2000, the first release after Sheehan's death and the first with Tad Kinchla and Ben Wilson. Drawn from an abandoned concept album about a young man who goes to war while struggling over a relationship. A planned commercial CD with an extra track was rejected by the label.</td>
+            </tr>
+            <tr class="era-three">
+                <td class="year-album">Bridge<br/>2001</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Matt Wallace, producer; Warren Haynes (slide guitar)</td>
+                <td>A&amp;M. Recorded in 2000 and released May 8, 2001, the first full album after Sheehan's death and the last for A&amp;M. Peaked at No. 91. Marks Kinchla and Wilson's official studio debut.</td>
+            </tr>
+            <tr class="era-three">
+                <td class="year-album">Truth Be Told<br/>2003</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Don Gehman, producer; no guests listed</td>
+                <td>Sanctuary. Recorded February–April 2003 and released August 5, the first album after A&amp;M dropped the band. Peaked at No. 147. Reviews ran from warm (AllMusic gave it four and a half stars) to lukewarm (Entertainment Weekly gave it a B−).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label four">INDEPENDENT YEARS (2005–2012)</span> Journeyman Labels, Varied Experiments</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-four">
+                <td class="year-album">¡Bastardos!<br/>2005</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Jay Bennett, producer (per one source; details limited)</td>
+                <td>Vanguard. Peaked at No. 49 on Billboard's Independent Albums chart. A live companion, <em>¡Bastardos en Vivo!</em>, is excluded from this report. Other details limited.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">Cover Yourself<br/>2007</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Producer details limited; Lisa Bouchelle (duet on "Only the Tequila Talking")</td>
+                <td>Label conflicts between sources (C3 on the discography listing, Columbia/Red Ink on the band article), so details limited. Did not chart. Classification as studio album versus covers or re-recordings is unconfirmed here.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">North Hollywood Shootout<br/>2008</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Producer details limited; Bruce Willis (guest)</td>
+                <td>Verve Forecast. Did not chart on the Billboard 200. Other details limited.</td>
+            </tr>
+            <tr class="era-four">
+                <td class="year-album">Suzie Cracks the Whip<br/>2012</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Producer details limited; Crystal Bowersox (backing vocals on "I Don't Wanna Go")</td>
+                <td>429 Records. Released June 26, 2012; the band's eleventh studio album. Debuted at No. 91 on the Billboard 200, described as their highest chart position since 2001. Lead single "You Don't Have to Love Me."</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><span class="era-label five">GUESTS &amp; COVERS (2015–2023)</span> Duets, Nashville Sessions &amp; the Blues Revisited</h3>
+    <table>
+        <thead>
+            <tr><th>Album / Year</th><th>Core Members</th><th>Collaborators / Producers</th><th>Label / Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr class="era-five">
+                <td class="year-album">Blow Up the Moon<br/>2015<span class="fmt">Collaborations</span></td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Producer details limited; every track features a guest, including 3OH!3, JC Chasez, The Dirty Heads with Rome Ramirez, Hanson, Plain White T's, Thompson Square, Jewel and Bowling for Soup</td>
+                <td>Loud &amp; Proud. Released April 7, 2015; the band's twelfth studio album. Charted at No. 29 on Independent Albums and No. 47 on Top Rock Albums. Lead single "Hurricane." AllMusic's critic called it pleasingly bizarre but a pandering time capsule.</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">Hurry Up &amp; Hang Around<br/>2018</td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Matt Rollings, producer</td>
+                <td>BMG. Recorded at Sound Emporium in Nashville and released October 12, 2018; the band's thirteenth studio album. Lead single "Accelerated Nation." Peaked at No. 14 on Independent Albums and No. 72 on Top Album Sales.</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">Traveler's Blues<br/>2021<span class="fmt">Covers</span></td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Matt Rollings, producer; Josh Gruss, executive producer; Keb' Mo', Warren Haynes, John Scofield, Christone "Kingfish" Ingram, The War and Treaty, Mickey Raphael, Crystal Bowersox, Rita Wilson, Wendy Moten, Jared James Nichols</td>
+                <td>Round Hill. Classic blues covers recorded in 2020 in Nashville, Stamford, Memphis (Royal Studios) and Spring Hill, Tennessee. Reached No. 1 on Billboard's Top Blues Albums chart and was nominated for Best Traditional Blues Album at the 2022 Grammys, losing to Cedric Burnside. Singles "Funky Bitch" and "Ball and Chain."</td>
+            </tr>
+            <tr class="era-five">
+                <td class="year-album">Traveler's Soul<br/>2023<span class="fmt">Covers</span></td>
+                <td><span class="musician-role">John Popper</span><span class="instrument">vocals, harmonica</span><span class="musician-role">Chan Kinchla</span><span class="instrument">guitar</span><span class="musician-role">Tad Kinchla</span><span class="instrument">bass</span><span class="musician-role">Ben Wilson</span><span class="instrument">keyboards</span><span class="musician-role">Brendan Hill</span><span class="instrument">drums</span></td>
+                <td>Producer details limited; guests include Pat Monahan of Train, Daisha McBride, Valerie June and Ryan Shaw</td>
+                <td>Round Hill. Released October 20, 2023: a covers album of R&amp;B and soul songs, a companion to <em>Traveler's Blues</em>. Other details limited. The band's most recent studio album found in research.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
