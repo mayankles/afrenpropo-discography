@@ -7,7 +7,7 @@
  "sessions_rated": 56,
  "sessions_dated": 56,
  "sessions_listed": 66,
- "reports": 15,
+ "reports": 16,
  "overall_average": 7.15,
  "curator": {
   "Nick": {
@@ -1683,8 +1683,14 @@
   "submitter": null,
   "start": null,
   "end": null,
-  "albums": [],
-  "has_report": false
+  "albums": [
+   "Four",
+   "Blues Traveler",
+   "Travelers and Thieves",
+   "Bridge",
+   "Traveler's Blues"
+  ],
+  "has_report": true
  },
  "current_issue": null
 }
